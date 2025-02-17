@@ -237,7 +237,7 @@ Stack:
 ------------------
 ```
 
-### **Step 2: `factorial(2)` is called from `factorial(3)` **
+### **Step 2: `factorial(2)` is called from `factorial(3)`**
 
 ```
 Stack:
@@ -248,7 +248,7 @@ Stack:
 ------------------
 ```
 
-### **Step 3: `factorial(1)` is called from `factorial(2)` **
+### **Step 3: `factorial(1)` is called from `factorial(2)`**
 
 ```
 Stack:
@@ -261,7 +261,7 @@ Stack:
 ------------------
 ```
 
-### **Step 4: `factorial(0)` is called from `factorial(1)` **
+### **Step 4: `factorial(0)` is called from `factorial(1)`**
 
 ```
 Stack:
