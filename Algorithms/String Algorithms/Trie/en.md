@@ -1,134 +1,144 @@
 # Trie (Prefix Tree)
 
-A **Trie** (also known as a **Prefix Tree**) is a data structure used to efficiently store and retrieve strings, especially when dealing with prefix-related queries. It is commonly employed in applications such as dictionary implementations, autocomplete functionality, spell checking, and more.
+A **Trie** (also known as a **Prefix Tree**) is a data structure used to efficiently store and retrieve strings, especially when dealing with prefix‑related queries. Common applications include dictionaries, autocomplete, and spell‑checking.
+
+---
 
 ## Key Concept
-- A Trie is composed of connected **nodes** where each node typically represents a single character of a string.
-- The path from the root node to a leaf node corresponds to the sequence of characters in a word.
-- Each node may contain a marker indicating whether it represents the end of a valid word.
 
-By sharing common paths between strings that share prefixes, the Trie helps save memory and provides efficient insert and search operations.
+* Each node usually represents **one character**.  
+* The path from the root to a node spells a prefix; if that node is marked *terminal* it represents a full word.  
+* Nodes that share prefixes are stored **once**, saving memory and giving \(O(m)\) insert / search where \(m\) is the key’s length.
 
 ---
 
 ## Advantages
-1. **Search Speed**: You can check if a word exists in \(O(m)\) time, where \(m\) is the length of the word.
-2. **Shared Paths**: A Trie stores only one copy of a shared prefix for multiple words, saving space.
-3. **Prefix Matching**: It is ideal for quickly finding all words that start with a certain prefix (e.g., autocomplete).
+
+1. **Fast look‑ups** in \(O(m)\).  
+2. **Prefix queries** are trivial (ideal for autocomplete).  
+3. **Space sharing** for common prefixes.
 
 ---
 
-## Common Operations
+## Core Operations
 
-Tries typically provide the following operations:
+| Operation   | Description                                        |
+|-------------|----------------------------------------------------|
+| **insert**  | Add a word to the Trie.                            |
+| **search**  | Check if a complete word exists.                   |
+| **startsWith** | Does any word start with the given prefix?      |
+| **delete**  | (optional) Remove a word and prune unused nodes.   |
 
-1. **Insert**: Insert a word into the Trie.
-2. **Search**: Check if a word exists in the Trie.
-3. **StartsWith** (optional): Check if any word in the Trie starts with a given prefix.
-4. **Delete** (optional): Remove a word from the Trie (requires special handling to clean up unused nodes).
+---
 
-Below is a complete example in **C++** demonstrating these basic operations:
+## Reference Implementations
 
+Below you’ll find equivalent code in C++, Python, and JavaScript.  
+
+=== "C++"
 ```cpp
 #include <iostream>
 #include <string>
 using namespace std;
 
-// A Trie node
-struct TrieNode {
-    // For English letters a-z, we use an array of size 26
-    TrieNode* children[26];
-    // Indicates if this node represents the end of a word
-    bool isEndOfWord;
-
-    TrieNode() {
-        for (int i = 0; i < 26; i++) {
-            children[i] = nullptr;
-        }
-        isEndOfWord = false;
-    }
+struct Node {
+    Node* child[26]{};
+    bool end = false;
 };
 
-// Trie class
 class Trie {
-private:
-    TrieNode* root;
-
-    // Helper function to convert a character to an index (0-25)
-    int charToIndex(char c) {
-        return c - 'a';
-    }
-
+    Node* root = new Node();
+    static int id(char c){ return c - 'a'; }
 public:
-    Trie() {
-        root = new TrieNode();
-    }
-
-    // Insert a word into the Trie
-    void insert(const string &key) {
-        TrieNode* currentNode = root;
-        for (char c : key) {
-            int index = charToIndex(c);
-            // If the child does not exist, create a new node
-            if (!currentNode->children[index]) {
-                currentNode->children[index] = new TrieNode();
-            }
-            currentNode = currentNode->children[index];
+    void insert(const string& w){
+        Node* cur = root;
+        for(char ch: w){
+            int i = id(ch);
+            if(!cur->child[i]) cur->child[i] = new Node();
+            cur = cur->child[i];
         }
-        // Mark the end of the word
-        currentNode->isEndOfWord = true;
+        cur->end = true;
     }
-
-    // Search for a word in the Trie
-    bool search(const string &key) {
-        TrieNode* currentNode = root;
-        for (char c : key) {
-            int index = charToIndex(c);
-            // If the child is missing, the word does not exist
-            if (!currentNode->children[index]) {
-                return false;
-            }
-            currentNode = currentNode->children[index];
+    bool search(const string& w){
+        Node* cur = root;
+        for(char ch: w){
+            int i = id(ch);
+            if(!(cur = cur->child[i])) return false;
         }
-        // Must be a valid end of a word
-        return (currentNode != nullptr && currentNode->isEndOfWord);
+        return cur->end;
     }
-
-    // Check if there is any word in the Trie that starts with a given prefix
-    bool startsWith(const string &prefix) {
-        TrieNode* currentNode = root;
-        for (char c : prefix) {
-            int index = charToIndex(c);
-            if (!currentNode->children[index]) {
-                return false;
-            }
-            currentNode = currentNode->children[index];
+    bool startsWith(const string& p){
+        Node* cur = root;
+        for(char ch: p){
+            int i = id(ch);
+            if(!(cur = cur->child[i])) return false;
         }
-        return true; // We reached the end of the prefix without interruption
+        return true;
     }
 };
+```
 
-int main() {
-    Trie trie;
+=== "Python"
+```python
+class TrieNode:
+    __slots__ = ("child", "end")
+    def __init__(self):
+        self.child = {}
+        self.end = False
 
-    trie.insert("hello");
-    trie.insert("hell");
-    trie.insert("help");
-    trie.insert("helium");
-    trie.insert("cat");
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
 
-    cout << boolalpha; // Print boolean values as 'true' or 'false' instead of 1/0
+    def insert(self, word: str):
+        node = self.root
+        for ch in word:
+            node = node.child.setdefault(ch, TrieNode())
+        node.end = True
 
-    // Test searching for words
-    cout << "Search for 'hello': " << trie.search("hello") << endl; // true
-    cout << "Search for 'hell':  " << trie.search("hell") << endl;  // true
-    cout << "Search for 'help':  " << trie.search("help") << endl;  // true
-    cout << "Search for 'hel':   " << trie.search("hel") << endl;   // false
+    def _walk(self, s: str):
+        node = self.root
+        for ch in s:
+            node = node.child.get(ch)
+            if node is None:
+                return None
+        return node
 
-    // Test if prefixes exist
-    cout << "Starts with 'he':   " << trie.startsWith("he") << endl; // true
-    cout << "Starts with 'ca':   " << trie.startsWith("ca") << endl; // true
-    cout << "Starts with 'ho':   " << trie.startsWith("ho") << endl; // false
+    def search(self, word: str) -> bool:
+        node = self._walk(word)
+        return bool(node and node.end)
 
-    return 0;
+    def starts_with(self, prefix: str) -> bool:
+        return self._walk(prefix) is not None
+```
+
+=== "JavaScript"
+```js
+class TrieNode{
+  constructor(){
+    this.child = new Map(); // char -> TrieNode
+    this.end   = false;
+  }
 }
+export class Trie{
+  #root = new TrieNode();
+  insert(word){
+    let node = this.#root;
+    for(const ch of word){
+      if(!node.child.has(ch)) node.child.set(ch, new TrieNode());
+      node = node.child.get(ch);
+    }
+    node.end = true;
+  }
+  #walk(str){
+    let node = this.#root;
+    for(const ch of str){
+      node = node.child.get(ch);
+      if(!node) return null;
+    }
+    return node;
+  }
+  search(word){ const n = this.#walk(word); return !!n && n.end; }
+  startsWith(prefix){ return !!this.#walk(prefix); }
+}
+```
