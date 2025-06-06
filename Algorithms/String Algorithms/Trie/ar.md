@@ -29,108 +29,111 @@
 
 فيما يلي مثال كامل في لغة **C++** يوضح هذه العمليات الأساسية:
 
+
+=== "C++"
 ```cpp
 #include <iostream>
 #include <string>
 using namespace std;
 
-// بنية عقدة التراي
-struct TrieNode {
-    // كل حرف بالإنجليزية (a-z) له 26 مؤشر (تبعاً لأبجدية اللغة الإنجليزية)
-    TrieNode* children[26];
-    // يشير إلى ما إذا كانت هذه العقدة تمثل نهاية كلمة
-    bool isEndOfWord;
-
-    TrieNode() {
-        // تهيئة المؤشرات بالقيمة nullptr
-        for (int i = 0; i < 26; i++) {
-            children[i] = nullptr;
-        }
-        isEndOfWord = false;
-    }
+struct Node {
+    Node* child[26]{};
+    bool end = false;
 };
 
-// تعريف التراي
 class Trie {
-private:
-    TrieNode* root;
-
-    // دالة مساعدة لتحويل الحرف إلى فهرس (0-25)
-    int charToIndex(char c) {
-        return c - 'a';
-    }
-
+    Node* root = new Node();
+    static int id(char c){ return c - 'a'; }
 public:
-    Trie() {
-        root = new TrieNode();
-    }
-
-    // إدراج كلمة في التراي
-    void insert(const string &key) {
-        TrieNode* currentNode = root;
-        for (char c : key) {
-            int index = charToIndex(c);
-            // إذا لم تكن العقدة موجودة، ننشئ واحدة جديدة
-            if (!currentNode->children[index]) {
-                currentNode->children[index] = new TrieNode();
-            }
-            currentNode = currentNode->children[index];
+    void insert(const string& w){
+        Node* cur = root;
+        for(char ch: w){
+            int i = id(ch);
+            if(!cur->child[i]) cur->child[i] = new Node();
+            cur = cur->child[i];
         }
-        // بعد انتهاء الحروف، نشير إلى أنّ العقدة تمثل نهاية لكلمة
-        currentNode->isEndOfWord = true;
+        cur->end = true;
     }
-
-    // البحث عن كلمة في التراي
-    bool search(const string &key) {
-        TrieNode* currentNode = root;
-        for (char c : key) {
-            int index = charToIndex(c);
-            // إذا المؤشر فارغ فهذا يعني عدم وجود المسار المطلوب
-            if (!currentNode->children[index]) {
-                return false;
-            }
-            currentNode = currentNode->children[index];
+    bool search(const string& w){
+        Node* cur = root;
+        for(char ch: w){
+            int i = id(ch);
+            if(!(cur = cur->child[i])) return false;
         }
-        // يجب أن تكون العقدة نهاية كلمة حتى تعتبر الكلمة موجودة فعليًا
-        return (currentNode != nullptr && currentNode->isEndOfWord);
+        return cur->end;
     }
-
-    // التحقق من وجود بادئة
-    bool startsWith(const string &prefix) {
-        TrieNode* currentNode = root;
-        for (char c : prefix) {
-            int index = charToIndex(c);
-            if (!currentNode->children[index]) {
-                return false;
-            }
-            currentNode = currentNode->children[index];
+    bool startsWith(const string& p){
+        Node* cur = root;
+        for(char ch: p){
+            int i = id(ch);
+            if(!(cur = cur->child[i])) return false;
         }
-        return true; // وصلنا لنهاية البادئة دون انقطاع
+        return true;
     }
 };
+```
 
-// اختبار التراي
-int main() {
-    Trie trie;
+=== "Python"
+```python
+class TrieNode:
+    __slots__ = ("child", "end")
+    def __init__(self):
+        self.child = {}
+        self.end = False
 
-    trie.insert("hello");
-    trie.insert("hell");
-    trie.insert("help");
-    trie.insert("helium");
-    trie.insert("cat");
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
 
-    cout << boolalpha; // عرض القيم المنطقية على شكل true/false
+    def insert(self, word: str):
+        node = self.root
+        for ch in word:
+            node = node.child.setdefault(ch, TrieNode())
+        node.end = True
 
-    // اختبار البحث عن كلمات
-    cout << "Search for 'hello': " << trie.search("hello") << endl; // true
-    cout << "Search for 'hell':  " << trie.search("hell") << endl;  // true
-    cout << "Search for 'help':  " << trie.search("help") << endl;  // true
-    cout << "Search for 'hel':   " << trie.search("hel") << endl;   // false
+    def _walk(self, s: str):
+        node = self.root
+        for ch in s:
+            node = node.child.get(ch)
+            if node is None:
+                return None
+        return node
 
-    // اختبار وجود بادئة
-    cout << "Starts with 'he':   " << trie.startsWith("he") << endl; // true
-    cout << "Starts with 'ca':   " << trie.startsWith("ca") << endl; // true
-    cout << "Starts with 'ho':   " << trie.startsWith("ho") << endl; // false
+    def search(self, word: str) -> bool:
+        node = self._walk(word)
+        return bool(node and node.end)
 
-    return 0;
+    def starts_with(self, prefix: str) -> bool:
+        return self._walk(prefix) is not None
+```
+
+=== "JavaScript"
+```js
+class TrieNode{
+  constructor(){
+    this.child = new Map(); // char -> TrieNode
+    this.end   = false;
+  }
 }
+export class Trie{
+  #root = new TrieNode();
+  insert(word){
+    let node = this.#root;
+    for(const ch of word){
+      if(!node.child.has(ch)) node.child.set(ch, new TrieNode());
+      node = node.child.get(ch);
+    }
+    node.end = true;
+  }
+  #walk(str){
+    let node = this.#root;
+    for(const ch of str){
+      node = node.child.get(ch);
+      if(!node) return null;
+    }
+    return node;
+  }
+  search(word){ const n = this.#walk(word); return !!n && n.end; }
+  startsWith(prefix){ return !!this.#walk(prefix); }
+}
+```
