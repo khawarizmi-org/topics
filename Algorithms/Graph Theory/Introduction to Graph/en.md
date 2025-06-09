@@ -1,17 +1,20 @@
 # Introduction to Graph
 
-A **Graph** is a data structure consisting of a set of **nodes** (also called **vertices**) and a set of **edges** connecting them. Graphs are fundamental in competitive programming for problems involving connectivity, shortest paths, components, and more.
+## Definition
+
+A **Graph** is a data structure consisting of a set of **nodes** (also called **vertices**) and a set of **edges** connecting them. Graphs are fundamental in competitive programming for solving problems related to connectivity, shortest paths, cycles, and components.
 
 ---
 
 ## Key Concept
 
-* A graph \( G = (V, E) \) contains:
-  * \( V \): a set of vertices (nodes)
-  * \( E \): a set of edges (connections between pairs of nodes)
-* Edges can be **directed** or **undirected**
-* Edges can be **weighted** or **unweighted**
-* Graphs can be represented using an **adjacency list** or an **adjacency matrix**
+* A graph $G = (V, E)$ contains:
+  * **$V$**: a set of vertices (nodes)  
+  * **$E$**: a set of edges connecting pairs of vertices  
+* Edges can be **directed** or **undirected**  
+* Edges can be **weighted** or **unweighted**  
+* Common subtypes include **trees** and **DAGs**  
+* Represented using **adjacency lists** or **adjacency matrices**  
 
 ---
 
@@ -26,44 +29,68 @@ A **Graph** is a data structure consisting of a set of **nodes** (also called **
 | Path             | A sequence of vertices connected by edges                      |
 | Cycle            | A path that starts and ends at the same vertex                 |
 | Connected Graph  | Every vertex is reachable from every other vertex              |
-| Tree             | A connected, undirected, acyclic graph with \(n - 1\) edges    |
+| Tree             | A connected, acyclic undirected graph                          |
 | DAG              | Directed Acyclic Graph (no cycles)                             |
 
 ---
 
 ## Types of Graphs
 
-1. **Undirected Graph**:  
-   Edges have no direction — \( (u, v) = (v, u) \)
+1. **Undirected Graph**  
+   Edges have no direction — $(u, v) = (v, u)$  
+   <div align="center">
+       <img src="images/undirected_graph.png" alt="Undirected Graph">
+   </div>
 
-2. **Directed Graph**:  
-   Edges have direction — \( (u, v) $\neq$ (v, u) \)
+2. **Directed Graph (Digraph)**  
+   Edges have a direction — $(u, v) \neq (v, u)$  
+   <div align="center">
+       <img src="images/directed_graph.png" alt="Directed Graph">
+   </div>
 
-3. **Unweighted Graph**:  
-   All edges are treated equally
+3. **Unweighted Graph**  
+   All edges are considered equal (weight = 1)  
+   <div align="center">
+       <img src="images/unweighted_graph.png" alt="Unweighted Graph">
+   </div>
 
-4. **Weighted Graph**:  
-   Each edge has a weight (cost, distance, etc.)
+4. **Weighted Graph**  
+   Each edge has a cost or weight  
+   <div align="center">
+       <img src="images/weighted_graph.png" alt="Weighted Graph">
+   </div>
 
-5. **Cyclic Graph**:  
-   Contains at least one cycle
+5. **Cyclic Graph**  
+   Contains at least one cycle  
+   <div align="center">
+       <img src="images/cyclic_graph.png" alt="Cyclic Graph">
+   </div>
 
-6. **Acyclic Graph**:  
-   No cycles
+6. **Acyclic Graph**  
+   Contains no cycles  
+   <div align="center">
+       <img src="images/acyclic_graph.png" alt="Acyclic Graph">
+   </div>
 
-7. **Tree**:  
-   Undirected, connected, acyclic graph with \( n \) nodes and \( n - 1 \) edges
+7. **Tree**  
+   A connected, undirected, acyclic graph with $n$ nodes and $n-1$ edges  
+   <div align="center">
+       <img src="images/tree_graph.png" alt="Tree">
+   </div>
 
-8. **DAG**:  
-   Directed Acyclic Graph, used in topological sorting and scheduling
+8. **DAG (Directed Acyclic Graph)**  
+   A directed graph with no cycles  
+   <div align="center">
+       <img src="images/dag_graph.png" alt="DAG">
+   </div>
 
 ---
 
 ## Adjacency List
 
-- Stores a list of neighbors for each node
-- Space complexity: \(O(n + m)\)
-- Edge check complexity: \(O(\text{degree})\)
+- Stores a list of neighbors for each node  
+- **Space complexity**: $O(n + m)$  
+- **Edge check complexity**: $O(\text{degree})$  
 
 
 === "c++"
@@ -82,10 +109,13 @@ adj[v].append(u)  # if undirected
 
 ## Adjacency Matrix
 
-- 2D matrix of size \( n \times n \)
-- \( \text{adj}[u][v] = 1 \) means there is an edge from node \( u \) to node \( v \)
-- **Space complexity**: \( O(n^2) \)
-- **Edge check complexity**: \( O(1) \)
+- 2D matrix of size $n \times n$  
+- $ \text{adj}[u][v] = 1 $ means there is an edge from node $u$ to node $v$  
+- Suitable for **dense graphs**  
+- **Space complexity**: $O(n^2)$  
+- **Edge check complexity**: $O(1)$  
+- Simple and fast lookups  
+- Not space-efficient for sparse graphs  
 
 === "c++"
 ```c++
