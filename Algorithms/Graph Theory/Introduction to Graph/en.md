@@ -95,9 +95,9 @@ A **Graph** is a data structure consisting of a set of **nodes** (also called **
 
 10. **Disconnected Graph**  
     At least one vertex is not reachable from others  
-    <div align="center">
-        <img src="images/disconnected_graph.png" alt="Disconnected Graph" width="400">
-    </div>
+   <div align="center">
+       <img src="images/disconnected_graph.png" alt="Disconnected Graph" width="400">
+   </div>
 
 ---
 
