@@ -131,3 +131,11 @@ adj = [[0] * n for _ in range(n)]
 adj[u][v] = 1
 adj[v][u] = 1  # if undirected
 ```
+
+---
+
+## Graph Traversal
+
+* Just like iterating over arrays or vectors, we have methods to **traverse** graphs.
+* Common approaches include **Depth-First Search (DFS)** and **Breadth-First Search (BFS)**.
+* We’ll cover these traversal algorithms in upcoming blog posts.
