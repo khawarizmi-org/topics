@@ -89,6 +89,7 @@ A **Graph** is a data structure consisting of a set of **nodes** (also called **
 ## Adjacency List
 
 - Stores a list of neighbors for each node  
+- Efficient for **sparse graphs**  
 - **Space complexity**: $O(n + m)$  
 - **Edge check complexity**: $O(\text{degree})$  
 
@@ -110,7 +111,7 @@ adj[v].append(u)  # if undirected
 ## Adjacency Matrix
 
 - 2D matrix of size $n \times n$  
-- $ \text{adj}[u][v] = 1 $ means there is an edge from node $u$ to node $v$  
+- $adj[u][v] = 1$ means there is an edge from node $u$ to node $v$  
 - Suitable for **dense graphs**  
 - **Space complexity**: $O(n^2)$  
 - **Edge check complexity**: $O(1)$  
