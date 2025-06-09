@@ -16,6 +16,7 @@ A **Graph** is a data structure consisting of a set of **nodes** (also called **
 * Common subtypes include **trees** and **DAGs**  
 * Represented using **adjacency lists** or **adjacency matrices**  
 
+
 ---
 
 ## Terminology
@@ -29,6 +30,7 @@ A **Graph** is a data structure consisting of a set of **nodes** (also called **
 | Path             | A sequence of vertices connected by edges                      |
 | Cycle            | A path that starts and ends at the same vertex                 |
 | Connected Graph  | Every vertex is reachable from every other vertex              |
+| Disconnected Graph | At least one vertex is not reachable from others             |
 | Tree             | A connected, acyclic undirected graph                          |
 | DAG              | Directed Acyclic Graph (no cycles)                             |
 
@@ -84,6 +86,17 @@ A **Graph** is a data structure consisting of a set of **nodes** (also called **
        <img src="images/dag_graph.png" alt="DAG">
    </div>
 
+9. **Connected Graph**  
+   Every vertex is reachable from every other vertex  
+   <div align="center">
+       <img src="images/connected_graph.png" alt="Connected Graph">
+   </div>
+
+10. **Disconnected Graph**  
+    At least one vertex is not reachable from others  
+   <div align="center">
+       <img src="images/disconnected_graph.png" alt="Disconnected Graph">
+   </div>
 ---
 
 ## Adjacency List
