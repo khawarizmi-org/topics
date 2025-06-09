@@ -136,6 +136,4 @@ adj[v][u] = 1  # if undirected
 
 ## Graph Traversal
 
-* Just like iterating over arrays or vectors, we have methods to **traverse** graphs.
-* Common approaches include **Depth-First Search (DFS)** and **Breadth-First Search (BFS)**.
-* We’ll cover these traversal algorithms in upcoming blog posts.
+Graph traversal refers to the techniques used to visit all the nodes in a graph, much like iterating through an array or a vector. Two fundamental methods are **Depth-First Search (DFS)**, which uses a stack or recursion to explore as far as possible along each branch, and **Breadth-First Search (BFS)**, which uses a queue to explore neighbors level by level. We will cover these traversal algorithms in detail in upcoming blog posts.
