@@ -37,7 +37,7 @@ A **Graph** is a data structure consisting of a set of **nodes** (also called **
    Edges have no direction — \( (u, v) = (v, u) \)
 
 2. **Directed Graph**:  
-   Edges have direction — \( (u, v) \neq (v, u) \)
+   Edges have direction — \( (u, v) $\neq$ (v, u) \)
 
 3. **Unweighted Graph**:  
    All edges are treated equally
