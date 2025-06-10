@@ -10,13 +10,18 @@
 
 ## المفهوم الرئيسي
 
-* يحتوي الرسم البياني $G = (V, E)$ على:
-  * **$V$**: مجموعة من **الرؤوس (vertices)**  
-  * **$E$**: مجموعة من **الحواف (edges)** التي تربط أزواجَ الرؤوس  
-* يمكن أن تكون الحواف **موجهة (directed)** أو **غير موجهة (undirected)**  
-* يمكن أن تكون الحواف **موزونة (weighted)** أو **غير موزونة (unweighted)**  
-* تشمل الأنواع الشائعة **الشجرة (tree)** و**الرسم البياني الموجه غير الدوري (DAG)**  
-* يتم تمثيل الرسوم البيانية باستخدام **قائمة الجوار (adjacency list)** أو **مصفوفة الجوار (adjacency matrix)**  
+<ul dir="rtl" style="direction: rtl; text-align: right;">
+<li>يحتوي الرسم البياني $G = (V, E)$ على:  
+  <ul dir="rtl" style="direction: rtl; text-align: right;">
+  <li>**$V$**: مجموعة من **الرؤوس (vertices)**</li>
+  <li>**$E$**: مجموعة من **الحواف (edges)** التي تربط أزواجَ الرؤوس</li>
+  </ul>
+</li>
+<li>يمكن أن تكون الحواف **موجهة (directed)** أو **غير موجهة (undirected)**</li>
+<li>يمكن أن تكون الحواف **موزونة (weighted)** أو **غير موزونة (unweighted)**</li>
+<li>تشمل الأنواع الشائعة **الشجرة (tree)** و**الرسم البياني الموجه غير الدوري (DAG)**</li>
+<li>يتم تمثيل الرسوم البيانية باستخدام **قائمة الجوار (adjacency list)** أو **مصفوفة الجوار (adjacency matrix)**</li>
+</ul>
 
 ---
 
@@ -71,7 +76,7 @@
          <img src="images/cyclic_graph.png" alt="Cyclic Graph" width="400">
      </div>
   </li>
-  <li>**الرسم البياني غير الدوري (Acyclic Graph)**  
+  <li>**الرسم البياني غير دوري (Acyclic Graph)**  
      لا يحتوي على دورات  
      <div align="center">
          <img src="images/acyclic_graph.png" alt="Acyclic Graph" width="400">
