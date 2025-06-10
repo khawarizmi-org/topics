@@ -38,65 +38,90 @@
 
 ---
 
-1. **الرسم البياني غير الموجه (Undirected Graph)**  
-   الحواف ليس لها اتجاه — $(u, v) = (v, u)$  
-   <div align="center">
-       <img src="images/undirected_graph.png" alt="Undirected Graph" width="400">
-   </div>
+## أنواع الرسوم البيانية
 
-2. **الرسم البياني الموجه (Directed Graph)**  
-   للحواف اتجاه — $(u, v) \neq (v, u)$  
-   <div align="center">
-       <img src="images/directed_graph.png" alt="Directed Graph" width="400">
-   </div>
+<ol dir="rtl" style="direction: rtl; unicode-bidi: embed;">
+  <li>**الرسم البياني غير الموجه (Undirected Graph)**  
+     
+     الحواف ليس لها اتجاه — $(u, v) = (v, u)$  
+     <div align="center">
+         <img src="images/undirected_graph.png" alt="Undirected Graph" width="400">
+     </div>
+  </li>
 
-3. **الرسم البياني غير الموزون (Unweighted Graph)**  
-   جميع الحواف تُعتبر متساوية (الوزن = 1)  
-   <div align="center">
-       <img src="images/unweighted_graph.png" alt="Unweighted Graph" width="400">
-   </div>
+  <li>**الرسم البياني الموجه (Directed Graph)**  
+     
+     للحواف اتجاه — $(u, v) \neq (v, u)$  
+     <div align="center">
+         <img src="images/directed_graph.png" alt="Directed Graph" width="400">
+     </div>
+  </li>
 
-4. **الرسم البياني الموزون (Weighted Graph)**  
-   كل حافة لها تكلفة أو وزن  
-   <div align="center">
-       <img src="images/weighted_graph.png" alt="Weighted Graph" width="400">
-   </div>
+  <li>**الرسم البياني غير الموزون (Unweighted Graph)**  
+     
+     جميع الحواف تُعتبر متساوية (الوزن = 1)  
+     <div align="center">
+         <img src="images/unweighted_graph.png" alt="Unweighted Graph" width="400">
+     </div>
+  </li>
 
-5. **الرسم البياني الدوري (Cyclic Graph)**  
-   يحتوي على دورة واحدة على الأقل  
-   <div align="center">
-       <img src="images/cyclic_graph.png" alt="Cyclic Graph" width="400">
-   </div>
+  <li>**الرسم البياني الموزون (Weighted Graph)**  
+     
+     كل حافة لها تكلفة أو وزن  
+     <div align="center">
+         <img src="images/weighted_graph.png" alt="Weighted Graph" width="400">
+     </div>
+  </li>
 
-6. **الرسم البياني غير دوري (Acyclic Graph)**  
-   لا يحتوي على دورات  
-   <div align="center">
-       <img src="images/acyclic_graph.png" alt="Acyclic Graph" width="400">
-   </div>
+  <li>**الرسم البياني الدوري (Cyclic Graph)**  
+     
+     يحتوي على دورة واحدة على الأقل  
+     <div align="center">
+         <img src="images/cyclic_graph.png" alt="Cyclic Graph" width="400">
+     </div>
+  </li>
 
-7. **الشجرة (Tree)**  
-   رسم بياني غير موجه، مرتبط، وغير دوري به $n$ رؤوس و $n-1$ حافات  
-   <div align="center">
-       <img src="images/tree_graph.png" alt="Tree" width="400">
-   </div>
+  <li>**الرسم البياني غير دوري (Acyclic Graph)**  
+     
+     لا يحتوي على دورات  
+     <div align="center">
+         <img src="images/acyclic_graph.png" alt="Acyclic Graph" width="400">
+     </div>
+  </li>
 
-8. **الرسم البياني الموجه غير دوري (DAG)**  
-   رسم بياني موجه ولا يحتوي على دورات  
-   <div align="center">
-       <img src="images/dag_graph.png" alt="DAG" width="400">
-   </div>
+  <li>**الشجرة (Tree)**  
+     
+     رسم بياني غير موجه، مرتبط، وغير دوري به $n$ رؤوس و $n-1$ حافات  
+     <div align="center">
+         <img src="images/tree_graph.png" alt="Tree" width="400">
+     </div>
+  </li>
 
-9. **الرسم البياني المرتبط (Connected Graph)**  
-   كل رأس يمكن الوصول إليه من أي رأس آخر  
-   <div align="center">
-       <img src="images/connected_graph.png" alt="Connected Graph" width="400">
-   </div>
+  <li>**الرسم البياني الموجه غير دوري (DAG)**  
+     
+     رسم بياني موجه ولا يحتوي على دورات  
+     <div align="center">
+         <img src="images/dag_graph.png" alt="DAG" width="400">
+     </div>
+  </li>
 
-10. **الرسم البياني غير المرتبط (Disconnected Graph)**  
-    يوجد على الأقل رأس واحد لا يمكن الوصول إليه من آخر  
-    <div align="center">
-        <img src="images/disconnected_graph.png" alt="Disconnected Graph" width="400">
-    </div>
+  <li>**الرسم البياني المرتبط (Connected Graph)**  
+     
+     كل رأس يمكن الوصول إليه من أي رأس آخر  
+     <div align="center">
+         <img src="images/connected_graph.png" alt="Connected Graph" width="400">
+     </div>
+  </li>
+
+  <li>**الرسم البياني غير المرتبط (Disconnected Graph)**  
+     
+     يوجد على الأقل رأس واحد لا يمكن الوصول إليه من آخر  
+     <div align="center">
+         <img src="images/disconnected_graph.png" alt="Disconnected Graph" width="400">
+     </div>
+  </li>
+</ol>
+
 
 ---
 
