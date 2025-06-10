@@ -3,5 +3,7 @@
     "String Algorithms": "خوازميات النصوص",
     "Search": "بحث",
     "Recursion": "الاستدعاء الذاتي",
-    "Trie": "شجرة التراي (Trie)"
+    "Trie": "شجرة التراي (Trie)",
+    "Introduction": "الأساسيات",
+    "Complexity": "الكومبليكسيتي"
 }
