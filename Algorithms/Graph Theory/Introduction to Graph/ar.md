@@ -40,65 +40,55 @@
 
 ## أنواع الرسوم البيانية
 
-1. **الرسم البياني غير الموجه (Undirected Graph)**  
-   الحواف ليس لها اتجاه — $(u, v) = (v, u)$  
-   <div align="center">
-       <img src="images/undirected_graph.png" alt="Undirected Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/undirected_graph.png" alt="الرسم البياني غير الموجه" width="400">
+    <p><em>1 الرسم البياني غير الموجه — الحواف ليس لها اتجاه: $(u, v) = (v, u)$</em></p>
+</div>
 
-2. **الرسم البياني الموجه (Directed Graph)**  
-   للحواف اتجاه — $(u, v) \neq (v, u)$  
-   <div align="center">
-       <img src="images/directed_graph.png" alt="Directed Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/directed_graph.png" alt="الرسم البياني الموجه" width="400">
+    <p><em>2 الرسم البياني الموجه — للحواف اتجاه: $(u, v) \neq (v, u)$</em></p>
+</div>
 
-3. **الرسم البياني غير الموزون (Unweighted Graph)**  
-   جميع الحواف تُعتبر متساوية (الوزن = 1)  
-   <div align="center">
-       <img src="images/unweighted_graph.png" alt="Unweighted Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/unweighted_graph.png" alt="الرسم البياني غير الموزون" width="400">
+    <p><em>3 الرسم البياني غير الموزون — جميع الحواف تُعتبر متساوية (الوزن = 1)</em></p>
+</div>
 
-4. **الرسم البياني الموزون (Weighted Graph)**  
-   كل حافة لها تكلفة أو وزن  
-   <div align="center">
-       <img src="images/weighted_graph.png" alt="Weighted Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/weighted_graph.png" alt="الرسم البياني الموزون" width="400">
+    <p><em>4 الرسم البياني الموزون — كل حافة لها تكلفة أو وزن</em></p>
+</div>
 
-5. **الرسم البياني الدوري (Cyclic Graph)**  
-   يحتوي على دورة واحدة على الأقل  
-   <div align="center">
-       <img src="images/cyclic_graph.png" alt="Cyclic Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/cyclic_graph.png" alt="الرسم البياني الدوري" width="400">
+    <p><em>5 الرسم البياني الدوري — يحتوي على دورة واحدة على الأقل</em></p>
+</div>
 
-6. **الرسم البياني غير دوري (Acyclic Graph)**  
-   لا يحتوي على دورات  
-   <div align="center">
-       <img src="images/acyclic_graph.png" alt="Acyclic Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/acyclic_graph.png" alt="الرسم البياني غير دوري" width="400">
+    <p><em>6 الرسم البياني غير دوري — لا يحتوي على دورات</em></p>
+</div>
 
-7. **الشجرة (Tree)**  
-   رسم بياني غير موجه، مرتبط، وغير دوري به $n$ رؤوس و $n-1$ حافات  
-   <div align="center">
-       <img src="images/tree_graph.png" alt="Tree" width="400">
-   </div>
+<div align="center">
+    <img src="images/tree_graph.png" alt="الشجرة" width="400">
+    <p><em>7 الشجرة — رسم بياني غير موجه، مرتبط، وغير دوري به $n$ رؤوس و $n-1$ حافات</em></p>
+</div>
 
-8. **الرسم البياني الموجه غير دوري (DAG)**  
-   رسم بياني موجه ولا يحتوي على دورات  
-   <div align="center">
-       <img src="images/dag_graph.png" alt="DAG" width="400">
-   </div>
+<div align="center">
+    <img src="images/dag_graph.png" alt="الرسم البياني الموجه غير دوري" width="400">
+    <p><em>8 الرسم البياني الموجه غير دوري (DAG) — رسم بياني موجه ولا يحتوي على دورات</em></p>
+</div>
 
-9. **الرسم البياني المرتبط (Connected Graph)**  
-   كل رأس يمكن الوصول إليه من أي رأس آخر  
-   <div align="center">
-       <img src="images/connected_graph.png" alt="Connected Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/connected_graph.png" alt="الرسم البياني المرتبط" width="400">
+    <p><em>9 الرسم البياني المرتبط — كل رأس يمكن الوصول إليه من أي رأس آخر</em></p>
+</div>
 
-10. **الرسم البياني غير المرتبط (Disconnected Graph)**  
-    يوجد على الأقل رأس واحد لا يمكن الوصول إليه من آخر  
-   <div align="center">
-       <img src="images/disconnected_graph.png" alt="Disconnected Graph" width="400">
-   </div>
+<div align="center">
+    <img src="images/disconnected_graph.png" alt="الرسم البياني غير المرتبط" width="400">
+    <p><em>10 الرسم البياني غير المرتبط — يوجد على الأقل رأس واحد لا يمكن الوصول إليه من آخر</em></p>
+</div>
 
 
 ---
