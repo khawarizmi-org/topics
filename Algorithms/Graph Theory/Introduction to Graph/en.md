@@ -12,36 +12,36 @@ Before diving into the details, note that graphs fall into categories based on t
 
 ### Common Terms
 
-| Term            | Definition                                                                       |
-|-----------------|----------------------------------------------------------------------------------|
-| **Vertex**      | A node in the graph                                                              |
-| **Edge**        | A connection between two vertices                                                |
-| **Self-loop**   | An edge \((u,u)\) from a vertex to itself                                        |
-| **Multi-edge**  | Multiple edges connecting the same pair of vertices                              |
-| **Subgraph**    | A graph formed from a subset of the vertices and edges of the original graph     |
-| **Path**        | A sequence \((v_0,v_1,\dots,v_k)\) with each \((v_i,v_{i+1})\in E\)               |
-| **Simple Path** | A path with no repeated vertices                                                 |
-| **Cycle**       | A path where \(v_0 = v_k\)                                                       |
-| **Simple Cycle**| A cycle with no repeated vertices except the start/end                           |
+| Term            | Definition                                                                                 |
+|-----------------|--------------------------------------------------------------------------------------------|
+| **Vertex**      | A node in the graph                                                                        |
+| **Edge**        | A connection between two vertices                                                          |
+| **Self-loop**   | An edge \((u,u)\) from a vertex to itself                                                  |
+| **Multi-edge**  | Multiple edges connecting the same pair of vertices                                        |
+| **Subgraph**    | A graph formed from a subset of the vertices and edges of the original graph               |
+| **Path**        | A sequence \(\bigl(v_0, v_1, \dots, v_k\bigr)\) with each \((v_i, v_{i+1}) \in E\)           |
+| **Simple Path** | A path with no repeated vertices                                                           |
+| **Cycle**       | A path where \(v_0 = v_k\)                                                                 |
+| **Simple Cycle**| A cycle with no repeated vertices except the start/end                                     |
 
 ### Undirected-Specific
 
-| Term                    | Definition                                                    |
-|-------------------------|---------------------------------------------------------------|
-| **Degree**              | Number of edges incident to a vertex                          |
-| **Connected Component** | A maximal subgraph in which any two vertices are connected    |
-| **Connected Graph**     | A graph with exactly one connected component                  |
-| **Tree**                | A connected, acyclic undirected graph with \(|E| = |V|-1\)    |
+| Term                    | Definition                                                  |
+|-------------------------|-------------------------------------------------------------|
+| **Degree**              | Number of edges incident to a vertex                        |
+| **Connected Component** | A maximal subgraph in which any two vertices are connected  |
+| **Connected Graph**     | A graph with exactly one connected component                |
+| **Tree**                | A connected, acyclic undirected graph with \(\lvert E\rvert = \lvert V\rvert - 1\) |
 
 ### Directed-Specific
 
-| Term                              | Definition                                                                         |
-|-----------------------------------|------------------------------------------------------------------------------------|
-| **In-degree**                     | Number of edges entering a vertex                                                  |
-| **Out-degree**                    | Number of edges leaving a vertex                                                   |
-| **DAG**                           | Directed Acyclic Graph—no directed cycles                                          |
-| **Strongly Connected Component** | A maximal subgraph where each vertex can reach every other via directed paths      |
-| **Reachability**                  | Existence of a directed path from one vertex to another                            |
+| Term                              | Definition                                                                     |
+|-----------------------------------|--------------------------------------------------------------------------------|
+| **In-degree**                     | Number of edges entering a vertex                                              |
+| **Out-degree**                    | Number of edges leaving a vertex                                               |
+| **DAG**                           | Directed Acyclic Graph—no directed cycles                                      |
+| **Strongly Connected Component** | A maximal subgraph where each vertex can reach every other via directed paths  |
+| **Reachability**                  | Existence of a directed path from one vertex to another                        |
 
 ---
 
