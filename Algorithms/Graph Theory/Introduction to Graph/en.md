@@ -81,156 +81,108 @@ A **tree** is a special undirected graph with no cycles and exactly $n-1$ edges 
 
 ## Examples
 
-### Example 1: Weighted Undirected with Self-Loop and Multi-Edge
+### Example 1: Undirected Unweighted (Paths, Cycles & Degrees)
 
 This is the input graph  
-$G = (V, E), \quad
-V = \{1, 2, 3\}, \quad
-E = \{(1,1,5),\(1,2,3),\(1,2,3),\(2,3,4)\}.$
+$G = (V, E), V = {1,2,3,4,5}, E = {(1,1), (1,2), (1,2), (2,3), (2,4), (3,5)}$
 
 <div align="center">
     <img src="images/example1.png" alt="Example 1" width="400">
 </div>
 
-This is a **weighted**, **undirected** graph that demonstrates:
+This is an **undirected**, **unweighted** graph with a self-loop at 1 and a multi-edge between 1 and 2.  
 
-- A **self-loop** at vertex 1: edge \((1,1,5)\).  
-- A **multi-edge** between 1 and 2: two copies of \((1,2,3)\).  
-- A normal edge \((2,3,4)\) of weight 4.
+- **Path:** `1 → 2 → 3 → 5`  
+- **Simple path:** `4 → 2 → 3`  
+- **Cycle:** `2 → 3 → 5 → 3 → 2`  
+- **Simple cycle:** `1 → 2 → 4 → 1`  
+
+**Degrees (self-loop counts as 2 at vertex 1):**  
+- degree(1) = 4 (self-loop adds 2 + two edges to 2)  
+- degree(2) = 4 (two edges from 1 + edges to 3 and 4)  
+- degree(3) = 2 (edges to 2 and 5)  
+- degree(4) = 1 (edge to 2)  
+- degree(5) = 1 (edge to 3)  
 
 ---
 
-### Example 2: Path vs Simple Path
+### Example 2: Tree (Depth, Height & Diameter)
 
-This is the input graph  
-$G = (V, E), \quad
-V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\(2,3),\(3,4),\(4,5),\(2,4)\}.$
+This is the input tree  
+$G = (V, E), V = {1,2,3,4,5}, E = {(1,2), (1,3), (2,4), (2,5)}$
 
 <div align="center">
     <img src="images/example2.png" alt="Example 2" width="400">
 </div>
 
-This **unweighted**, **undirected** graph shows:
+This **undirected**, **acyclic** graph is a tree rooted at 1:
 
-- A **path** from 1 to 5, e.g. $1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5$.  
-- A **non-simple path** that revisits 2: $1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 4 \rightarrow 5$.  
-- A **simple path** with no repeats: $1 \rightarrow 2 \rightarrow 4 \rightarrow 5$.
+- **Depths:**  
+  - depth(1)=0  
+  - depth(2)=1, depth(3)=1  
+  - depth(4)=2, depth(5)=2  
+- **Height:** 2 (maximum depth)  
+- **Diameter:** 3 (longest path e.g. `4 – 2 – 1 – 3`)  
 
 ---
 
-### Example 3: Cycle vs Simple Cycle
+### Example 3: Disconnected Graph & Components
 
 This is the input graph  
-$G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2),\(2,3),\(3,1),\(2,4)\}.$
+$G = (V, E), V = {1,2,3,4,5,6}, E = {(1,2), (2,3), (4,5)}$
 
 <div align="center">
     <img src="images/example3.png" alt="Example 3" width="400">
 </div>
 
-In this **unweighted**, **undirected** graph:
+This **undirected**, **unweighted** graph is **disconnected** into:
 
-- A **cycle** is $1 \rightarrow 2 \rightarrow 3 \rightarrow 1$.  
-- A **non-simple cycle** might revisit 2: $1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 1$.  
-- A **simple cycle** visits each vertex once: $1 \rightarrow 2 \rightarrow 3 \rightarrow 1$.
+1. Component `{1,2,3}` (chain 1–2–3)  
+2. Component `{4,5}` (edge 4–5)  
+3. Component `{6}` (isolated)  
 
 ---
 
-### Example 4: Disconnected Graph and Components
+### Example 4: Weighted Undirected (Path Cost)
 
 This is the input graph  
-$G = (V, E), \quad
-V = \{1,2,3,4,5,6,7\}, \quad
-E = \{(1,2),\(2,3),\(4,5),\(5,6)\}.$
+$G = (V, E), V = {1,2,3,4}, E = {(1,2,3), (2,3,4), (3,4,5), (1,4,10)}$
 
 <div align="center">
     <img src="images/example4.png" alt="Example 4" width="400">
 </div>
 
-This **unweighted**, **undirected** graph is **disconnected**. Its components are:
+This **weighted**, **undirected** graph:
 
-1. \(\{1,2,3\}\) (chain 1–2–3)  
-2. \(\{4,5,6\}\) (chain 4–5–6)  
-3. \(\{7\}\) (isolated vertex)
+- **Path 1→4 via 1–2–3–4:** cost = 3 + 4 + 5 = **12**  
+- **Direct path 1→4:** cost = **10**  
+
+Thus the cheaper route is direct (10 vs 12).
 
 ---
 
-### Example 5: Weighted Undirected Degrees
+### Example 5: Directed Unweighted (Paths, Cycles & Degrees)
 
 This is the input graph  
-$G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2,2),\(1,3,5),\(2,4,1),\(3,4,3)\}.$
+$G = (V, E), V = {1,2,3,4,5}, E = {(1,1), (1,2), (2,3), (3,4), (4,2), (4,5), (4,5), (5,4)}$
 
 <div align="center">
     <img src="images/example5.png" alt="Example 5" width="400">
 </div>
 
-This **weighted**, **undirected** graph has:
+This **directed**, **unweighted** graph has loops and multi-edges:
 
-- **degree(1) = 2** (neighbors 2, 3)  
-- **degree(2) = 2** (neighbors 1, 4)  
-- **degree(3) = 2** (neighbors 1, 4)  
-- **degree(4) = 2** (neighbors 2, 3)
+- **Path:** `1 → 2 → 3 → 4 → 5 → 4`  
+- **Simple path:** `1 → 2 → 3 → 4 → 5`  
+- **Cycle:** `2 → 3 → 4 → 2`  
+- **Simple cycle:** `2 → 3 → 4 → 2`  
 
----
-
-### Example 6: Tree Heights, Depths, Diameter
-
-This is the input tree  
-$G = (V, E), \quad
-V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\(1,3),\(3,4),\(3,5)\}.$
-
-<div align="center">
-    <img src="images/example6.png" alt="Example 6" width="400">
-</div>
-
-This **undirected**, **acyclic** tree (rooted at 1) has:
-
-- **depth(1)=0**, **depth(2)=1**, **depth(3)=1**, **depth(4)=2**, **depth(5)=2**  
-- **height** = 2 (maximum depth)  
-- **diameter** = 3 (longest path 2–1–3–4)
-
----
-
-### Example 7: DAG In/Out Degrees
-
-This is the input DAG  
-$G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2),\(1,3),\(2,4),\(3,4)\}.$
-
-<div align="center">
-    <img src="images/example7.png" alt="Example 7" width="400">
-</div>
-
-This **directed**, **acyclic** graph has:
-
-- **in(1)=0**, **out(1)=2**  
-- **in(2)=1**, **out(2)=1**  
-- **in(3)=1**, **out(3)=1**  
-- **in(4)=2**, **out(4)=0**
-
----
-
-### Example 8: Strongly Connected Components
-
-This is the input graph  
-$G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2),\(2,3),\(3,1),\(3,4)\}.$
-
-<div align="center">
-    <img src="images/example8.png" alt="Example 8" width="400">
-</div>
-
-This **directed** graph forms two SCCs:
-
-- **SCC 1:** \(\{1,2,3\}\) (1→2→3→1 cycle)  
-- **SCC 2:** \(\{4\}\) (no return path)
+**In-degrees / Out-degrees:**  
+- 1: in=1, out=2  
+- 2: in=2, out=1  
+- 3: in=1, out=1  
+- 4: in=2, out=3  
+- 5: in=2, out=1  
 
 ---
 
