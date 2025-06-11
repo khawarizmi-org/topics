@@ -79,20 +79,26 @@ A **tree** is a special undirected graph with no cycles and exactly $n-1$ edges 
 ---
 
 
+## Examples
+
 ### Example 1: Weighted Undirected with Self-Loop and Multi-Edge
 
 This is the input graph  
 $$
-G = (V, E), \quad
-V = \{1, 2, 3\}, \quad
-E = \{(1,1,5),\, (1,2,3),\, (1,2,3),\, (2,3,4)\}.
+G = (V, E), \\
+V = {1, 2, 3}, \\
+E = {(1,1,5), (1,2,3), (1,2,3), (2,3,4)}
 $$
 
 <div align="center">
     <img src="images/example1.png" alt="Example 1" width="400">
 </div>
 
-This is a **weighted**, **undirected** graph with special edges. It contains a **self-loop** at vertex 1 (edge \((1,1,5)\)) and a **multi-edge** between 1 and 2 (two copies of \((1,2,3)\)). The edge \((2,3,4)\) is a normal undirected connection of weight 4.
+This is a **weighted**, **undirected** graph that demonstrates:
+
+- A **self-loop** at vertex 1: edge $(1,1,5)$.  
+- A **multi-edge** between 1 and 2: two parallel edges $(1,2,3)$.  
+- A normal edge $(2,3,4)$ of weight 4.
 
 ---
 
@@ -100,20 +106,20 @@ This is a **weighted**, **undirected** graph with special edges. It contains a *
 
 This is the input graph  
 $$
-G = (V, E), \quad
-V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\, (2,3),\, (3,4),\, (4,5),\, (2,4)\}.
+G = (V, E), \\
+V = {1,2,3,4,5}, \\
+E = {(1,2), (2,3), (3,4), (4,5), (2,4)}
 $$
 
 <div align="center">
     <img src="images/example2.png" alt="Example 2" width="400">
 </div>
 
-This is an **unweighted**, **undirected** graph. Consider:
+This **unweighted**, **undirected** graph shows:
 
-- A **path** from 1 to 5 can be \(1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5\).  
-- A **non-simple path** might revisit a vertex, e.g. \(1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 4 \rightarrow 5\).  
-- A **simple path** has no repeats, such as \(1 \rightarrow 2 \rightarrow 4 \rightarrow 5\).
+- A **path** from 1 to 5: $1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5$.  
+- A **non-simple path** that revisits 2: $1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 4 \rightarrow 5$.  
+- A **simple path** with no repeats: $1 \rightarrow 2 \rightarrow 4 \rightarrow 5$.
 
 ---
 
@@ -121,20 +127,20 @@ This is an **unweighted**, **undirected** graph. Consider:
 
 This is the input graph  
 $$
-G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2),\, (2,3),\, (3,1),\, (2,4)\}.
+G = (V, E), \\
+V = {1,2,3,4}, \\
+E = {(1,2), (2,3), (3,1), (2,4)}
 $$
 
 <div align="center">
     <img src="images/example3.png" alt="Example 3" width="400">
 </div>
 
-This is an **unweighted**, **undirected** graph. Notice:
+This **unweighted**, **undirected** graph illustrates:
 
-- A **cycle** is \(1 \rightarrow 2 \rightarrow 3 \rightarrow 1\).  
-- A **non-simple cycle** might be \(1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 1\).  
-- A **simple cycle** visits each vertex once before returning, e.g. \(1 \rightarrow 2 \rightarrow 3 \rightarrow 1\).
+- A **cycle**: $1 \rightarrow 2 \rightarrow 3 \rightarrow 1$.  
+- A **non-simple cycle** revisiting 2: $1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 1$.  
+- A **simple cycle** visiting each vertex once: $1 \rightarrow 2 \rightarrow 3 \rightarrow 1$.
 
 ---
 
@@ -142,20 +148,20 @@ This is an **unweighted**, **undirected** graph. Notice:
 
 This is the input graph  
 $$
-G = (V, E), \quad
-V = \{1,2,3,4,5,6,7\}, \quad
-E = \{(1,2),\, (2,3),\, (4,5),\, (5,6)\}.
+G = (V, E), \\
+V = {1,2,3,4,5,6,7}, \\
+E = {(1,2), (2,3), (4,5), (5,6)}
 $$
 
 <div align="center">
     <img src="images/example4.png" alt="Example 4" width="400">
 </div>
 
-This **unweighted**, **undirected** graph is **disconnected** and splits into three components:
+This **unweighted**, **undirected** graph is **disconnected**, with three components:
 
-1. Component \(\{1,2,3\}\), since 1–2–3 form a chain.  
-2. Component \(\{4,5,6\}\), since 4–5–6 form a chain.  
-3. Component \(\{7\}\), an isolated vertex.
+1. {1,2,3} (chain 1–2–3)  
+2. {4,5,6} (chain 4–5–6)  
+3. {7} as an isolated vertex
 
 ---
 
@@ -163,9 +169,9 @@ This **unweighted**, **undirected** graph is **disconnected** and splits into th
 
 This is the input graph  
 $$
-G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2,2),\, (1,3,5),\, (2,4,1),\, (3,4,3)\}.
+G = (V, E), \\
+V = {1,2,3,4}, \\
+E = {(1,2,2), (1,3,5), (2,4,1), (3,4,3)}
 $$
 
 <div align="center">
@@ -174,10 +180,10 @@ $$
 
 This **weighted**, **undirected** graph has degrees:
 
-- **degree(1) = 2** (neighbors: 2, 3)  
-- **degree(2) = 2** (neighbors: 1, 4)  
-- **degree(3) = 2** (neighbors: 1, 4)  
-- **degree(4) = 2** (neighbors: 2, 3)
+- degree(1) = 2 (neighbors 2, 3)  
+- degree(2) = 2 (neighbors 1, 4)  
+- degree(3) = 2 (neighbors 1, 4)  
+- degree(4) = 2 (neighbors 2, 3)
 
 ---
 
@@ -185,20 +191,20 @@ This **weighted**, **undirected** graph has degrees:
 
 This is the input tree  
 $$
-G = (V, E), \quad
-V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\, (1,3),\, (3,4),\, (3,5)\}.
+G = (V, E), \\
+V = {1,2,3,4,5}, \\
+E = {(1,2), (1,3), (3,4), (3,5)}
 $$
 
 <div align="center">
     <img src="images/example6.png" alt="Example 6" width="400">
 </div>
 
-This is an **undirected**, **acyclic** graph (a tree). Root at 1:
+This **undirected**, **acyclic** tree (root = 1) has:
 
-- **depth(1) = 0**, **depth(2) = 1**, **depth(3) = 1**, **depth(4) = 2**, **depth(5) = 2**  
-- **height** = 2 (the greatest depth)  
-- **diameter** = 3 (longest path, e.g. 2–1–3–4)
+- depth(1)=0, depth(2)=1, depth(3)=1, depth(4)=2, depth(5)=2  
+- height = 2  
+- diameter = 3 (longest path, e.g. 2–1–3–4)
 
 ---
 
@@ -206,9 +212,9 @@ This is an **undirected**, **acyclic** graph (a tree). Root at 1:
 
 This is the input DAG  
 $$
-G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2),\, (1,3),\, (2,4),\, (3,4)\}.
+G = (V, E), \\
+V = {1,2,3,4}, \\
+E = {(1,2), (1,3), (2,4), (3,4)}
 $$
 
 <div align="center">
@@ -217,10 +223,10 @@ $$
 
 This **directed**, **acyclic** graph has:
 
-- **in(1) = 0**, **out(1) = 2**  
-- **in(2) = 1**, **out(2) = 1**  
-- **in(3) = 1**, **out(3) = 1**  
-- **in(4) = 2**, **out(4) = 0**
+- in(1)=0, out(1)=2  
+- in(2)=1, out(2)=1  
+- in(3)=1, out(3)=1  
+- in(4)=2, out(4)=0
 
 ---
 
@@ -228,19 +234,19 @@ This **directed**, **acyclic** graph has:
 
 This is the input graph  
 $$
-G = (V, E), \quad
-V = \{1,2,3,4\}, \quad
-E = \{(1,2),\, (2,3),\, (3,1),\, (3,4)\}.
+G = (V, E), \\
+V = {1,2,3,4}, \\
+E = {(1,2), (2,3), (3,1), (3,4)}
 $$
 
 <div align="center">
     <img src="images/example8.png" alt="Example 8" width="400">
 </div>
 
-This **directed** graph has SCCs:
+This **directed** graph forms two SCCs:
 
-- **SCC 1:** \(\{1,2,3\}\) since 1→2→3→1 forms a cycle.  
-- **SCC 2:** \(\{4\}\) stands alone without return edges.
+- SCC 1: {1,2,3}  
+- SCC 2: {4}
 
 ---
 
