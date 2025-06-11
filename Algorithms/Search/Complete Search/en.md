@@ -12,22 +12,9 @@ A regular bracket sequence (RBS) is a sequence of brackets that is correctly bal
 
 - At any point in the sequence, the number of closing brackets `)` never exceeds the number of opening brackets `(` when reading from left to right.
 
-### Examples of Regular Bracket Sequences:
+### Examples
 
-```
-()
-(())()
-((()))
-()()
-```
-
-### Examples of Irregular (Invalid) Bracket Sequences:
-
-```
-)(
-(()
-())(
-```
+`()`, `(())()`, `((()))`, `()()` are regular bracket sequences. `)(`, `(()`, `())(` are not regular (invalid).
 
 A brute-force solution for this problem would be to generate all possible sequences of length $n$, then check for each sequence whether it is regular or not.
 
