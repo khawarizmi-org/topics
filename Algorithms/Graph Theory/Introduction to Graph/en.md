@@ -2,7 +2,9 @@
 
 ## Definition
 
-A **graph** is a way to show how things relate. Each **vertex** (or **node**) represents an item, and each **edge** connects two vertices to show a link. For example, in a social network, people are vertices and friendships are edges; on a map, cities are vertices and roads are edges; in scheduling, tasks are vertices and dependencies are directed edges. Graphs can be **undirected** (links work both ways) or **directed** (links point one way), and **unweighted** (all links equal) or **weighted** (links carry a cost). These choices affect how we study and solve graph problems.
+A **graph** $G = (V, E)$ is a collection of **vertices** (nodes) $V$ and **edges** $E$ connecting pairs of vertices. Many contest problems—from modeling social networks of friends to mapping cities and roads, from scheduling tasks with prerequisites to crawling the web—boil down to graph questions.
+
+Before diving into the details, note that graphs fall into categories based on their edges: **directed** vs **undirected**, and **weighted** vs **unweighted**. These distinctions determine which structures (trees, DAGs, cycles) and techniques (BFS, topological sort, union-find, SCC algorithms) apply.
 
 ---
 
