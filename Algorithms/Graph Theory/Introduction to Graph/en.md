@@ -67,6 +67,14 @@ There are several basic graph types, each defined by edge direction and weight o
 
 ---
 
+## How to Represent a Graph
+
+There are two main ways to represent graphs: **adjacency list** and **adjacency matrix**.  
+An **adjacency list** uses an array or list for each vertex to store all its neighboring vertices. This is efficient for most sparse graphs and saves memory.  
+An **adjacency matrix** uses a 2D array (matrix), where the cell at row $i$ and column $j$ is 1 if there's an edge from $i$ to $j$, and 0 otherwise. This method is quick for checking edge existence and is simple for dense graphs, but uses more memory.
+
+---
+
 ## Tree Properties
 
 
@@ -93,6 +101,25 @@ E = \{(1,1),\(1,2),\(1,2),\(2,3),\(2,4),\(3,5)\}$
 </div>
 
 This is an **undirected**, **unweighted** graph with a self-loop at 1 and a multi-edge between 1 and 2.  
+
+**Adjacency List:**
+```plaintext
+1: 1, 2, 2
+2: 1, 1, 3, 4
+3: 2, 5
+4: 2
+5: 3
+```
+
+**Adjacency Matrix:**
+```plaintext
+   1 2 3 4 5
+1 [1 2 0 0 0]
+2 [2 0 1 1 0]
+3 [0 1 0 0 1]
+4 [0 1 0 0 0]
+5 [0 0 1 0 0]
+```
 
 - **Path:** `4 → 2 → 3 → 5 → 3`  
 - **Simple path:** `4 → 2 → 3`  
@@ -181,6 +208,25 @@ E = \{(1,1),\(1,2),\(2,3),\(3,4),\(4,2),\(4,5),\(4,5),\(5,4)\}$
 </div>
 
 This **directed**, **unweighted** graph has loops and multi-edges:
+
+**Adjacency List:**
+```plaintext
+1: 1, 2
+2: 3
+3: 4
+4: 2, 5, 5
+5: 4
+```
+
+**Adjacency Matrix:**
+```plaintext
+   1 2 3 4 5
+1 [1 1 0 0 0]
+2 [0 0 1 0 0]
+3 [0 0 0 1 0]
+4 [0 1 0 0 2]
+5 [0 0 0 1 0]
+```
 
 - **Path:** `1 → 2 → 3 → 4 → 5 → 4`  
 - **Simple path:** `1 → 2 → 3 → 4 → 5`  
