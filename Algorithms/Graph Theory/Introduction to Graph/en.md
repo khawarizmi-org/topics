@@ -84,11 +84,9 @@ A **tree** is a special undirected graph with no cycles and exactly $n-1$ edges 
 ### Example 1: Weighted Undirected with Self-Loop and Multi-Edge
 
 This is the input graph  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1, 2, 3\}, \quad
-E = \{(1,1,5),\,(1,2,3),\,(1,2,3),\,(2,3,4)\}.
-$
+E = \{(1,1,5),\,(1,2,3),\,(1,2,3),\,(2,3,4)\}.$
 
 <div align="center">
     <img src="images/example1.png" alt="Example 1" width="400">
@@ -105,11 +103,9 @@ This is a **weighted**, **undirected** graph that demonstrates:
 ### Example 2: Path vs Simple Path
 
 This is the input graph  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\,(2,3),\,(3,4),\,(4,5),\,(2,4)\}.
-$
+E = \{(1,2),\,(2,3),\,(3,4),\,(4,5),\,(2,4)\}.$
 
 <div align="center">
     <img src="images/example2.png" alt="Example 2" width="400">
@@ -126,11 +122,9 @@ This **unweighted**, **undirected** graph shows:
 ### Example 3: Cycle vs Simple Cycle
 
 This is the input graph  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2),\,(2,3),\,(3,1),\,(2,4)\}.
-$
+E = \{(1,2),\,(2,3),\,(3,1),\,(2,4)\}.$
 
 <div align="center">
     <img src="images/example3.png" alt="Example 3" width="400">
@@ -147,11 +141,9 @@ In this **unweighted**, **undirected** graph:
 ### Example 4: Disconnected Graph and Components
 
 This is the input graph  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1,2,3,4,5,6,7\}, \quad
-E = \{(1,2),\,(2,3),\,(4,5),\,(5,6)\}.
-$
+E = \{(1,2),\,(2,3),\,(4,5),\,(5,6)\}.$
 
 <div align="center">
     <img src="images/example4.png" alt="Example 4" width="400">
@@ -168,11 +160,9 @@ This **unweighted**, **undirected** graph is **disconnected**. Its components ar
 ### Example 5: Weighted Undirected Degrees
 
 This is the input graph  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2,2),\,(1,3,5),\,(2,4,1),\,(3,4,3)\}.
-$
+E = \{(1,2,2),\,(1,3,5),\,(2,4,1),\,(3,4,3)\}.$
 
 <div align="center">
     <img src="images/example5.png" alt="Example 5" width="400">
@@ -190,11 +180,9 @@ This **weighted**, **undirected** graph has:
 ### Example 6: Tree Heights, Depths, Diameter
 
 This is the input tree  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\,(1,3),\,(3,4),\,(3,5)\}.
-$
+E = \{(1,2),\,(1,3),\,(3,4),\,(3,5)\}.$
 
 <div align="center">
     <img src="images/example6.png" alt="Example 6" width="400">
@@ -211,11 +199,9 @@ This **undirected**, **acyclic** tree (rooted at 1) has:
 ### Example 7: DAG In/Out Degrees
 
 This is the input DAG  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2),\,(1,3),\,(2,4),\,(3,4)\}.
-$
+E = \{(1,2),\,(1,3),\,(2,4),\,(3,4)\}.$
 
 <div align="center">
     <img src="images/example7.png" alt="Example 7" width="400">
@@ -233,11 +219,9 @@ This **directed**, **acyclic** graph has:
 ### Example 8: Strongly Connected Components
 
 This is the input graph  
-$
-G = (V, E), \quad
+$G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2),\,(2,3),\,(3,1),\,(3,4)\}.
-$
+E = \{(1,2),\,(2,3),\,(3,1),\,(3,4)\}.$
 
 <div align="center">
     <img src="images/example8.png" alt="Example 8" width="400">
