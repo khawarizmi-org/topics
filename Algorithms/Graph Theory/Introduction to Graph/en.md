@@ -168,11 +168,9 @@ This **unweighted**, **undirected** graph is **disconnected**, with three compon
 ### Example 5: Weighted Undirected Degrees
 
 This is the input graph  
-$$
-G = (V, E), \\
+$G = (V, E), \\
 V = {1,2,3,4}, \\
-E = {(1,2,2), (1,3,5), (2,4,1), (3,4,3)}
-$$
+E = {(1,2,2), (1,3,5), (2,4,1), (3,4,3)}$
 
 <div align="center">
     <img src="images/example5.png" alt="Example 5" width="400">
