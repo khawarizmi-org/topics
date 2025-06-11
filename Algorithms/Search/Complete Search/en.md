@@ -9,6 +9,7 @@ You are given an even positive integer $n$. You should print all regular bracket
 A regular bracket sequence (RBS) is a sequence of brackets that is correctly balanced and properly nested. Formally, a sequence consisting of `(` and `)` is a regular bracket sequence if:
 
 - Every opening bracket `(` has a corresponding closing bracket `)`.
+
 - At any point in the sequence, the number of closing brackets `)` never exceeds the number of opening brackets `(` when reading from left to right.
 
 ### Examples of Regular Bracket Sequences:
@@ -53,15 +54,26 @@ Now, the problem is to generate all possible sequences of length $n$, where each
 One known way to do this on paper is to draw a tree as follows:
 
 - You start at the root of the tree with an empty sequence.
+
 - The first character has two options, either `(` or `)`, so you draw two children, one with `(` and one with `)`.
-- For each child, repeat this process by adding `(` and `)` again, forming all combinations of length $2$.
-- If the depth of the tree is $d$, adding two edges to the leaf nodes increases the depth to $d + 1$.
-- Each leaf represents a sequence of length $d + 1$, where the string is determined by the edges on the path from the root to the leaf.
-- To generate all possible RBS of length $n$, repeat this step until the depth is $n$.
+
+- For each child, repeat this process by adding two children, one with `(` and one with `)`, forming all combinations of length $2$.
+
+- A leaf is a node that has no children, and the depth of the tree is the distance between the leaf nodes and the root.
+
+- At this point, we have a tree of depth $2$, and each path from the root node to a leaf represents a different combination, so all leaves together give all combinations of length $2$.
+
+- If we want to get all combinations of length $3$, we can draw two children for all leaves, one with `(` and another with `)`.
+
+- So, if we have a tree of depth $d$ and we draw two children for all leaves, we will get a tree of depth $d+1$.
+
+- To generate all possible sequences of length $n$, we need to draw a tree of depth $n$.
+
+- In the end, we can check each sequence to determine if it is a regular bracket sequence or not.
 
 Here is an example where $n = 4$:
 
-![Alt Text](draw-tree.gif)
+![Alt Text](gifs/draw-tree.gif)
 
 ### Recursive Generation
 
@@ -104,10 +116,6 @@ int main() {
 } 
 ```
 
-The Tree of calls of these functions looks like:
-
-![Alt Text](rec-tree.jpg)
-
 ### Optimized Recursive Approach
 
 The previous approach requires writing $n$ separate functions. However, since each function at depth $i$ tries two options and calls the function at depth $i + 1$, we can replace this with a single recursive function where the base case is when the depth reaches $n$.
@@ -136,6 +144,38 @@ int main() {
 
 This recursive function correctly generates all bracket sequences of length $n$, ensuring that only valid sequences are printed.
 
+### Complexity Analysis
+
+- Number of recursive calls:
+  
+  - The recursion forms a binary tree of height $n$.
+  
+  - The number of leaves is equal to $2^n$, which is also the number of possibilities.
+  
+  - The total number of calls is $1 + 2 + 4 + \ldots + 2^n = 2^{n+1} - 1$.
+
+- Work Done at Non-Leaves:
+  
+  - Each recursive call constructs a new string by appending `'('` or `')'` to $s$. Appending a character to a string of length $k$ (in C++) costs $O(k)$ (since it copies the string).
+
+- Work Done at Each Leaf:
+  
+  - At each leaf (when `depth == n`), `is_rbs(s)` is called on a string of length $n$.
+  
+  - Checking if a string is an RBS can be done in $O(n)$ time.
+
+- Total Work:
+  
+  - At each leaf: $O(n)$
+  
+  - Number of leaves: $2^n$
+  
+  - Total time for checking: $O(n \cdot 2^n)$
+  
+  - Over all calls, the cumulative cost of string operations also sums up to $O(n \cdot 2^n)$, since each leaf is reached through a path of $n$ appends, and there are $2^n$ leaves.
+
+So the total complexity is $O(n \cdot 2^n)$.
+
 ### Different Implementation
 
 Since passing the string $s$ as a parameter makes the complexity of the call $O(\text{len}(s))$, we can send $s$ by reference to improve efficiency. The code then becomes:
@@ -150,8 +190,10 @@ void solve(int depth, string &s, int n) {
     }
     s += "(";
     solve(depth + 1, s, n);
+    s.pop_back();
     s += ")";
     solve(depth + 1, s, n);
+    s.pop_back();
 }
 
 int main() {
@@ -165,7 +207,7 @@ int main() {
 
 But is this code correct?
 
-The answer is no. Whenever the function ends and returns to the caller function, we need to ensure that $s$ looks the same as it did before the function was called. To achieve this, we must roll back the changes, so the corrected code will look like this:
+The answer is no. Whenever the function ends and returns to the caller, we need to ensure that $s$ looks the same as it did before the function was called. To achieve this, we must roll back the changes, so the corrected code will look like this:
 
 ```c++
 void solve(int depth, string &s, int n) {
@@ -194,3 +236,36 @@ int main() {
     return 0;
 }
 ```
+
+We reduced the overhead from string copying in recursive calls, but the check function on each leaf still has complexity $O(n)$, so the total complexity remains $O(n \cdot 2^n)$.
+
+We can improve this by doing the check while making the recursive calls. We can add a counter parameter that counts the difference between the number of opening and closing brackets. If the counter becomes negative, we can return immediately, since all sequences under this branch would be invalid:
+
+```c++
+void solve(int depth, string &s, int n, int counter) {
+    if (counter < 0)
+        return;
+    if (depth == n) {
+        if (counter == 0) {
+            cout << s << endl;
+        }
+        return;
+    }
+    s += "(";
+    solve(depth + 1, s, n, counter + 1);
+    s.pop_back();
+    s += ")";
+    solve(depth + 1, s, n, counter - 1);
+    s.pop_back();
+}
+
+int main() {
+    int n;
+    cin >> n;
+    string s = "";
+    solve(0, s, n, 0);
+    return 0;
+}
+```
+
+Now, the work done at each leaf and non-leaf node is $O(1)$. With the negative counter check and early return, we are skipping many branches, which makes the solution much faster, but the worst-case complexity is still close to $O(2^n)$.
