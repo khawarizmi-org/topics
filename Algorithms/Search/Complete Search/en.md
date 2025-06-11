@@ -35,17 +35,18 @@ We can use this code to check if a string is an RBS or not:
 
 ```c++
 bool is_rbs(string &s) {
-    int cnt = 0;
+    int opening = 0;
     for (int i = 0; i < (int)s.size(); i++) {
-        if (s[i] == ')') {
-            cnt--;
-            if (cnt < 0)
-                return false;
-        } else {
-            cnt++;
-        }
+        if (s[i] == '(')
+            opening++;
+        else
+            opening--;
+         //There is a closing bracket that doesn't have a corresponding opening
+        if (opening < 0)
+            return false;
     }
-    return cnt == 0;
+    // return true if each opening has a corresponding closing
+    return opening == 0;
 }
 ```
 
