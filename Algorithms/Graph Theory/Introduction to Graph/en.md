@@ -86,7 +86,7 @@ A **tree** is a special undirected graph with no cycles and exactly $n-1$ edges 
 This is the input graph  
 $G = (V, E), \quad
 V = \{1, 2, 3\}, \quad
-E = \{(1,1,5),\,(1,2,3),\,(1,2,3),\,(2,3,4)\}.$
+E = \{(1,1,5),\(1,2,3),\(1,2,3),\(2,3,4)\}.$
 
 <div align="center">
     <img src="images/example1.png" alt="Example 1" width="400">
@@ -105,7 +105,7 @@ This is a **weighted**, **undirected** graph that demonstrates:
 This is the input graph  
 $G = (V, E), \quad
 V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\,(2,3),\,(3,4),\,(4,5),\,(2,4)\}.$
+E = \{(1,2),\(2,3),\(3,4),\(4,5),\(2,4)\}.$
 
 <div align="center">
     <img src="images/example2.png" alt="Example 2" width="400">
@@ -113,7 +113,7 @@ E = \{(1,2),\,(2,3),\,(3,4),\,(4,5),\,(2,4)\}.$
 
 This **unweighted**, **undirected** graph shows:
 
-- A **path** from 1 to 5, e.g.\ $1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5$.  
+- A **path** from 1 to 5, e.g. $1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5$.  
 - A **non-simple path** that revisits 2: $1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 4 \rightarrow 5$.  
 - A **simple path** with no repeats: $1 \rightarrow 2 \rightarrow 4 \rightarrow 5$.
 
@@ -124,7 +124,7 @@ This **unweighted**, **undirected** graph shows:
 This is the input graph  
 $G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2),\,(2,3),\,(3,1),\,(2,4)\}.$
+E = \{(1,2),\(2,3),\(3,1),\(2,4)\}.$
 
 <div align="center">
     <img src="images/example3.png" alt="Example 3" width="400">
@@ -143,7 +143,7 @@ In this **unweighted**, **undirected** graph:
 This is the input graph  
 $G = (V, E), \quad
 V = \{1,2,3,4,5,6,7\}, \quad
-E = \{(1,2),\,(2,3),\,(4,5),\,(5,6)\}.$
+E = \{(1,2),\(2,3),\(4,5),\(5,6)\}.$
 
 <div align="center">
     <img src="images/example4.png" alt="Example 4" width="400">
@@ -162,7 +162,7 @@ This **unweighted**, **undirected** graph is **disconnected**. Its components ar
 This is the input graph  
 $G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2,2),\,(1,3,5),\,(2,4,1),\,(3,4,3)\}.$
+E = \{(1,2,2),\(1,3,5),\(2,4,1),\(3,4,3)\}.$
 
 <div align="center">
     <img src="images/example5.png" alt="Example 5" width="400">
@@ -182,7 +182,7 @@ This **weighted**, **undirected** graph has:
 This is the input tree  
 $G = (V, E), \quad
 V = \{1,2,3,4,5\}, \quad
-E = \{(1,2),\,(1,3),\,(3,4),\,(3,5)\}.$
+E = \{(1,2),\(1,3),\(3,4),\(3,5)\}.$
 
 <div align="center">
     <img src="images/example6.png" alt="Example 6" width="400">
@@ -201,7 +201,7 @@ This **undirected**, **acyclic** tree (rooted at 1) has:
 This is the input DAG  
 $G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2),\,(1,3),\,(2,4),\,(3,4)\}.$
+E = \{(1,2),\(1,3),\(2,4),\(3,4)\}.$
 
 <div align="center">
     <img src="images/example7.png" alt="Example 7" width="400">
@@ -221,7 +221,7 @@ This **directed**, **acyclic** graph has:
 This is the input graph  
 $G = (V, E), \quad
 V = \{1,2,3,4\}, \quad
-E = \{(1,2),\,(2,3),\,(3,1),\,(3,4)\}.$
+E = \{(1,2),\(2,3),\(3,1),\(3,4)\}.$
 
 <div align="center">
     <img src="images/example8.png" alt="Example 8" width="400">
