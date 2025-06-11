@@ -109,6 +109,20 @@ Before diving into the details, note that graphs fall into categories based on t
 
 ---
 
+## Graph Connectivity
+
+In **undirected graphs**, **connected components** partition the vertices into maximal sets where each pair is linked by some path. We detect these via BFS/DFS. An **articulation point** (cut vertex) is one whose removal increases the number of connected components; a **bridge** is an edge whose removal does the same. A graph is **Eulerian** if it has a trail traversing every edge exactly once—this requires all vertices of nonzero degree to be in a single component and each vertex to have even degree.
+
+In **directed graphs**, **strongly connected components** (SCCs) are maximal sets where every vertex is reachable from every other following edge directions. Algorithms like Kosaraju’s or Tarjan’s decompose a digraph into SCCs. Directed **articulation points** and **bridges** generalize with more complex reachability. A directed graph is Eulerian if each vertex’s in-degree equals its out-degree and its nonzero-degree vertices form a single strongly connected component.
+
+---
+
+## Tree Properties
+
+A **tree** is a special undirected graph without cycles. Its **depth** measures the distance from a chosen root to each node. The **height** of a tree is the maximum depth among its nodes. The **diameter** of a tree is the length of the longest simple path between any two vertices—computable by two BFS/DFS passes: pick an arbitrary node, find the farthest node A, then find the farthest from A.
+
+---
+
 ## Adjacency List
 
 - Stores a list of neighbors for each node  
