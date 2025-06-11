@@ -94,10 +94,10 @@ E = \{(1,1),\(1,2),\(1,2),\(2,3),\(2,4),\(3,5)\}$
 
 This is an **undirected**, **unweighted** graph with a self-loop at 1 and a multi-edge between 1 and 2.  
 
-- **Path:** `1 → 2 → 3 → 5`  
+- **Path:** `4 → 2 → 3 → 5 → 3`  
 - **Simple path:** `4 → 2 → 3`  
-- **Cycle:** `2 → 3 → 5 → 3 → 2`  
-- **Simple cycle:** `1 → 2 → 4 → 1`  
+- **Cycle:** `3 → 2 → 1 → 2 → 4 → 3`  
+- **Simple cycle:** `2 → 3 → 4 → 2`  
 
 **Degrees (self-loop counts as 2 at vertex 1):**  
 - **degree(1)** = 4 (self-loop adds 2 + two edges to 2)  
@@ -184,7 +184,7 @@ This **directed**, **unweighted** graph has loops and multi-edges:
 
 - **Path:** `1 → 2 → 3 → 4 → 5 → 4`  
 - **Simple path:** `1 → 2 → 3 → 4 → 5`  
-- **Cycle:** `2 → 3 → 4 → 2`  
+- **Cycle:** `2 → 3 → 4 → 5 → 4 → 2`  
 - **Simple cycle:** `2 → 3 → 4 → 2`  
 
 **In-degrees / Out-degrees:**  
