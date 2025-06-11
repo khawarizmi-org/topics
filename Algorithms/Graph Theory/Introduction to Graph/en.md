@@ -2,38 +2,46 @@
 
 ## Definition
 
-A **Graph** is a data structure consisting of a set of **nodes** (also called **vertices**) and a set of **edges** connecting them. Graphs are fundamental in competitive programming for solving problems related to connectivity, shortest paths, cycles, and components.
+A **graph** \(G = (V, E)\) is a collection of **vertices** (nodes) \(V\) and **edges** \(E\) connecting pairs of vertices. Many contest problems—from modeling social networks of friends to mapping cities and roads, from scheduling tasks with prerequisites to crawling the web—boil down to graph questions. By framing a problem as a graph, you tap into a rich arsenal of concepts and algorithms.
 
----
-
-## Key Concept
-
-* A graph $G = (V, E)$ contains:
-  * **$V$**: a set of vertices (nodes)  
-  * **$E$**: a set of edges connecting pairs of vertices  
-* Edges can be **directed** or **undirected**  
-* Edges can be **weighted** or **unweighted**  
-* Common subtypes include **trees** and **DAGs**  
-* Represented using **adjacency lists** or **adjacency matrices**  
-
+Before diving into the details, note that graphs fall into categories based on their edges: **directed** vs **undirected**, and **weighted** vs **unweighted**. These distinctions determine which structures (trees, DAGs, cycles) and techniques (BFS, topological sort, union-find, SCC algorithms) apply.
 
 ---
 
 ## Terminology
 
-| Term             | Meaning                                                        |
-|------------------|----------------------------------------------------------------|
-| Vertex (Node)    | A point or object in the graph                                 |
-| Edge             | A connection between two vertices                              |
-| Adjacent         | Two vertices are adjacent if connected by an edge              |
-| Degree           | Number of edges connected to a vertex                          |
-| Path             | A sequence of vertices connected by edges                      |
-| Cycle            | A path that starts and ends at the same vertex                 |
-| Connected Graph  | Every vertex is reachable from every other vertex              |
-| Disconnected Graph | At least one vertex is not reachable from others             |
-| Tree             | A connected, acyclic undirected graph                          |
-| DAG              | Directed Acyclic Graph (no cycles)                             |
+### Common Terms
 
+| Term            | Definition                                                                       |
+|-----------------|----------------------------------------------------------------------------------|
+| **Vertex**      | A node in the graph                                                              |
+| **Edge**        | A connection between two vertices                                                |
+| **Self-loop**   | An edge \((u,u)\) from a vertex to itself                                        |
+| **Multi-edge**  | Multiple edges connecting the same pair of vertices                              |
+| **Subgraph**    | A graph formed from a subset of the vertices and edges of the original graph     |
+| **Path**        | A sequence \((v_0,v_1,\dots,v_k)\) with each \((v_i,v_{i+1})\in E\)               |
+| **Simple Path** | A path with no repeated vertices                                                 |
+| **Cycle**       | A path where \(v_0 = v_k\)                                                       |
+| **Simple Cycle**| A cycle with no repeated vertices except the start/end                           |
+
+### Undirected-Specific
+
+| Term                    | Definition                                                    |
+|-------------------------|---------------------------------------------------------------|
+| **Degree**              | Number of edges incident to a vertex                          |
+| **Connected Component** | A maximal subgraph in which any two vertices are connected    |
+| **Connected Graph**     | A graph with exactly one connected component                  |
+| **Tree**                | A connected, acyclic undirected graph with \(|E| = |V|-1\)    |
+
+### Directed-Specific
+
+| Term                              | Definition                                                                         |
+|-----------------------------------|------------------------------------------------------------------------------------|
+| **In-degree**                     | Number of edges entering a vertex                                                  |
+| **Out-degree**                    | Number of edges leaving a vertex                                                   |
+| **DAG**                           | Directed Acyclic Graph—no directed cycles                                          |
+| **Strongly Connected Component** | A maximal subgraph where each vertex can reach every other via directed paths      |
+| **Reachability**                  | Existence of a directed path from one vertex to another                            |
 
 ---
 
