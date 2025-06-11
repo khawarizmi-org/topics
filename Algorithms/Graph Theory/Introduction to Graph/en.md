@@ -79,15 +79,13 @@ A **tree** is a special undirected graph with no cycles and exactly $n-1$ edges 
 ---
 
 
-## Examples
-
-### Example 1:
+### Example 1: Weighted Undirected with Self-Loop and Multi-Edge
 
 This is the input graph  
 $$
-G = (V, E),\quad
-V = \{1, 2, 3\},\quad
-E = \{(1,1,5),\,(1,2,3),\,(1,2,3),\,(2,3,4)\}
+G = (V, E), \quad
+V = \{1, 2, 3\}, \quad
+E = \{(1,1,5),\, (1,2,3),\, (1,2,3),\, (2,3,4)\}.
 $$
 
 <div align="center">
@@ -98,131 +96,126 @@ This is a **weighted**, **undirected** graph with special edges. It contains a *
 
 ---
 
-### Example 2:
+### Example 2: Path vs Simple Path
 
 This is the input graph  
 $$
-G = (V, E),\quad
-V = \{1,2,3,4,5\},\quad
-E = \{(1,2),\,(2,3),\,(3,4),\,(4,5),\,(2,4)\}
+G = (V, E), \quad
+V = \{1,2,3,4,5\}, \quad
+E = \{(1,2),\, (2,3),\, (3,4),\, (4,5),\, (2,4)\}.
 $$
 
 <div align="center">
     <img src="images/example2.png" alt="Example 2" width="400">
 </div>
 
-This is an **unweighted**, **undirected** graph. Consider the following:
+This is an **unweighted**, **undirected** graph. Consider:
 
-- A **path** from 1 to 5 can be \(1 \to 2 \to 3 \to 4 \to 5\).  
-- A **non-simple path** might revisit a vertex, e.g. \(1 \to 2 \to 3 \to 2 \to 4 \to 5\).  
-- A **simple path** is one with no repeats, such as \(1 \to 2 \to 4 \to 5\).
+- A **path** from 1 to 5 can be \(1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5\).  
+- A **non-simple path** might revisit a vertex, e.g. \(1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 4 \rightarrow 5\).  
+- A **simple path** has no repeats, such as \(1 \rightarrow 2 \rightarrow 4 \rightarrow 5\).
 
 ---
 
-### Example 3:
+### Example 3: Cycle vs Simple Cycle
 
 This is the input graph  
 $$
-G = (V, E),\quad
-V = \{1,2,3,4\},\quad
-E = \{(1,2),\,(2,3),\,(3,1),\,(2,4)\}
+G = (V, E), \quad
+V = \{1,2,3,4\}, \quad
+E = \{(1,2),\, (2,3),\, (3,1),\, (2,4)\}.
 $$
 
 <div align="center">
     <img src="images/example3.png" alt="Example 3" width="400">
 </div>
 
-This is an **unweighted**, **undirected** graph. Observe:
+This is an **unweighted**, **undirected** graph. Notice:
 
-- A **cycle** might be \(1 \to 2 \to 3 \to 1\).  
-- A **non-simple cycle** could revisit a vertex, e.g. \(1 \to 2 \to 3 \to 2 \to 1\).  
-- A **simple cycle** visits each vertex exactly once before returning, e.g. \(1 \to 2 \to 3 \to 1\).
+- A **cycle** is \(1 \rightarrow 2 \rightarrow 3 \rightarrow 1\).  
+- A **non-simple cycle** might be \(1 \rightarrow 2 \rightarrow 3 \rightarrow 2 \rightarrow 1\).  
+- A **simple cycle** visits each vertex once before returning, e.g. \(1 \rightarrow 2 \rightarrow 3 \rightarrow 1\).
 
 ---
 
-### Example 4:
+### Example 4: Disconnected Graph and Components
 
 This is the input graph  
 $$
-G = (V, E),\quad
-V = \{1,2,3,4,5,6\},\quad
-E = \{(1,2),\,(2,3),\,(4,5)\}
+G = (V, E), \quad
+V = \{1,2,3,4,5,6,7\}, \quad
+E = \{(1,2),\, (2,3),\, (4,5),\, (5,6)\}.
 $$
 
 <div align="center">
     <img src="images/example4.png" alt="Example 4" width="400">
 </div>
 
-This is an **unweighted**, **undirected** graph that is **disconnected**. It splits into three components:
+This **unweighted**, **undirected** graph is **disconnected** and splits into three components:
 
-1. Component \(\{1,2,3\}\) where 1–2–3 are linked.  
-2. Component \(\{4,5\}\) linked by edge 4–5.  
-3. Component \(\{6\}\) as an isolated vertex.
+1. Component \(\{1,2,3\}\), since 1–2–3 form a chain.  
+2. Component \(\{4,5,6\}\), since 4–5–6 form a chain.  
+3. Component \(\{7\}\), an isolated vertex.
 
 ---
 
-### Example 5:
+### Example 5: Weighted Undirected Degrees
 
 This is the input graph  
 $$
-G = (V, E),\quad
-V = \{1,2,3,4\},\quad
-E = \{(1,2,2),\,(1,3,5),\,(2,4,1),\,(3,4,3)\}
+G = (V, E), \quad
+V = \{1,2,3,4\}, \quad
+E = \{(1,2,2),\, (1,3,5),\, (2,4,1),\, (3,4,3)\}.
 $$
 
 <div align="center">
     <img src="images/example5.png" alt="Example 5" width="400">
 </div>
 
-This is a **weighted**, **undirected** graph. Ignoring weights, the **degree** of each vertex is:
+This **weighted**, **undirected** graph has degrees:
 
-- **degree(1) = 2** (neighbors: 2 and 3)  
-- **degree(2) = 2** (neighbors: 1 and 4)  
-- **degree(3) = 2** (neighbors: 1 and 4)  
-- **degree(4) = 2** (neighbors: 2 and 3)
-
-Weights (2, 5, 1, 3) matter for path cost but not for degree counts.
+- **degree(1) = 2** (neighbors: 2, 3)  
+- **degree(2) = 2** (neighbors: 1, 4)  
+- **degree(3) = 2** (neighbors: 1, 4)  
+- **degree(4) = 2** (neighbors: 2, 3)
 
 ---
 
-### Example 6:
+### Example 6: Tree Heights, Depths, Diameter
 
 This is the input tree  
 $$
-G = (V, E),\quad
-V = \{1,2,3,4,5\},\quad
-E = \{(1,2),\,(1,3),\,(3,4),\,(3,5)\}
+G = (V, E), \quad
+V = \{1,2,3,4,5\}, \quad
+E = \{(1,2),\, (1,3),\, (3,4),\, (3,5)\}.
 $$
 
 <div align="center">
     <img src="images/example6.png" alt="Example 6" width="400">
 </div>
 
-This is an **undirected**, **acyclic** graph—a tree. With vertex 1 as the root:
+This is an **undirected**, **acyclic** graph (a tree). Root at 1:
 
-- **Depths:**  
-  - depth(1) = 0  
-  - depth(2) = 1, depth(3) = 1  
-  - depth(4) = 2, depth(5) = 2  
-- **Height:** the maximum depth is 2.  
-- **Diameter:** the longest simple path (e.g., 2–1–3–4) has length 3 edges.
+- **depth(1) = 0**, **depth(2) = 1**, **depth(3) = 1**, **depth(4) = 2**, **depth(5) = 2**  
+- **height** = 2 (the greatest depth)  
+- **diameter** = 3 (longest path, e.g. 2–1–3–4)
 
 ---
 
-### Example 7:
+### Example 7: DAG In/Out Degrees
 
 This is the input DAG  
 $$
-G = (V, E),\quad
-V = \{1,2,3,4\},\quad
-E = \{(1,2),\,(1,3),\,(2,4),\,(3,4)\}
+G = (V, E), \quad
+V = \{1,2,3,4\}, \quad
+E = \{(1,2),\, (1,3),\, (2,4),\, (3,4)\}.
 $$
 
 <div align="center">
     <img src="images/example7.png" alt="Example 7" width="400">
 </div>
 
-This is a **directed**, **acyclic** graph (DAG). The **in-degree** and **out-degree** of each vertex are:
+This **directed**, **acyclic** graph has:
 
 - **in(1) = 0**, **out(1) = 2**  
 - **in(2) = 1**, **out(2) = 1**  
@@ -231,23 +224,23 @@ This is a **directed**, **acyclic** graph (DAG). The **in-degree** and **out-deg
 
 ---
 
-### Example 8:
+### Example 8: Strongly Connected Components
 
 This is the input graph  
 $$
-G = (V, E),\quad
-V = \{1,2,3,4\},\quad
-E = \{(1,2),\,(2,3),\,(3,1),\,(3,4)\}
+G = (V, E), \quad
+V = \{1,2,3,4\}, \quad
+E = \{(1,2),\, (2,3),\, (3,1),\, (3,4)\}.
 $$
 
 <div align="center">
     <img src="images/example8.png" alt="Example 8" width="400">
 </div>
 
-This is a **directed** graph with the following **strongly connected components (SCCs)**:
+This **directed** graph has SCCs:
 
-- **SCC 1:** \(\{1,2,3\}\), since each can reach every other via directed edges (1→2→3→1).  
-- **SCC 2:** \(\{4\}\), as vertex 4 has no path back to the group {1,2,3}.
+- **SCC 1:** \(\{1,2,3\}\) since 1→2→3→1 forms a cycle.  
+- **SCC 2:** \(\{4\}\) stands alone without return edges.
 
 ---
 
