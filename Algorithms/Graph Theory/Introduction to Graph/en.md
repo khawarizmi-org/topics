@@ -31,7 +31,7 @@ Before diving into the details, note that graphs fall into categories based on t
 | **Degree**              | The number of edges incident to a vertex                                       |
 | **Connected Component** | A maximal set of vertices where each pair is connected by some path            |
 | **Connected Graph**     | An undirected graph with exactly one connected component                       |
-| **Tree**                | A connected, acyclic undirected graph with exactly $|E| = |V| - 1$ edges        |
+| **Tree**                | A connected, acyclic undirected graph with exactly $V - 1$ edges        |
 
 ### Directed-Specific
 
