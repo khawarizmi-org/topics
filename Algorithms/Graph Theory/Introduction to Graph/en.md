@@ -85,8 +85,8 @@ A **tree** is a special undirected graph with no cycles and exactly $n-1$ edges 
 
 This is the input graph  
 $G = (V, E), 
-V = {1,2,3,4,5}, 
-E = {(1,1), (1,2), (1,2), (2,3), (2,4), (3,5)}$
+//V = {1,2,3,4,5}, 
+//E = {(1,1), (1,2), (1,2), (2,3), (2,4), (3,5)}$
 
 <div align="center">
     <img src="images/example1.png" alt="Example 1" width="400">
