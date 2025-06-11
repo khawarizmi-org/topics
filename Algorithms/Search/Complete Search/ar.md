@@ -19,8 +19,7 @@
 
 يمكننا استخدام الكود التالي للتحقق مما إذا كانت السلسلة RBS أم لا:
 
-=== c++
-
+=== "c++"
 ```c++
 bool is_rbs(string &s) {
     int opening = 0;
@@ -38,8 +37,7 @@ bool is_rbs(string &s) {
 }
 ```
 
-=== Java
-
+=== "Java"
 ```java
 public static boolean isRbs(String s) {
     int opening = 0;
@@ -57,8 +55,7 @@ public static boolean isRbs(String s) {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def is_rbs(s):
     opening = 0
@@ -100,6 +97,7 @@ def is_rbs(s):
 
 على سبيل المثال، عندما تكون $n = 4$، الكود التالي يولد جميع التسلسلات:
 
+=== "c++"
 ```c++
 void depth0(string s);
 void depth1(string s);
@@ -139,8 +137,7 @@ int main() {
 }
 ```
 
-=== Java
-
+=== "Java"
 ```java
 public class Main {
     static void depth0() {
@@ -175,8 +172,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def depth0():
     s = ""
@@ -208,8 +204,7 @@ depth0()
 
 يبدو الحل العودي المحسن كما يلي:
 
-=== c++
-
+=== "c++"
 ```c++
 void generate_rbs(int depth, string s, int n) {
     if (depth == n) {
@@ -230,8 +225,7 @@ int main() {
 }
 ```
 
-=== Java
-
+=== "Java"
 ```java
 import java.util.Scanner;
 
@@ -256,8 +250,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def generate_rbs(depth, s, n):
     if depth == n:
@@ -305,8 +298,7 @@ generate_rbs(0, "", n)
 
 على أي حال، عند انتهاء الدالة والعودة إلى المستدعي، نحتاج إلى ضمان أن تبدو $s$ كما كانت قبل استدعاء الدالة. لتحقيق ذلك، يجب التراجع عن التغييرات، لذا سيكون الكود المصحح كالتالي:
 
-=== c++
-
+=== "c++"
 ```c++
 void generate_rbs(int depth, string &s, int n) {
     if (depth == n) {
@@ -335,8 +327,7 @@ int main() {
 }
 ```
 
-=== Java
-
+=== "Java"
 ```java
 import java.util.Scanner;
 
@@ -370,8 +361,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def generate_rbs(depth, s, n):
     if depth == n:
@@ -398,8 +388,7 @@ generate_rbs(0, s, n)
 
 يمكننا تحسين ذلك عن طريق إجراء التحقق أثناء الاستدعاءات العودية. يمكننا إضافة وسيط عدّاد (counter) يحسب الفرق بين عدد الأقواس المفتوحة والمغلقة. إذا أصبح العداد سالبًا، يمكننا العودة فورًا، لأن جميع التسلسلات تحت هذا الفرع ستكون غير صالحة:
 
-=== c++
-
+=== "c++"
 ```c++
 void generate_rbs(int depth, string &s, int n, int counter) {
     if (counter < 0)
@@ -420,8 +409,7 @@ void generate_rbs(int depth, string &s, int n, int counter) {
 ...
 ```
 
-=== Java
-
+=== "Java"
 ```java
 import java.util.Scanner;
 
@@ -453,8 +441,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def generate_rbs(depth, s, n, counter):
     if counter < 0:

@@ -21,8 +21,7 @@ A brute-force solution for this problem would be to generate all possible sequen
 We can use this code to check if a string is an RBS or not:
 
 
-=== c++
-
+=== "c++"
 ```c++
 bool is_rbs(string &s) {
     int opening = 0;
@@ -40,8 +39,7 @@ bool is_rbs(string &s) {
 }
 ```
 
-=== Java
-
+=== "Java"
 ```java
 public static boolean isRbs(String s) {
     int opening = 0;
@@ -59,8 +57,7 @@ public static boolean isRbs(String s) {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def is_rbs(s):
     opening = 0
@@ -110,6 +107,7 @@ One way to implement this is by writing a function for each depth level. We star
 
 For example, when $n = 4$, the following code generates all sequences:
 
+=== "c++"
 ```c++
 
 void depth0(string s);
@@ -150,8 +148,7 @@ int main() {
 } 
 ```
 
-=== Java
-
+=== "Java"
 ```java
 public class Main {
     static void depth0() {
@@ -186,8 +183,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def depth0():
     s = ""
@@ -219,8 +215,7 @@ The previous approach requires writing $n$ separate functions. However, since ea
 
 The optimized recursive solution looks like this:
 
-=== c++
-
+=== "c++"
 ```c++
 void generate_rbs(int depth, string s, int n) {
     if (depth == n) {
@@ -242,8 +237,7 @@ int main() {
 ```
 
 
-=== Java
-
+=== "Java"
 ```java
 import java.util.Scanner;
 
@@ -268,8 +262,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def generate_rbs(depth, s, n):
     if depth == n:
@@ -323,8 +316,7 @@ Since passing the string $s$ as a parameter makes the complexity of the call $O(
 
 Any ways Whenever the function ends and returns to the caller, we need to ensure that $s$ looks the same as it did before the function was called. To achieve this, we must roll back the changes, so the corrected code will look like this:
 
-=== c++
-
+=== "c++"
 ```c++
 void generate_rbs(int depth, string &s, int n) {
     if (depth == n) {
@@ -353,8 +345,7 @@ int main() {
 }
 ```
 
-=== Java
-
+=== "Java"
 ```java
 import java.util.Scanner;
 
@@ -388,8 +379,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def generate_rbs(depth, s, n):
     if depth == n:
@@ -416,8 +406,7 @@ We reduced the overhead from string copying in recursive calls, but the check fu
 
 We can improve this by doing the check while making the recursive calls. We can add a counter parameter that counts the difference between the number of opening and closing brackets. If the counter becomes negative, we can return immediately, since all sequences under this branch would be invalid:
 
-=== c++
-
+=== "c++"
 ```c++
 void generate_rbs(int depth, string &s, int n, int counter) {
     if (counter < 0)
@@ -445,8 +434,7 @@ int main() {
 }
 ```
 
-=== Java
-
+=== "Java"
 ```java
 import java.util.Scanner;
 
@@ -478,8 +466,7 @@ public class Main {
 }
 ```
 
-=== Python
-
+=== "Python"
 ```python
 def generate_rbs(depth, s, n, counter):
     if counter < 0:
