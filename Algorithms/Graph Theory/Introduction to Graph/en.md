@@ -2,7 +2,7 @@
 
 ## Definition
 
-A **graph** \(G = (V, E)\) is a collection of **vertices** (nodes) \(V\) and **edges** \(E\) connecting pairs of vertices. Many contest problems—from modeling social networks of friends to mapping cities and roads, from scheduling tasks with prerequisites to crawling the web—boil down to graph questions. By framing a problem as a graph, you tap into a rich arsenal of concepts and algorithms.
+A **graph** $G = (V, E)$ is a collection of **vertices** (nodes) $V$ and **edges** $E$ connecting pairs of vertices. Many contest problems—from modeling social networks of friends to mapping cities and roads, from scheduling tasks with prerequisites to crawling the web—boil down to graph questions. By framing a problem as a graph, you tap into a rich arsenal of concepts and algorithms.
 
 Before diving into the details, note that graphs fall into categories based on their edges: **directed** vs **undirected**, and **weighted** vs **unweighted**. These distinctions determine which structures (trees, DAGs, cycles) and techniques (BFS, topological sort, union-find, SCC algorithms) apply.
 
@@ -16,12 +16,12 @@ Before diving into the details, note that graphs fall into categories based on t
 |-----------------|--------------------------------------------------------------------------------------------|
 | **Vertex**      | A node in the graph                                                                        |
 | **Edge**        | A connection between two vertices                                                          |
-| **Self-loop**   | An edge \((u,u)\) from a vertex to itself                                                  |
+| **Self-loop**   | An edge $(u,u)$ from a vertex to itself                                                    |
 | **Multi-edge**  | Multiple edges connecting the same pair of vertices                                        |
 | **Subgraph**    | A graph formed from a subset of the vertices and edges of the original graph               |
-| **Path**        | A sequence \(\bigl(v_0, v_1, \dots, v_k\bigr)\) with each \((v_i, v_{i+1}) \in E\)           |
+| **Path**        | A sequence $(v_0, v_1, \dots, v_k)$ with each $(v_i, v_{i+1}) \in E$                        |
 | **Simple Path** | A path with no repeated vertices                                                           |
-| **Cycle**       | A path where \(v_0 = v_k\)                                                                 |
+| **Cycle**       | A path where $v_0 = v_k$                                                                   |
 | **Simple Cycle**| A cycle with no repeated vertices except the start/end                                     |
 
 ### Undirected-Specific
@@ -31,7 +31,7 @@ Before diving into the details, note that graphs fall into categories based on t
 | **Degree**              | Number of edges incident to a vertex                        |
 | **Connected Component** | A maximal subgraph in which any two vertices are connected  |
 | **Connected Graph**     | A graph with exactly one connected component                |
-| **Tree**                | A connected, acyclic undirected graph with \(\lvert E\rvert = \lvert V\rvert - 1\) |
+| **Tree**                | A connected, acyclic undirected graph with $|E| = |V| - 1$   |
 
 ### Directed-Specific
 
