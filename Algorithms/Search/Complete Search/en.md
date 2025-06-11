@@ -20,6 +20,9 @@ A brute-force solution for this problem would be to generate all possible sequen
 
 We can use this code to check if a string is an RBS or not:
 
+
+=== c++
+
 ```c++
 bool is_rbs(string &s) {
     int opening = 0;
@@ -35,6 +38,42 @@ bool is_rbs(string &s) {
     // return true if each opening has a corresponding closing
     return opening == 0;
 }
+```
+
+=== Java
+
+```java
+public static boolean isRbs(String s) {
+    int opening = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (s.charAt(i) == '(')
+            opening++;
+        else
+            opening--;
+        // There is a closing bracket that doesn't have a corresponding opening
+        if (opening < 0)
+            return false;
+    }
+    // return true if each opening has a corresponding closing
+    return opening == 0;
+}
+```
+
+=== Python
+
+```python
+def is_rbs(s):
+    opening = 0
+    for c in s:
+        if c == '(':
+            opening += 1
+        else:
+            opening -= 1
+        # There is a closing bracket that doesn't have a corresponding opening
+        if opening < 0:
+            return False
+    # return True if each opening has a corresponding closing
+    return opening == 0
 ```
 
 Now, the problem is to generate all possible sequences of length $n$, where each character is either `(` or `)`.
@@ -72,19 +111,17 @@ One way to implement this is by writing a function for each depth level. We star
 For example, when $n = 4$, the following code generates all sequences:
 
 ```c++
-void depth4(string s) {
-    if (is_rbs(s))
-        cout << s << endl;
-}
 
-void depth3(string s) {
-    depth4(s + '(');
-    depth4(s + ')');
-}
+void depth0(string s);
+void depth1(string s);
+void depth2(string s);
+void depth3(string s);
+void depth4(string s);
 
-void depth2(string s) {
-    depth3(s + '(');
-    depth3(s + ')');
+void depth0() {
+    string s;
+    depth1(s + '(');
+    depth1(s + ')');
 }
 
 void depth1(string s) {
@@ -92,10 +129,19 @@ void depth1(string s) {
     depth2(s + ')');
 }
 
-void depth0() {
-    string s;
-    depth1(s + '(');
-    depth1(s + ')');
+void depth2(string s) {
+    depth3(s + '(');
+    depth3(s + ')');
+}
+
+void depth3(string s) {
+    depth4(s + '(');
+    depth4(s + ')');
+}
+
+void depth4(string s) {
+    if (is_rbs(s))
+        cout << s << endl;
 }
 
 int main() {
@@ -104,30 +150,137 @@ int main() {
 } 
 ```
 
+=== Java
+
+```java
+public class Main {
+    static void depth0() {
+        String s = "";
+        depth1(s + "(");
+        depth1(s + ")");
+    }
+
+    static void depth1(String s) {
+        depth2(s + "(");
+        depth2(s + ")");
+    }
+
+    static void depth2(String s) {
+        depth3(s + "(");
+        depth3(s + ")");
+    }
+
+    static void depth3(String s) {
+        depth4(s + "(");
+        depth4(s + ")");
+    }
+
+    static void depth4(String s) {
+        if (isRbs(s))
+            System.out.println(s);
+    }
+
+    public static void main(String[] args) {
+        depth0();
+    }
+}
+```
+
+=== Python
+
+```python
+def depth0():
+    s = ""
+    depth1(s + "(")
+    depth1(s + ")")
+
+def depth1(s):
+    depth2(s + "(")
+    depth2(s + ")")
+
+def depth2(s):
+    depth3(s + "(")
+    depth3(s + ")")
+
+def depth3(s):
+    depth4(s + "(")
+    depth4(s + ")")
+
+def depth4(s):
+    if is_rbs(s):
+        print(s)
+
+depth0()
+```
+
 ### Optimized Recursive Approach
 
 The previous approach requires writing $n$ separate functions. However, since each function at depth $i$ tries two options and calls the function at depth $i + 1$, we can replace this with a single recursive function where the base case is when the depth reaches $n$.
 
 The optimized recursive solution looks like this:
 
+=== c++
+
 ```c++
-void solve(int depth, string s, int n) {
+void generate_rbs(int depth, string s, int n) {
     if (depth == n) {
         if (is_rbs(s)) {
             cout << s << endl;
         }
         return;
     }
-    solve(depth + 1, s + "(", n);
-    solve(depth + 1, s + ")", n);
+    generate_rbs(depth + 1, s + "(", n);
+    generate_rbs(depth + 1, s + ")", n);
 }
 
 int main() {
     int n;
     cin >> n;
-    solve(0, "", n);
+    generate_rbs(0, "", n);
     return 0;
 }
+```
+
+
+=== Java
+
+```java
+import java.util.Scanner;
+
+public class Main {
+
+    static void generateRbs(int depth, String s, int n) {
+        if (depth == n) {
+            if (isRbs(s)) {
+                System.out.println(s);
+            }
+            return;
+        }
+        generateRbs(depth + 1, s + "(", n);
+        generateRbs(depth + 1, s + ")", n);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        generateRbs(0, "", n);
+    }
+}
+```
+
+=== Python
+
+```python
+def generate_rbs(depth, s, n):
+    if depth == n:
+        if is_rbs(s):
+            print(s)
+        return
+    generate_rbs(depth + 1, s + "(", n)
+    generate_rbs(depth + 1, s + ")", n)
+
+n = int(input())
+generate_rbs(0, "", n)
 ```
 
 This recursive function correctly generates all bracket sequences of length $n$, ensuring that only valid sequences are printed.
@@ -166,10 +319,14 @@ So the total complexity is $O(n \cdot 2^n)$.
 
 ### Different Implementation
 
-Since passing the string $s$ as a parameter makes the complexity of the call $O(\text{len}(s))$, we can send $s$ by reference to improve efficiency. The code then becomes:
+Since passing the string $s$ as a parameter makes the complexity of the call $O(\text{len}(s))$, we can send $s$ by reference to improve efficiency. 
+
+Any ways Whenever the function ends and returns to the caller, we need to ensure that $s$ looks the same as it did before the function was called. To achieve this, we must roll back the changes, so the corrected code will look like this:
+
+=== c++
 
 ```c++
-void solve(int depth, string &s, int n) {
+void generate_rbs(int depth, string &s, int n) {
     if (depth == n) {
         if (is_rbs(s)) {
             cout << s << endl;
@@ -177,41 +334,12 @@ void solve(int depth, string &s, int n) {
         return;
     }
     s += "(";
-    solve(depth + 1, s, n);
+    generate_rbs(depth + 1, s, n);
     s.pop_back();
     s += ")";
-    solve(depth + 1, s, n);
+    generate_rbs(depth + 1, s, n);
     s.pop_back();
-}
-
-int main() {
-    int n;
-    cin >> n;
-    string s = "";
-    solve(0, s, n);
-    return 0;
-}
-```
-
-But is this code correct?
-
-The answer is no. Whenever the function ends and returns to the caller, we need to ensure that $s$ looks the same as it did before the function was called. To achieve this, we must roll back the changes, so the corrected code will look like this:
-
-```c++
-void solve(int depth, string &s, int n) {
-    if (depth == n) {
-        if (is_rbs(s)) {
-            cout << s << endl;
-        }
-        return;
-    }
-    s += "(";
-    solve(depth + 1, s, n);
-    s.pop_back();
-    s += ")";
-    solve(depth + 1, s, n);
-    s.pop_back();
-    // After calling solve(depth + 1, s, n), we ensure that string s
+    // After calling generate_rbs(depth + 1, s, n), we ensure that string s
     // is the same as it was before the call. Using pop_back() removes
     // the change we made, so we return with no modifications to s.
 }
@@ -220,17 +348,78 @@ int main() {
     int n;
     cin >> n;
     string s = "";
-    solve(0, s, n);
+    generate_rbs(0, s, n);
     return 0;
 }
+```
+
+=== Java
+
+```java
+import java.util.Scanner;
+
+public class Main {
+
+    static void generateRbs(int depth, StringBuilder s, int n) {
+        if (depth == n) {
+            if (isRbs(s.toString())) {
+                System.out.println(s.toString());
+            }
+            return;
+        }
+        s.append('(');
+        generateRbs(depth + 1, s, n);
+        s.deleteCharAt(s.length() - 1);
+
+        s.append(')');
+        generateRbs(depth + 1, s, n);
+        s.deleteCharAt(s.length() - 1);
+        // After calling generateRbs(depth + 1, s, n), we ensure that s
+        // is the same as it was before the call. Using deleteCharAt removes
+        // the change we made, so we return with no modifications to s.
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        StringBuilder s = new StringBuilder();
+        generateRbs(0, s, n);
+    }
+}
+```
+
+=== Python
+
+```python
+def generate_rbs(depth, s, n):
+    if depth == n:
+        if is_rbs(''.join(s)):
+            print(''.join(s))
+        return
+    s.append('(')
+    generate_rbs(depth + 1, s, n)
+    s.pop()
+
+    s.append(')')
+    generate_rbs(depth + 1, s, n)
+    s.pop()
+    # After calling generate_rbs(depth + 1, s, n), we ensure that s
+    # is the same as it was before the call. Using pop() removes
+    # the change we made, so we return with no modifications to s.
+
+n = int(input())
+s = []
+generate_rbs(0, s, n)
 ```
 
 We reduced the overhead from string copying in recursive calls, but the check function on each leaf still has complexity $O(n)$, so the total complexity remains $O(n \cdot 2^n)$.
 
 We can improve this by doing the check while making the recursive calls. We can add a counter parameter that counts the difference between the number of opening and closing brackets. If the counter becomes negative, we can return immediately, since all sequences under this branch would be invalid:
 
+=== c++
+
 ```c++
-void solve(int depth, string &s, int n, int counter) {
+void generate_rbs(int depth, string &s, int n, int counter) {
     if (counter < 0)
         return;
     if (depth == n) {
@@ -240,10 +429,10 @@ void solve(int depth, string &s, int n, int counter) {
         return;
     }
     s += "(";
-    solve(depth + 1, s, n, counter + 1);
+    generate_rbs(depth + 1, s, n, counter + 1);
     s.pop_back();
     s += ")";
-    solve(depth + 1, s, n, counter - 1);
+    generate_rbs(depth + 1, s, n, counter - 1);
     s.pop_back();
 }
 
@@ -251,9 +440,65 @@ int main() {
     int n;
     cin >> n;
     string s = "";
-    solve(0, s, n, 0);
+    generate_rbs(0, s, n, 0);
     return 0;
 }
+```
+
+=== Java
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    static void generateRbs(int depth, StringBuilder s, int n, int counter) {
+        if (counter < 0)
+            return;
+        if (depth == n) {
+            if (counter == 0) {
+                System.out.println(s.toString());
+            }
+            return;
+        }
+        s.append('(');
+        generateRbs(depth + 1, s, n, counter + 1);
+        s.deleteCharAt(s.length() - 1);
+
+        s.append(')');
+        generateRbs(depth + 1, s, n, counter - 1);
+        s.deleteCharAt(s.length() - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        StringBuilder s = new StringBuilder();
+        generateRbs(0, s, n, 0);
+    }
+}
+```
+
+=== Python
+
+```python
+def generate_rbs(depth, s, n, counter):
+    if counter < 0:
+        return
+    if depth == n:
+        if counter == 0:
+            print(''.join(s))
+        return
+    s.append('(')
+    generate_rbs(depth + 1, s, n, counter + 1)
+    s.pop()
+
+    s.append(')')
+    generate_rbs(depth + 1, s, n, counter - 1)
+    s.pop()
+
+n = int(input())
+s = []
+generate_rbs(0, s, n, 0)
 ```
 
 Now, the work done at each leaf and non-leaf node is $O(1)$. With the negative counter check and early return, we are skipping many branches, which makes the solution much faster, but the worst-case complexity is still close to $O(2^n)$.
