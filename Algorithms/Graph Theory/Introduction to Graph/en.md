@@ -85,8 +85,8 @@ A **tree** is a special undirected graph with no cycles and exactly $n-1$ edges 
 
 This is the input graph  
 $G = (V, E), 
-/V = {1,2,3,4,5}, 
-/E = {(1,1), (1,2), (1,2), (2,3), (2,4), (3,5)}$
+V = \{1,2,3,4,5}, 
+E = \{(1,1), (1,2), (1,2), (2,3), (2,4), (3,5)}$
 
 <div align="center">
     <img src="images/example1.png" alt="Example 1" width="400">
@@ -100,18 +100,20 @@ This is an **undirected**, **unweighted** graph with a self-loop at 1 and a mult
 - **Simple cycle:** `1 → 2 → 4 → 1`  
 
 **Degrees (self-loop counts as 2 at vertex 1):**  
-- degree(1) = 4 (self-loop adds 2 + two edges to 2)  
-- degree(2) = 4 (two edges from 1 + edges to 3 and 4)  
-- degree(3) = 2 (edges to 2 and 5)  
-- degree(4) = 1 (edge to 2)  
-- degree(5) = 1 (edge to 3)  
+- **degree(1)** = 4 (self-loop adds 2 + two edges to 2)  
+- **degree(2)** = 4 (two edges from 1 + edges to 3 and 4)  
+- **degree(3)** = 2 (edges to 2 and 5)  
+- **degree(4)** = 1 (edge to 2)  
+- **degree(5)** = 1 (edge to 3)  
 
 ---
 
 ### Example 2: Tree (Depth, Height & Diameter)
 
 This is the input tree  
-$G = (V, E), V = {1,2,3,4,5}, E = {(1,2), (1,3), (2,4), (2,5)}$
+$G = (V, E), 
+V = \{1,2,3,4,5}, 
+E = \{(1,2), (1,3), (2,4), (2,5)}$
 
 <div align="center">
     <img src="images/example2.png" alt="Example 2" width="400">
@@ -131,7 +133,9 @@ This **undirected**, **acyclic** graph is a tree rooted at 1:
 ### Example 3: Disconnected Graph & Components
 
 This is the input graph  
-$G = (V, E), V = {1,2,3,4,5,6}, E = {(1,2), (2,3), (4,5)}$
+$G = (V, E), 
+V = \{1,2,3,4,5,6}, 
+E = \{(1,2), (2,3), (4,5)}$
 
 <div align="center">
     <img src="images/example3.png" alt="Example 3" width="400">
@@ -139,16 +143,18 @@ $G = (V, E), V = {1,2,3,4,5,6}, E = {(1,2), (2,3), (4,5)}$
 
 This **undirected**, **unweighted** graph is **disconnected** into:
 
-1. Component `{1,2,3}` (chain 1–2–3)  
-2. Component `{4,5}` (edge 4–5)  
-3. Component `{6}` (isolated)  
+1. **Component `{1,2,3}`** (chain 1–2–3)  
+2. **Component `{4,5}`** (edge 4–5)  
+3. **Component `{6}`** (isolated)  
 
 ---
 
 ### Example 4: Weighted Undirected (Path Cost)
 
 This is the input graph  
-$G = (V, E), V = {1,2,3,4}, E = {(1,2,3), (2,3,4), (3,4,5), (1,4,10)}$
+$G = (V, E), 
+V = \{1,2,3,4}, 
+E = \{(1,2,3), (2,3,4), (3,4,5), (1,4,10)}$
 
 <div align="center">
     <img src="images/example4.png" alt="Example 4" width="400">
@@ -166,7 +172,9 @@ Thus the cheaper route is direct (10 vs 12).
 ### Example 5: Directed Unweighted (Paths, Cycles & Degrees)
 
 This is the input graph  
-$G = (V, E), V = {1,2,3,4,5}, E = {(1,1), (1,2), (2,3), (3,4), (4,2), (4,5), (4,5), (5,4)}$
+$G = (V, E), 
+V = \{1,2,3,4,5}, 
+E = \{(1,1), (1,2), (2,3), (3,4), (4,2), (4,5), (4,5), (5,4)}$
 
 <div align="center">
     <img src="images/example5.png" alt="Example 5" width="400">
@@ -180,11 +188,11 @@ This **directed**, **unweighted** graph has loops and multi-edges:
 - **Simple cycle:** `2 → 3 → 4 → 2`  
 
 **In-degrees / Out-degrees:**  
-- 1: in=1, out=2  
-- 2: in=2, out=1  
-- 3: in=1, out=1  
-- 4: in=2, out=3  
-- 5: in=2, out=1  
+- **Node 1:** in=1, out=2  
+- **Node 2:** in=2, out=1  
+- **Node 3:** in=1, out=1  
+- **Node 4:** in=2, out=3  
+- **Node 5:** in=2, out=1  
 
 ---
 
