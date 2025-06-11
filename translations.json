@@ -8,5 +8,8 @@
     "Data Structures": "هياكل البيانات",
     "STL": "المكتبة القياسية للغة C++",
     "Introduction": "الأساسيات",
-    "Complexity": "الكومبليكسيتي"
+    "Complexity": "الكومبليكسيتي",
+    "Introduction to Graphs": "مقدمة في الرسوم البيانية",
+    "Complete Search": "البحث الشامل",
+    "Graph Theory": "نظرية الرسوم البيانية"
 }
