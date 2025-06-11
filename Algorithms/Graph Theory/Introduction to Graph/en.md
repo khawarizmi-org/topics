@@ -23,6 +23,9 @@ Before diving into the details, note that graphs fall into categories based on t
 | **Simple Path** | A path in which no vertex is repeated                                                      |
 | **Cycle**       | A path whose first and last vertices are the same                                         |
 | **Simple Cycle**| A cycle in which no vertices (except the start/end) are repeated                           |
+| **Acyclic**     | A graph with no cycles                                                         |
+| **Cyclic**      | A graph that contains at least one cycle                                      |
+| **Component**   | A set of vertices in which each pair is connected by some path   
 
 ### Undirected-Specific
 
@@ -45,70 +48,24 @@ Before diving into the details, note that graphs fall into categories based on t
 
 ---
 
-## Types of Graphs
-
-1. **Undirected Graph**  
-   Edges have no direction — $(u, v) = (v, u)$  
-   <div align="center">
-       <img src="images/undirected_graph.png" alt="Undirected Graph" width="400">
-   </div>
-
-2. **Directed Graph (Digraph)**  
-   Edges have a direction — $(u, v) \neq (v, u)$  
-   <div align="center">
-       <img src="images/directed_graph.png" alt="Directed Graph" width="400">
-   </div>
-
-3. **Unweighted Graph**  
-   All edges are considered equal (weight = 1)  
-   <div align="center">
-       <img src="images/unweighted_graph.png" alt="Unweighted Graph" width="400">
-   </div>
-
-4. **Weighted Graph**  
-   Each edge has a cost or weight  
-   <div align="center">
-       <img src="images/weighted_graph.png" alt="Weighted Graph" width="400">
-   </div>
-
-5. **Cyclic Graph**  
-   Contains at least one cycle  
-   <div align="center">
-       <img src="images/cyclic_graph.png" alt="Cyclic Graph" width="400">
-   </div>
-
-6. **Acyclic Graph**  
-   Contains no cycles  
-   <div align="center">
-       <img src="images/acyclic_graph.png" alt="Acyclic Graph" width="400">
-   </div>
-
-7. **Tree**  
-   A connected, undirected, acyclic graph with $n$ nodes and $n-1$ edges  
-   <div align="center">
-       <img src="images/tree_graph.png" alt="Tree" width="400">
-   </div>
-
-8. **DAG (Directed Acyclic Graph)**  
-   A directed graph with no cycles  
-   <div align="center">
-       <img src="images/dag_graph.png" alt="DAG" width="400">
-   </div>
-
-9. **Connected Graph**  
-   Every vertex is reachable from every other vertex  
-   <div align="center">
-       <img src="images/connected_graph.png" alt="Connected Graph" width="400">
-   </div>
-
-10. **Disconnected Graph**  
-    At least one vertex is not reachable from others  
-   <div align="center">
-       <img src="images/disconnected_graph.png" alt="Disconnected Graph" width="400">
-   </div>
-
 ---
 
+## Types of Graphs
+
+There are several basic graph types, each defined by edge direction and weight or special structure:
+
+- **Undirected Graph**: Edges have no direction — $(u, v) = (v, u)$.  
+- **Directed Graph (Digraph)**: Edges have a direction — $(u, v) \neq (v, u)$.
+- **Unweighted Graph**: All edges are considered equal (weight = 1).
+- **Weighted Graph**: Each edge has a cost or weight.   
+- **Cyclic Graph**: Contains at least one cycle. 
+- **Acyclic Graph**: Contains at least one cycle.
+- **Tree**: A connected, undirected, acyclic graph with $n$ nodes and $n-1$ edges.  
+- **DAG (Directed Acyclic Graph)**: A directed graph with no cycles.
+- **Connected Graph**: an undirected graph with exactly one connected component.  
+- **Disconnected Graph**: an undirected graph with two or more separate components.
+
+---
 
 ## Tree Properties
 
