@@ -134,8 +134,8 @@ This **undirected**, **acyclic** graph is a tree rooted at 1:
 
 This is the input graph  
 $G = (V, E), 
-V = \{1,2,3,4,5,6}, 
-E = \{(1,2), (2,3), (4,5)}$
+V = /{1,2,3,4,5,6}, 
+E = /{(1,2), (2,3), (4,5)}$
 
 <div align="center">
     <img src="images/example3.png" alt="Example 3" width="400">
