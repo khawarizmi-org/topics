@@ -11,7 +11,7 @@ Constraints:
 $$
 1 \le n \le 40,\quad
 1 \le a_i \le 10^9,\quad
-1 \le k \le 4 \cdot 10^{10}..
+1 \le k \le 4 \cdot 10^{10}.
 $$
 
 A naive complete search examines all $2^n$ subsequences in $O(2^n)$ time, which is too large for $n=40$.
