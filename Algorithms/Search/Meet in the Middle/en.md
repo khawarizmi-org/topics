@@ -1,6 +1,6 @@
 ### Meet in the Middle
 
-**Meet-in-the-Middle** is a classic **time–space trade-off** technique that can turn an $O(b^n)$ brute-force search into roughly $O(b^{n/2})$ by splitting the problem into two halves, solving each half independently, and then merging the results efficiently.
+**Meet-in-the-Middle** is a classic **time–space trade-off** technique that can turn an $O(k^n)$ brute-force search into roughly $O(k^{n/2})$ by splitting the problem into two halves, solving each half independently, and then merging the results efficiently.
 
 #### Example Problem
 
