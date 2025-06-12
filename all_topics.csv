@@ -1,0 +1,66 @@
+Topic,Category,Sub Category,Difficulty,
+Complexity,Algorithms,Introduction,1
+Bruteforce,Algorithms,Introduction,1
+Greedy,Algorithms,Introduction,1
+Arrays,Data Structures,STL,1
+Vectors,Data Structures,STL,1
+Stack,Data Structures,STL,1
+Queue,Data Structures,STL,1
+Deque,Data Structures,STL,1
+Frequency Array,Data Structures,STL,1
+Map,Data Structures,STL,1
+Priority Queue,Data Structures,STL,1
+Set,Data Structures,STL,1
+Iterators,Data Structures,STL,1
+Sub-Linear Sum,Math,Introduction,1
+Binary Search,Algorithms,Search,1
+Two Pointers,Algorithms,Search,1
+Prefix Sum,Algorithms,Constructive Algorithms,1
+Recursion,Algorithms,Search,1
+Complete Search,Algorithms,Search,1
+Bit Manpulation,Math,Bit Mask,1
+Introduction to Number Theory,Math,Number Theory,1
+Prime Check,Math,Primes,1
+Prime Factorization,Math,Primes,1
+GCD,Math,Algebra,1
+LCM,Math,Algebra,1
+Bubble Sort,Algorithms,Sorting,1
+Selection Sort,Algorithms,Sorting,1
+Insertion Sort,Algorithms,Sorting,1
+Quick Sort,Algorithms,Sorting,2
+Merge Sort,Algorithms,Sorting,2
+Meet in the Middle,Algorithms,Search,2
+Introduction to Graph,Algorithms,Graph Theory,2
+Topological Sort,Algorithms,Graph Theory,2
+BFS,Algorithms,Graph Theory,2
+DFS,Algorithms,Graph Theory,2
+Dijkstra,Algorithms,Graph Theory,2
+Belman Ford,Algorithms,Graph Theory,2
+Disjoint Sets,Algorithms,Graph Theory,2
+Minimum Spanning Trees,Algorithms,Graph Theory,2
+Cycle detection in directed graphs,Algorithms,Graph Theory,2
+Introduction to DP,Algorithms,Dynamic Programming,2
+DP: Memoization,Algorithms,Dynamic Programming,2
+DP: Top Down,Algorithms,Dynamic Programming,2
+DP: Bottom Up,Algorithms,Dynamic Programming,2
+Floyd,Algorithms,Graph Theory,2
+Trie,Algorithms,Strings Algorithms,2
+Hashing,Algorithms,Strings Algorithms,2
+Ternary Search,Algorithms,Search,2
+Sparse Table,Data Structures,Range Query,2
+Segment Tree (Without lazy),Data Structures,Range Query,2
+Permutations and Combinations,Math,Combinatorics,2
+Stars and Bars,Math,Combinatorics,2
+Inclusion-Exclusion,Math,Combinatorics,2
+Fast Power,Math,Number Theory,2
+Congruence,Math,Number Theory,2
+Little Fermat Theorem,Math,Number Theory,2
+Mod Inverse,Math,Number Theory,2
+Basic Geometry,Math,Geometry,2
+Introduction to Game Theory,Algorithms,Game Theory,2
+Nim Game,Algorithms,Game Theory,2
+Games On Cyclic Graph,Algorithms,Game Theory,2
+Binomial Coefficient,Math,Combinatorics,3
+Expected Value,Math,Probabilities,3
+Segment Tree (Lazy Propagation),Data Structures,Range Query,3
+Lowest Common Ancestor,Algorithms,Graph Theory,3
