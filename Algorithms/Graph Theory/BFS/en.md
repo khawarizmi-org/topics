@@ -32,9 +32,6 @@ Consider:
 V = {1,2,3,4,5,6}
 E = {(1,2),(1,3),(2,4),(3,4),(4,5),(5,6)}
 ```
-<div align="center">
-    <img src="images/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
-</div>
 
 Adjacency list (1-based):
 ```plaintext
@@ -46,6 +43,9 @@ Adjacency list (1-based):
 6: 5
 ```
 
+<div align="center">
+    <img src="images/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
+</div>
 
 Starting from source = 1:
 - **Step 0**  
