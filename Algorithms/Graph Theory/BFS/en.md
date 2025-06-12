@@ -144,9 +144,6 @@ E = {(1,2),(1,3),(2,4),(2,5),(3,6),(3,7),(4,5),(5,6),
      (6,7),(7,8),(8,9),(9,10),(10,4),(5,10)}
 ```
 
-<div align="center">
-    <img src="images/bfs_detailed_graph.png" alt="Detailed BFS Graph" width="400">
-</div>
 
 Adjacency:
 ```plaintext
@@ -161,6 +158,10 @@ Adjacency:
 9: 8, 10
 10: 4, 5, 9
 ```
+<div align="center">
+    <img src="images/bfs_detailed_graph.gif" alt="Detailed BFS Graph" width="400">
+</div>
+
 
 | Step | Queue       | vis                                                                           | dis                                         | par                                          |
 | ---- | ----------- | ----------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
