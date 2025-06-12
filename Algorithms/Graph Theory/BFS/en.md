@@ -180,7 +180,7 @@ Adjacency:
 
 ## Time Complexity
 
-BFS marks each vertex `vis[v]` exactly once and enqueues it once. Each edge in the adjacency lists is examined exactly one time during these enqueue operations. Thus, the total running time is $O(|V| + |E|)$ Space usage includes the `vis`, `dis`, `par` arrays and the queue, each requiring $O(|V|)$ memory.
+BFS marks each vertex `vis[v]` exactly once and enqueues it once. Each edge in the adjacency lists is examined exactly one time during these enqueue operations. Thus, the total running time is $O(|V| + |E|)$. Space usage includes the `vis`, `dis`, `par` arrays and the queue, each requiring $O(|V|)$ memory.
 
 ---
 
