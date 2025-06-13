@@ -1,7 +1,7 @@
 # Deque
 ## Definition
 
-Deque is an STL used to store and load items, which supports adding items to both ends (left end and right end), getting items at both ends, and removing items from both ends, we also can look at the deque as a two-way tube, if you look from the left side you can only see the leftmost item and if you look from the right you only see the rightmost item.
+Deque (double ended queue) is an STL used to store and load items, which supports adding items to both ends (left end and right end), getting items at both ends, and removing items from both ends, we also can look at the deque as a two-way tube, if you look from the left side you can only see the leftmost item and if you look from the right you only see the rightmost item.
 
 In deque, the operations are done on both ends of the queue the left end which is usually referred to as "front" and the right end usually referred to as "back".
 
@@ -15,7 +15,7 @@ There are some operations used in deque to add new items, access items in the de
 * Get Right: returns the item at the right end of the deque (the item in the back).
 * Get Left: returns the item at the left end of the deque (the item in the front).
 
-All operations supported by the deque have time complicity of $O(1)$ so the overall complexity of the deque is $O(1)$ the space complicity of the deque is $O(n)$ where n is the number of items.
+All operations supported by the deque have time complexity of $O(1)$ so the overall complexity of adding $n$ elements to the deque is $O(n)$ and the space complexity is $O(n)$.
 
 ## Example on Deque
 Let's observe how the deque works when we apply the following operations in the same order they were given:
@@ -121,7 +121,6 @@ int main(){
     //Add Left 3
     items.push_front(3);
     //items = 3, 5 <- item in the back
-
 
     //Remove Right
     items.pop_back();
