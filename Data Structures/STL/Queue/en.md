@@ -9,9 +9,9 @@ In the queue, the operations are done on both ends of the queue the left end whi
 ## Queue Operations
 
 There are some operations used in the queue to add new items, access items in the queue, and remove items:
-* Add: insert a new item to the right end of the queue (the back).
-* Remove: delete the first item added to the queue (the item in the front).
-* Get: returns the first item added to the queue (the item in the front).
+* Add (Push): insert a new item to the right end of the queue (the back).
+* Remove (Pop): delete the first item added to the queue (the item in the front).
+* Get (Front): returns the first item added to the queue (the item in the front).
 
 All operations supported by the queue have time complicity of $O(1)$ so the overall complexity of the queue is $O(1)$ the space complicity of the queue is $O(n)$ where n is the number of items.
 
@@ -26,7 +26,6 @@ Let's observe how the queue works when we apply the following operations in the 
 6. Add 1
 7. Remove
 8. Get
-
 
 <div align="center">
     <img src="images/example_1_1.png">
@@ -77,7 +76,6 @@ Let's observe how the queue works when we apply the following operations in the 
     <img src="images/example_8_1.png">
     <p><em>(8) The eighth operation is a Get operation and the result is the item in the front (0)</em></p>
 </div>
-
 
 ## Queue Implementation
 
