@@ -46,7 +46,7 @@ Adjacency list (1-based):
 ```
 
 <div align="center">
-    <img src="images/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
+    <img src="gifs/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
 </div>
 
 Starting from source = 1:
@@ -142,42 +142,27 @@ def bfs(s, adj):
 Consider:
 ```
 V = {1,2,3,4,5,6,7,8,9,10}
-E = {(1,2),(1,3),(2,4),(2,5),(3,6),(3,7),(4,5),(5,6),
-     (6,7),(7,8),(8,9),(9,10),(10,4),(5,10)}
+E = {(1,2),(1,3),(2,4),(2,8),(3,4),(3,5),(5,10),(4,6),
+     (6,7),(7,9),(9,8),(10,8)}
 ```
 
 
 Adjacency:
 ```plaintext
-1: 2, 3
-2: 1, 4, 5
-3: 1, 6, 7
-4: 2, 5, 10
-5: 2, 4, 6, 10
-6: 3, 5, 7
-7: 3, 6, 8
-8: 7, 9
-9: 8, 10
-10: 4, 5, 9
+1: 2, 3, 9
+2: 1, 4, 8
+3: 1, 4, 5
+4: 2, 3, 6
+5: 3, 10
+6: 4, 7
+7: 6, 9
+8: 2, 9, 10
+9: 1, 8
+10: 5, 8
 ```
 <div align="center">
-    <img src="images/bfs_detailed_graph.gif" alt="Detailed BFS Graph" width="400">
+    <img src="gifs/bfs.gif" alt="Detailed BFS Graph" width="400">
 </div>
-
-
-| Step | Queue       | vis                                                                           | dis                                         | par                                          |
-| ---- | ----------- | ----------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
-| 0    | [1]        | {False, True,  False, False, False, False, False, False, False, False, False} | {-1, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1} | {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1} |
-| 1    | [2,3]      | {False, True,  True,  True,  False, False, False, False, False, False, False} | {-1, 0,  1,  1, -1, -1, -1, -1, -1, -1, -1} | {-1, -1,  1,  1, -1, -1, -1, -1, -1, -1, -1} |
-| 2    | [3,4,5]    | {False, True,  True,  True,  True,  True,  False, False, False, False, False} | {-1, 0,  1,  1,  2,  2, -1, -1, -1, -1, -1} | {-1, -1,  1,  1,  2,  2, -1, -1, -1, -1, -1} |
-| 3    | [4,5,6,7]  | {False, True,  True,  True,  True,  True,  True,  True,  False, False, False} | {-1, 0,  1,  1,  2,  2,  2,  2, -1, -1, -1} | {-1, -1,  1,  1,  2,  2,  3,  3, -1, -1, -1} |
-| 4    | [5,6,7,10] | {False, True,  True,  True,  True,  True,  True,  True,  False, False, True } | {-1, 0,  1,  1,  2,  2,  2,  2, -1, -1,  3} | {-1, -1,  1,  1,  2,  2,  3,  3, -1, -1,  4} |
-| 5    | [6,7,10]   | {False, True,  True,  True,  True,  True,  True,  True,  False, False, True } | {-1, 0,  1,  1,  2,  2,  2,  2, -1, -1,  3} | {-1, -1,  1,  1,  2,  2,  3,  3, -1, -1,  4} |
-| 6    | [7,10]     | {False, True,  True,  True,  True,  True,  True,  True,  False, False, True } | {-1, 0,  1,  1,  2,  2,  2,  2, -1, -1,  3} | {-1, -1,  1,  1,  2,  2,  3,  3, -1, -1,  4} |
-| 7    | [10,8]     | {False, True,  True,  True,  True,  True,  True,  True,  True,  False, True } | {-1, 0,  1,  1,  2,  2,  2,  2,  3, -1,  3} | {-1, -1,  1,  1,  2,  2,  3,  3,  7, -1,  4} |
-| 8    | [8,9]      | {False, True,  True,  True,  True,  True,  True,  True,  True,  True,  True } | {-1, 0,  1,  1,  2,  2,  2,  2,  3,  4,  3} | {-1, -1,  1,  1,  2,  2,  3,  3,  7, 10,  4} |
-| 9    | [9]        | {False, True,  True,  True,  True,  True,  True,  True,  True,  True,  True } | {-1, 0,  1,  1,  2,  2,  2,  2,  3,  4,  3} | {-1, -1,  1,  1,  2,  2,  3,  3,  7, 10,  4} |
-| 10   | []         | {False, True,  True,  True,  True,  True,  True,  True,  True,  True,  True } | {-1, 0,  1,  1,  2,  2,  2,  2,  3,  4,  3} | {-1, -1,  1,  1,  2,  2,  3,  3,  7, 10,  4} |
 ---
 
 ## Time Complexity
