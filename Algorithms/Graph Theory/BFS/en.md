@@ -12,6 +12,8 @@ The algorithm takes as input an unweighted graph and the identifier of the sourc
 
 BFS can be understood as a fire spreading on the graph: at time step 0 only the source $s$ is “on fire.” At each subsequent step, every burning vertex ignites all of its unlit neighbors. In each iteration, the “ring of fire” expands by one edge‐length.
 
+At its core, BFS maintains a frontier of vertices at the current distance layer and explores them in order of arrival. By using a queue—a first-in, first-out (FIFO) structure—it guarantees that vertices are processed in the exact order of increasing distance from the source. No other standard container (like a stack or priority queue) naturally preserves this layer-by-layer exploration without additional overhead.
+
 More precisely:
 1. Create a queue $q$ to process vertices in FIFO order.
 2. Maintain a Boolean array `vis[]` indicating whether each vertex has been visited.
