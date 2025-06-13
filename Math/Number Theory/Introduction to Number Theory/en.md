@@ -41,7 +41,6 @@ This congruence relation helps us reason about divisibility and equivalence clas
 
 ---
 
-
 ## Divisors
 
 Let `d` and `n` be positive integers.
@@ -127,21 +126,21 @@ Let’s consider two numbers `a` and `b` such that:
 a × b = n
 ```
 
-We claim that **at least one of `a` or `b` must be less than or equal to $\sqrt{n}$**.
+We claim that **at least one of $a$ or $b$ must be less than or equal to $\sqrt{n}$**.
 
 #### Proof:
 
-Assume for contradiction that both `a > $\sqrt{n}$` and `b > $\sqrt{n}$`.  
+Assume for contradiction that both $a > \sqrt{n}$ and $b > \sqrt{n}$.  
 Then their product would satisfy:
 
-```
-a × b > $\sqrt{n}$ × $\sqrt{n}$ = n
-```
+$$
+a \times b > \sqrt{n} \times \sqrt{n} = n
+$$
 
-But this contradicts our original assumption that `a × b = n`.  
-Therefore, **it is impossible for both `a` and `b` to be greater than $\sqrt{n}$** if their product is `n`.
+But this contradicts our original assumption that $a \times b = n$.  
+Therefore, **it is impossible for both $a$ and $b$ to be greater than $\sqrt{n}$** if their product is $n$.
 
-So in every divisor pair `(d, n/d)`, at least one of the numbers must be ≤ $\sqrt{n}$.  
+So in every divisor pair `(d, n/d)`, at least one of the numbers must be $\le \sqrt{n}$.  
 This means:
 
 > To find all divisors of `n`, it is sufficient to check for divisors `d` in the range `1 ≤ d ≤ $\sqrt{n}$`.  
@@ -153,7 +152,7 @@ This means:
 
 Let’s say `n = 36`.
 
-If we check from `1` to `6` (since √36 = 6), we find:
+If we check from `1` to `6` (since $\sqrt{36}$ = 6), we find:
 - 1 → paired with 36
 - 2 → paired with 18
 - 3 → paired with 12
@@ -162,13 +161,13 @@ If we check from `1` to `6` (since √36 = 6), we find:
 
 Every divisor greater than `6` is just the result of `n / d` for some smaller divisor `d`.
 
-This is why checking up to `$\sqrt{n}$` is not only sufficient but **optimal** for finding all divisors.
+This is why checking up to $\sqrt{n}$ is not only sufficient but **optimal** for finding all divisors.
 
 
 ### Optimized Divisor Algorithm – O($\sqrt{n}$)
 
 By using the insight above, we can reduce our work.  
-We only iterate up to `$\sqrt{n}$` and for every divisor `i`, we add both `i` and `n / i`.
+We only iterate up to $\sqrt{n}$ and for every divisor $i$, we add both $i$ and $n / i$.
 
 ---
 
