@@ -8,14 +8,14 @@
 ## What Is Modulo?
 
 The **modulo operation** is a way of finding the **remainder** when one number is divided by another.  
-It is written as `a % b`, and is read as “`a` mod `b`”.
+It is written as $a$ % $b$, and is read as $a mod b$”.
 
 ### Example:
-- `14 % 3 = 2` → because 14 divided by 3 is 4 with a remainder of 2  
-- `12 % 4 = 0` → because 12 is exactly divisible by 4  
-- `7 % 7 = 0` → every number is divisible by itself
+- $14$ % $3$ = $2$ → because 14 divided by 3 is 4 with a remainder of 2  
+- $12$ % $4$ = $0$ → because 12 is exactly divisible by 4  
+- $7$ % $7$ = $0$ → every number is divisible by itself
 
-Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if `a % b == 0`)
+Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if $a$ % $b$ == $0$)
 
 
 ---
@@ -24,18 +24,18 @@ Modulo is one of the core tools in number theory, it’s used to check if a numb
 
 In number theory, we often express modulo relations more formally using **congruence** notation.
 
-> Two integers `a` and `b` are said to be **congruent modulo `m`** if they leave the same remainder when divided by `m`.
+> Two integers $a$ and $b$ are said to be **congruent modulo $m$** if they leave the same remainder when divided by $m$.
 
 Mathematically:
 ```
-a ≡ b (mod m)  ⇔  (a - b) is divisible by m  ⇔  a % m == b % m
+$a$ ≡ $b$ ($mod m$)  ⇔  ($a$ - $b$) is divisible by $m$  ⇔  $a$ % $m$ == $b$ % $m$
 ```
 
 ### Examples:
 
-- `14 ≡ 2 (mod 3)` because both 14 and 2 leave remainder 2 when divided by 3
-- `38 ≡ 2 (mod 6)` → since `38 - 2 = 36`, and 36 is divisible by 6
-- `7 ≡ 0 (mod 7)` → every number is congruent to 0 modulo itself
+- $14 ≡ 2 (mod 3)$ because both $14$ and $2$ leave remainder $2$ when divided by $3$
+- $38 ≡ 2 (mod 6)$ → since $38$ - $2$ = $36$, and $36$ is divisible by $6$
+- $7 ≡ 0 (mod 7)$ → every number is congruent to 0 modulo itself
 
 This congruence relation helps us reason about divisibility and equivalence classes of integers under a given modulus. It’s also the foundation of modular arithmetic, which allows us to add, subtract, multiply, and even exponentiate **modulo m**.
 
@@ -43,24 +43,24 @@ This congruence relation helps us reason about divisibility and equivalence clas
 
 ## Divisors
 
-Let `d` and `n` be positive integers.
+Let $d$ and $n$ be positive integers.
 
-> We say that `d` is a **divisor** of `n` if there exists an integer `k` such that `n = d × k`.
+> We say that $d$ is a **divisor** of $n$ if there exists an integer $k$ such that $$n = d \times k$.
 
-In other words, `d` divides `n` **exactly** — with **no remainder**.  
+In other words, $d$ divides $n$ **exactly** — with **no remainder**.  
 This is the same as saying:
 ```
 n % d == 0
 ```
 
-Every positive integer `n` has at least two divisors: `1` and `n` itself.  
-We are often interested in finding **all divisors** of a given number `n`.
+Every positive integer $n$ has at least two divisors: $1$ and $n$ itself.  
+We are often interested in finding **all divisors** of a given number $n$.
 
 ---
 
-### Goal: Find All Divisors of `n`
+### Goal: Find All Divisors of $n$
 
-We want a method that will list out **every number** that divides `n`.
+We want a method that will list out **every number** that divides $n$.
 
 ---
 
@@ -74,7 +74,7 @@ For each number i from 1 to n:
         Then i is a divisor of n → add it to the list
 ```
 
-This method checks **every number** up to `n`.
+This method checks **every number** up to $n$.
 
 ---
 
@@ -98,33 +98,33 @@ std::vector<int> findDivisorsNaive(int n) {
 }
 ```
 
-This works well for small `n`, but becomes inefficient as `n` grows — since it performs **n checks**.
+This works well for small $n$, but becomes inefficient as $n$ grows — since it performs **n checks**.
 
 ---
 
 ### How Divisors Come in Pairs
 
-Let `n` be a positive integer. A number `d` is called a **divisor** of `n` if there exists an integer `k` such that:
+Let $n$ be a positive integer. A number $d$ is called a **divisor** of $n$ if there exists an integer $k$ such that:
 
-```
-n = d × k
-```
+$$
+n = d \times k
+$$
 
-In this case, both `d` and `k` are divisors of `n`, since they multiply to `n`. This immediately tells us that **divisors come in pairs**: if `d` divides `n`, then `n / d` must also divide `n`.
+In this case, both $d$ and $k$ are divisors of $n$, since they multiply to $n$. This immediately tells us that **divisors come in pairs**: if $d$ divides $n$, then $n / d$ must also divide $n$.
 
-We can think of every divisor `d` being paired with another divisor `n / d`. Therefore, all the divisors of `n` can be grouped into such **(d, n/d)** pairs.
+We can think of every divisor $d$ being paired with another divisor $n$ / $d$. Therefore, all the divisors of $n$ can be grouped into such **($d$, $n$/$d$)** pairs.
 
 ---
 
 ### Why It’s Enough to Check Up to $\sqrt{n}$
 
-Now we want to know: how many values of `d` do we need to check in order to find all the divisors?
+Now we want to know: how many values of $d$ do we need to check in order to find all the divisors?
 
-Let’s consider two numbers `a` and `b` such that:
+Let’s consider two numbers $a$ and $b$ such that:
 
-```
-a × b = n
-```
+$$
+a \times b = n
+$$
 
 We claim that **at least one of $a$ or $b$ must be less than or equal to $\sqrt{n}$**.
 
@@ -140,26 +140,26 @@ $$
 But this contradicts our original assumption that $a \times b = n$.  
 Therefore, **it is impossible for both $a$ and $b$ to be greater than $\sqrt{n}$** if their product is $n$.
 
-So in every divisor pair `(d, n/d)`, at least one of the numbers must be $\le \sqrt{n}$.  
+So in every divisor pair $`$(d, n/d)$`$, at least one of the numbers must be $\le \sqrt{n}$.  
 This means:
 
-> To find all divisors of `n`, it is sufficient to check for divisors `d` in the range `1 ≤ d ≤ $\sqrt{n}$`.  
-> If `d` divides `n`, then `n / d` is automatically a valid divisor and can be added as its pair.
+> To find all divisors of $n$, it is sufficient to check for divisors $d$ in the range $1 \le d \le $\sqrt{n}$$.  
+> If $d$ divides $n$, then $n / d$ is automatically a valid divisor and can be added as its pair.
 
 ---
 
 #### Example:
 
-Let’s say `n = 36`.
+Let’s say $n = 36$.
 
-If we check from `1` to `6` (since $\sqrt{36}$ = 6), we find:
+If we check from $1$ to $6$ (since $\sqrt{36}$ = $6$), we find:
 - 1 → paired with 36
 - 2 → paired with 18
 - 3 → paired with 12
 - 4 → paired with 9
 - 6 → paired with 6 (only counted once)
 
-Every divisor greater than `6` is just the result of `n / d` for some smaller divisor `d`.
+Every divisor greater than $6$ is just the result of $n / d$ for some smaller divisor $d$.
 
 This is why checking up to $\sqrt{n}$ is not only sufficient but **optimal** for finding all divisors.
 
