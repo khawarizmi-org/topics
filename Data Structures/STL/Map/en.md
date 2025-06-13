@@ -1,4 +1,4 @@
-# Map vs Frequency Array in CP
+# Map
 
 #### Map (`map`/`TreeMap`) and Hash-Map (`unordered_map`/`HashMap`/`dict`)
 
