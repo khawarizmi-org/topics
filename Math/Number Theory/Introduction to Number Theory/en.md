@@ -11,8 +11,8 @@ The **modulo operation** is a way of finding the **remainder** when one number i
 It is written as $a$ % $b$, and is read as $a mod b$”.
 
 ### Example:
-- $14$ % $3$ = $2$ → because 14 divided by 3 is 4 with a remainder of 2  
-- $12$ % $4$ = $0$ → because 12 is exactly divisible by 4  
+- $14$ % $3$ = $2$ → because $14$ divided by $3$ is $4$ with a remainder of 2  
+- $12$ % $4$ = $0$ → because $12$ is exactly divisible by $4$  
 - $7$ % $7$ = $0$ → every number is divisible by itself
 
 Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if $a$ % $b$ == $0$)
@@ -27,9 +27,9 @@ In number theory, we often express modulo relations more formally using **congru
 > Two integers $a$ and $b$ are said to be **congruent modulo $m$** if they leave the same remainder when divided by $m$.
 
 Mathematically:
-```
-$a$ ≡ $b$ ($mod m$)  ⇔  ($a$ - $b$) is divisible by $m$  ⇔  $a$ % $m$ == $b$ % $m$
-```
+$$
+a ≡ b (mod m)  ⇔  (a - b) is divisible by m  ⇔  a % m == b % m
+$$
 
 ### Examples:
 
@@ -49,9 +49,9 @@ Let $d$ and $n$ be positive integers.
 
 In other words, $d$ divides $n$ **exactly** — with **no remainder**.  
 This is the same as saying:
-```
+$$
 n % d == 0
-```
+$$
 
 Every positive integer $n$ has at least two divisors: $1$ and $n$ itself.  
 We are often interested in finding **all divisors** of a given number $n$.
