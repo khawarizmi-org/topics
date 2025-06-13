@@ -117,7 +117,7 @@ We can think of every divisor `d` being paired with another divisor `n / d`. The
 
 ---
 
-### Why It’s Enough to Check Up to √n
+### Why It’s Enough to Check Up to $\sqrt{n}$
 
 Now we want to know: how many values of `d` do we need to check in order to find all the divisors?
 
@@ -127,24 +127,24 @@ Let’s consider two numbers `a` and `b` such that:
 a × b = n
 ```
 
-We claim that **at least one of `a` or `b` must be less than or equal to √n**.
+We claim that **at least one of `a` or `b` must be less than or equal to $\sqrt{n}$**.
 
 #### Proof:
 
-Assume for contradiction that both `a > √n` and `b > √n`.  
+Assume for contradiction that both `a > $\sqrt{n}$` and `b > $\sqrt{n}$`.  
 Then their product would satisfy:
 
 ```
-a × b > √n × √n = n
+a × b > $\sqrt{n}$ × $\sqrt{n}$ = n
 ```
 
 But this contradicts our original assumption that `a × b = n`.  
-Therefore, **it is impossible for both `a` and `b` to be greater than √n** if their product is `n`.
+Therefore, **it is impossible for both `a` and `b` to be greater than $\sqrt{n}$** if their product is `n`.
 
-So in every divisor pair `(d, n/d)`, at least one of the numbers must be ≤ √n.  
+So in every divisor pair `(d, n/d)`, at least one of the numbers must be ≤ $\sqrt{n}$.  
 This means:
 
-> To find all divisors of `n`, it is sufficient to check for divisors `d` in the range `1 ≤ d ≤ √n`.  
+> To find all divisors of `n`, it is sufficient to check for divisors `d` in the range `1 ≤ d ≤ $\sqrt{n}$`.  
 > If `d` divides `n`, then `n / d` is automatically a valid divisor and can be added as its pair.
 
 ---
@@ -162,13 +162,13 @@ If we check from `1` to `6` (since √36 = 6), we find:
 
 Every divisor greater than `6` is just the result of `n / d` for some smaller divisor `d`.
 
-This is why checking up to `√n` is not only sufficient but **optimal** for finding all divisors.
+This is why checking up to `$\sqrt{n}$` is not only sufficient but **optimal** for finding all divisors.
 
 
-### Optimized Divisor Algorithm – O(√n)
+### Optimized Divisor Algorithm – O($\sqrt{n}$)
 
 By using the insight above, we can reduce our work.  
-We only iterate up to `√n` and for every divisor `i`, we add both `i` and `n / i`.
+We only iterate up to `$\sqrt{n}$` and for every divisor `i`, we add both `i` and `n / i`.
 
 ---
 
@@ -209,5 +209,5 @@ std::vector<int> findDivisors(int n) {
 }
 ```
 
-This approach reduces the time complexity from **O(n)** to **O(√n)** and is the standard method in most number theory problems.
+This approach reduces the time complexity from **O(n)** to **O($\sqrt{n}$)** and is the standard method in most number theory problems.
 
