@@ -12,5 +12,7 @@
     "Introduction to Graph": "مقدمة في الرسم البياني",
     "Complete Search": "البحث الشامل",
     "Graph Theory": "نظرية الرسوم البيانية",
-    "Queue": "الطابور"
+    "Queue": "الطابور",
+    "Deque": "ديكيو (Deque)",
+    "Meet in the Middle": "الالتقاء في المنتصف"
 }
