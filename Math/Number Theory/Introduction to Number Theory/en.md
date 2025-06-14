@@ -35,6 +35,14 @@ In **programming**, the modulo operation is commonly represented using the perce
 a % b
 ```
 
+This operation is related to **integer division**:
+
+> When you divide $a$ by $b$, you get two results:  
+> - the **quotient**: how many times $b$ fits in $a$  
+> - the **remainder**: what's left over after subtracting $b \times$ quotient from $a$
+
+The modulo operation returns just the **remainder**.
+
 ### Example:
 - $14 \bmod 3$ = $2$ $\rightarrow$ because $14$ divided by $3$ is $4$ with a remainder of $2$.
 - $12 \bmod 4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$.
@@ -209,7 +217,7 @@ This is why checking up to $\sqrt{n}$ is not only sufficient but **optimal** for
 ### Optimized Divisor Algorithm – $O(\sqrt{n})$
 
 By using the insight above, we can reduce our work.  
-We only iterate up to $\sqrt{n}$ and for every divisor $i$, we add both $i$ and $n / i$.
+We only iterate up to $\sqrt{n}$ and for every divisor $i$, we add both $i$ and $\frac{n}{i}$.
 
 ---
 
