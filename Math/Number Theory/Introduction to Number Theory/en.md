@@ -105,6 +105,7 @@ This method checks **every number** up to $n$.
 
 #### C++ Implementation
 
+=== "c++"
 ```cpp
 #include <vector>
 using namespace std;
@@ -122,6 +123,19 @@ vector<int> findDivisorsNaive(int n) {
 
     return divisors;
 }
+```
+
+=== "Python"
+```python
+def find_divisors_naive(n):
+    divisors = []
+
+    for i in range(1, n + 1):
+        if n % i == 0:
+            # i is a divisor if it divides n with no remainder
+            divisors.append(i)
+
+    return divisors
 ```
 
 This works well for small $n$, but becomes inefficient as $n$ grows — since it performs **$n$ checks**.
@@ -213,13 +227,15 @@ This way, we get both the small and large divisors efficiently.
 
 #### C++ Implementation
 
+=== "c++"
 ```cpp
 #include <vector>
 #include <cmath>
+using namespace std;
 
 // Optimized method: only check up to sqrt(n), and use divisor pairs
-std::vector<int> findDivisors(int n) {
-    std::vector<int> divisors;
+vector<int> findDivisors(int n) {
+    vector<int> divisors;
 
     for (int i = 1; i * i <= n; ++i) {
         if (n % i == 0) {
@@ -232,6 +248,22 @@ std::vector<int> findDivisors(int n) {
 
     return divisors;
 }
+```
+
+=== "Python"
+```python
+import math
+
+def find_divisors(n):
+    divisors = []
+
+    for i in range(1, int(math.isqrt(n)) + 1):
+        if n % i == 0:
+            divisors.append(i)           # i is a divisor
+            if i != n // i:
+                divisors.append(n // i)  # n // i is the paired divisor
+
+    return divisors
 ```
 
 This approach reduces the time complexity from **$O(n)$** to **$O(\sqrt{n})$** and is the standard method in most number theory problems.
