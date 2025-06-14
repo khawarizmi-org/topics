@@ -24,7 +24,7 @@ The result of the **modulo operation** is the **remainder** when one number is d
 In **mathematics**, this is written as:
 
 $$
-a mod b
+a \bmod b
 $$
 
 and is read as “**$a \bmod b$**”.
