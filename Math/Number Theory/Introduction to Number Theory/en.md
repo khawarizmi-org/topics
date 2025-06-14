@@ -52,6 +52,7 @@ In number theory, we often express modulo relations more formally using **congru
 > Two integers $a$ and $b$ are said to be **congruent modulo $m$** if they leave the same remainder when divided by $m$.
 
 Mathematically:
+
 $$
 a \equiv b\ \pmod{m} \Leftrightarrow (a - b)$ is divisible by $m \Leftrightarrow a \bmod m = b \bmod m
 $$
