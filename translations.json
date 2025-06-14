@@ -14,5 +14,7 @@
     "Graph Theory": "نظرية الرسوم البيانية",
     "Queue": "الطابور",
     "Deque": "ديكيو (Deque)",
-    "Meet in the Middle": "الالتقاء في المنتصف"
+    "Meet in the Middle": "الالتقاء في المنتصف",
+    "Constructive Algorithms": "الخوازرميات البنائية",
+    "Prefix Sum": "المجموع التراكمي"
 }
