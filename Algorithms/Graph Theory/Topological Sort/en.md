@@ -109,6 +109,8 @@ E = {
     <img src="images/topo_detailed_example.gif" alt="Topological Sort Detailed Example GIF" width="400">
 </div>
 
+
+
 | Step | Queue       | In-Degrees                     | Output                          |
 |------|-------------|--------------------------------|---------------------------------|
 | 0    | [1,6]       | [0,0,1,2,1,1,0,2,2,3,1]        | []                              |
