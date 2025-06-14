@@ -37,7 +37,7 @@
 
 رياضيًا، يتطلّب إدراج كلمة أو البحث عنها بطول $L$ زيارة $L+1$ عقد (بما في ذلك الجذر)، كل منها في وقت ثابت، أي $O(L)$ لكل عملية.
 
-=== c++
+=== "c++"
 
 ```cpp
 #include <bits/stdc++.h>
@@ -108,7 +108,7 @@ public:
 };
 ```
 
-=== Java
+=== "Java"
 
 ```java
 import java.util.HashMap;
@@ -178,7 +178,7 @@ public class Trie {
 }
 ```
 
-=== Python
+=== "Python"
 
 ```python
 class TrieNode:

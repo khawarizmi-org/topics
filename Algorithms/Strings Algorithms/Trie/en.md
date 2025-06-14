@@ -39,7 +39,7 @@ Each trie node typically contains:
 
 Mathematically, inserting or searching a word of length $L$ into a trie requires visiting $L+1$ nodes (including root), each in constant time, giving $O(L)$ per operation.
 
-=== c++
+=== "c++"
 
 ```cpp
 #include <bits/stdc++.h>
@@ -110,7 +110,7 @@ public:
 };
 ```
 
-=== Java
+=== "Java"
 
 ```java
 import java.util.HashMap;
@@ -180,7 +180,7 @@ public class Trie {
 }
 ```
 
-=== Python
+=== "Python"
 
 ```python
 class TrieNode:
