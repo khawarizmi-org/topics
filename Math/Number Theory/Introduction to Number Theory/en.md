@@ -36,11 +36,11 @@ a % b
 ```
 
 ### Example:
-- $14$ \bmod $3$ = $2$ $\rightarrow$ because $14$ divided by $3$ is $4$ with a remainder of $2$  
-- $12$ \bmod $4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$  
-- $7$ \bmod $7$ = $0$ $\rightarrow$ every number is divisible by itself
+- $14$ \bmod $3$ = $2$ $\rightarrow$ because $14$ divided by $3$ is $4$ with a remainder of $2$.
+- $12$ \bmod $4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$.
+- $7$ \bmod $7$ = $0$ $\rightarrow$ every number is divisible by itself.
 
-Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if $a$ % $b$ == $0$)
+Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if $a$ % $b$ == $0$).
 
 
 ---
@@ -58,9 +58,9 @@ $$
 
 ### Examples:
 
-- $14 \equiv 2 (mod 3)$ because both $14$ and $2$ leave remainder $2$ when divided by $3$
-- $38 \equiv 2 (mod 6)$ $\rightarrow$ since $38$ - $2$ = $36$, and $36$ is divisible by $6$
-- $7 \equiv 0 (mod 7)$ $\rightarrow$ every number is congruent to $0$ modulo itself
+- $14 \equiv 2 (mod 3)$ because both $14$ and $2$ leave remainder $2$ when divided by $3$.
+- $38 \equiv 2 (mod 6)$ $\rightarrow$ since $38$ - $2$ = $36$, and $36$ is divisible by $6$.
+- $7 \equiv 0 (mod 7)$ $\rightarrow$ every number is congruent to $0$ modulo itself.
 
 This congruence relation helps us reason about divisibility and equivalence classes of integers under a given modulus. It’s also the foundation of modular arithmetic, which allows us to add, subtract, multiply, and even exponentiate **modulo $m$**.
 
@@ -103,7 +103,7 @@ This method checks **every number** up to $n$.
 
 ---
 
-#### C++ Implementation
+#### Implementation
 
 === "c++"
 ```cpp
@@ -193,11 +193,11 @@ This means:
 Let’s say $n = 36$.
 
 If we check from $1$ to $6$ (since $\sqrt{36}$ = $6$), we find:
-- $1$ $\rightarrow$ paired with $36$
-- $2$ $\rightarrow$ paired with $18$
-- $3$ $\rightarrow$ paired with $12$
-- $4$ $\rightarrow$ paired with $9$
-- $6$ $\rightarrow$ paired with $6$ (only counted once)
+- $1$ $\rightarrow$ paired with $36$.
+- $2$ $\rightarrow$ paired with $18$.
+- $3$ $\rightarrow$ paired with $12$.
+- $4$ $\rightarrow$ paired with $9$.
+- $6$ $\rightarrow$ paired with $6$ (only counted once).
 
 Every divisor greater than $6$ is just the result of $\frac{n}{d}$ for some smaller divisor $d$.
 
@@ -225,7 +225,7 @@ This way, we get both the small and large divisors efficiently.
 
 ---
 
-#### C++ Implementation
+#### Implementation
 
 === "c++"
 ```cpp
@@ -286,24 +286,24 @@ This means that you cannot write a prime number as a product of two smaller natu
 
 Let’s look at a few examples to see the difference between prime and composite numbers:
 
-- $2$ $\rightarrow$ $\textcolor{green}{prime}$
-    - Divisors: $1$ and $2$
-- $3$ $\rightarrow$ $\textcolor{green}{prime}$
-    - Divisors: $1$ and $3$
-- $4$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
-    - Divisors: $1$, $2$, $4$ $\rightarrow$ more than two
-- $5$ $\rightarrow$ $\textcolor{green}{prime}$
-    - Divisors: $1$ and $5$
-- $6$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
-    - Divisors: $1$, $2$, $3$, $6$
-- $7$ $\rightarrow$ $\textcolor{green}{prime}$
-    - Divisors: $1$ and $7$
-- $8$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
-    - Divisors: $1$, $2$, $4$, $8$
-- $9$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
-    - Divisors: $1$, $3$, $9$
-- $11$ $\rightarrow$ $\textcolor{green}{prime}$
-    - Divisors: $1$ and $11
+- $2$ $\rightarrow$ $\textcolor{green}{prime}$:
+    - Divisors: $1$ and $2$.
+- $3$ $\rightarrow$ $\textcolor{green}{prime}$:
+    - Divisors: $1$ and $3$.
+- $4$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite):
+    - Divisors: $1$, $2$, $4$ $\rightarrow$ more than two.
+- $5$ $\rightarrow$ $\textcolor{green}{prime}$:
+    - Divisors: $1$ and $5$.
+- $6$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite):
+    - Divisors: $1$, $2$, $3$, $6$.
+- $7$ $\rightarrow$ $\textcolor{green}{prime}$:
+    - Divisors: $1$ and $7$.
+- $8$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite):
+    - Divisors: $1$, $2$, $4$, $8$.
+- $9$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite):
+    - Divisors: $1$, $3$, $9$.
+- $11$ $\rightarrow$ $\textcolor{green}{prime}$:
+    - Divisors: $1$ and $11.
 
 ---
 
