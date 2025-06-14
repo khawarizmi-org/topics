@@ -8,7 +8,7 @@
 
 The central concept in number theory is **divisibility**.
 
-Consider the integers $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots \}$, for $a, b, \in \mathbb{Z}$, we say that $a$ **divides** $b$ if $a \dot x = b$ for some $ x \in \mathbb{Z}$. If $a$ divides $b$ we write $a \divides b$, and we say that $a$ is a **divisor** of $b$, or that $b$ is **multiple** of $a$ or that $b$ is **divisible by** $a$. If $a$ does not divide $b$, then we write $a \notdivides b$.
+Consider the integers $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots \}$, for $a, b, \in \mathbb{Z}$, we say that $a$ **divides** $b$ if $a \dot x = b$ for some $x \in \mathbb{Z}$. If $a$ divides $b$ we write $a \divides b$, and we say that $a$ is a **divisor** of $b$, or that $b$ is **multiple** of $a$ or that $b$ is **divisible by** $a$. If $a$ does not divide $b$, then we write $a \notdivides b$.
 
 ### Theorem
 For all $a, b, c, \in \mathbb{Z}$, we have:
@@ -266,7 +266,7 @@ Let’s look at a few examples to see the difference between prime and composite
     - Divisors: $1$, $2$, $3$, $6$
 - $7$ $\rightarrow$ $\textcolor{green}{prime}$
     - Divisors: $1$ and $7$
-- $8$ $\rightarrow$ $\textcolor{red}{prime}$ (composite)
+- $8$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
     - Divisors: $1$, $2$, $4$, $8$
 - $9$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
     - Divisors: $1$, $3$, $9$
