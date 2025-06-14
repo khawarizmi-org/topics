@@ -11,26 +11,11 @@ sum(A_{l..r}) = P_r − P_{l−1}
 $$
 Building $P$ takes $O(n)$.
 
-## The Difference‐Array (“Range Update”) Trick
-Sometimes you need to perform **many range‐increment operations** on an initially all‐zero array, then inspect final values.  
-Naively doing each update in $O(length)$ yields $O(n·m)$, too slow if both are up to $10^5$.
-
-The **difference array** $D$ lets you do each range update in $O(1)$ with 1-indexing:
-
-- To add $+1$ to all $A_l, A_{l + 1}, \dots, A_{r - 1}, A_r$, do:
-  ```cpp
-  D[l] += 1;
-  D[r+1] -= 1;     // ensure D has size n+2
-  ```
-- After processing all updates, rebuild $A$ by taking the prefix sums of $D$:
-  ```cpp
-  for(int i = 1; i <= n; i++)
-      A[i] = A[i-1] + D[i];
-  ```
-- Now $A_i$ holds the total number of times any range covered index $i$.
-
-**Why it works:**  
-Each $+1$ at $D_l$ means “start adding 1 from here on,” and each $–1$ at $D_{r+1}$ means “stop adding 1 after r.”
+### Example for array $A$ and the corresponding prefix sum $P$:
+| Index | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|-------|---|---|---|---|---|---|---|
+| A     | 0 | 1 | 1 | 0 | 6 | 5 | 3 |
+| P     | 0 | 1 | 2 | 2 | 8 | 13| 16|
 
 ## Complexity
 - **Building a prefix‐sum**: O(n)  
@@ -40,7 +25,7 @@ Each $+1$ at $D_l$ means “start adding 1 from here on,” and each $–1$ at $
 
 Overall both patterns run in $O(n + q)$ or $O(n + m)$, suitable for $n$, $q$, $m$ up to $10^5$ or higher.
 
-## Example 1: Static Sum Queries
+## Example: Static Sum Queries
 
 **Problem:**  
 Given an array $A_1, A_2, \dots,  A_n$ and $q$ queries, each asking for the sum of $A_l + A_{l + 1} + \dots + A_{r - 1} + A_r$.
@@ -129,7 +114,28 @@ for _ in range(q):
     print(P[r] - P[l-1])
 ```
 
-## Example 2: Counting Overlaps with Difference Array
+## The Difference‐Array (“Range Update”) Trick
+Sometimes you need to perform **many range‐increment operations** on an initially all‐zero array, then inspect final values.  
+Naively doing each update in $O(length)$ yields $O(n·m)$, too slow if both are up to $10^5$.
+
+The **difference array** $D$ lets you do each range update in $O(1)$ with 1-indexing:
+
+- To add $+1$ to all $A_l, A_{l + 1}, \dots, A_{r - 1}, A_r$, do:
+  ```cpp
+  D[l] += 1;
+  D[r+1] -= 1;     // ensure D has size n+2
+  ```
+- After processing all updates, rebuild $A$ by taking the prefix sums of $D$:
+  ```cpp
+  for(int i = 1; i <= n; i++)
+      A[i] = A[i-1] + D[i];
+  ```
+- Now $A_i$ holds the total number of times any range covered index $i$.
+
+**Why it works:**  
+Each $+1$ at $D_l$ means “start adding 1 from here on,” and each $–1$ at $D_{r+1}$ means “stop adding 1 after r.”
+
+## Example: Counting Overlaps with Difference Array
 
 **Problem:**  
 You have $m$ segments $[l_i, r_i]$ where $1 \le l_i \le r_i \le n$. Compute for each $i$ how many segments cover $i$.
