@@ -243,5 +243,5 @@ class Trie:
 Below is a GIF illustrating the insertion of the words **"he"**, **"cat"**, **"hello"**, and **"car"** into the trie step by step.
 
 <div align="center">
-    <img src="images/trie.gif" alt="trie visualization">
+    <img src="images/trie.gif" alt="trie visualization" width="600">
 </div>

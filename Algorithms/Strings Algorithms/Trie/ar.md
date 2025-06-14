@@ -241,5 +241,5 @@ class Trie:
 فيما يلي ملف GIF يوضح خطوة بخطوة إدراج الكلمات **"he"**، **"cat"**، **"hello"**، و **"car"** في التراي:
 
 <div align="center">
-    <img src="images/trie.gif" alt="توضيح التراي">
+    <img src="images/trie.gif" alt="توضيح التراي" width="600">
 </div>
