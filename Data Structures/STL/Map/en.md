@@ -45,32 +45,76 @@ In CP, you often need to count or look up items whose keys aren’t small intege
 === c++
 
 ```cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
+#include <string>
+#include <unordered_map>
 using namespace std;
 
-int main() {
-    int n; 
-    cin >> n;
+int main(){
     // Count frequencies of arbitrary keys (e.g. strings)
-    unordered_map<string,int> freq;     // O(1) avg operations
-    map<string,int>    ofreq;           // O(log n) ops, sorted
+    unordered_map<string, int> freq; // O(1) avg operations
+    map<string, int> ofreq;          // O(log n) ops, sorted
 
-    for(int i = 0; i < n; i++) {
-        string s; 
-        cin >> s;
-        freq[s]++;    // hash map
-        ofreq[s]++;   // ordered map
+    string arr[] = {
+    "cat", "hat", "apple",
+    "apple", "hat", "dog",
+    "hat", "cat", "cat",
+    "cat", "hat", "hat"};
+
+    for (string &s : arr){
+        freq[s]++;  // hash map
+        ofreq[s]++; // ordered map
     }
 
-    // Example lookup and in-order iteration
-    for (auto &p : ofreq) {
+    cout << "Map keys and values:\n"; // Example lookup and in-order iteration
+    for (auto &p : ofreq){
+        // p.first = key, p.second = count
+        cout << p.first << " -> " << p.second << "\n";
+    }
+    cout << "----------------------------------------------------" << endl;
+    cout << "Frequency of cat:    " << ofreq["cat"] << endl;    // prints 4
+    cout << "Frequency of apple:  " << ofreq["apple"] << endl;  // prints 2
+    cout << "Frequency of banana: " << ofreq["banana"] << endl; // prints 0, since it is a new key it inserts it to the map and assign it the value 0
+    cout << "----------------------------------------------------" << endl;
+
+    cout << "Map keys and values:\n"; // Example lookup and in-order iteration after the modification
+    for (auto &p : ofreq){
         // p.first = key, p.second = count
         cout << p.first << " -> " << p.second << "\n";
     }
 
-    cout << "Lookup "foo": " << freq["foo"] << "\n";
+    cout << "----------------------------------------------------" << endl;
+    cout << "Frequency of dog: " << ofreq["dog"] << endl; // prints 1
+    ofreq.erase("dog");
+    cout << "Frequency of dog: " << ofreq["dog"] << endl; // prints 0 since the key was erased from the map
+
+    ofreq.erase("car"); // nothing happens if the key didn't exist
     return 0;
 }
+
+// output
+/*
+Map keys and values:
+apple -> 2
+cat -> 4
+dog -> 1
+hat -> 5
+----------------------------------------------------
+Frequency of cat:    4
+Frequency of apple:  2
+Frequency of banana: 0
+----------------------------------------------------
+Map keys and values:
+apple -> 2
+banana -> 0
+cat -> 4
+dog -> 1
+hat -> 5
+----------------------------------------------------
+Frequency of dog: 1
+Frequency of dog: 0
+*/
 ```
 
 === Java
