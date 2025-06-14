@@ -27,15 +27,13 @@ This method always works on a DAG because at least one vertex in a DAG has in-de
 ><div align="center">  
 >  <img src="images/topo_valid.png" alt="Valid DAG" width="400">  
 ></div>  
-
 >In this graph, one correct topological order is 2, 4, 1, 5, 6.
 
 >**Example of a cyclic graph:**  
 ><div align="center">  
 >  <img src="images/topo_cycle.png" alt="Cyclic Graph" width="400">  
 ></div>  
-
->This graph contains a cycle and thus has **no** topological ordering.
+>This graph contains a cycle and thus has no topological ordering.
 
 ---
 
