@@ -7,7 +7,7 @@
 
 ## What Is Modulo?
 
-The **modulo operation** is a way of finding the **remainder** when one number is divided by another.  
+The result of the **modulo operation** is the **remainder** when one number is divided by another.  
 It is written as $a$ % $b$, and is read as $a$ mod $b$”.
 
 ### Example:
@@ -28,7 +28,7 @@ In number theory, we often express modulo relations more formally using **congru
 
 Mathematically:
 $$
-a ≡ b (mod m)  ⇔  (a - b) is divisible by m  ⇔  a % m == b % m
+a ≡ b (mod m)  ⇔  (a - b) is divisible by m  ⇔  a \% m == b \% m
 $$
 
 ### Examples:
@@ -50,7 +50,7 @@ Let $d$ and $n$ be positive integers.
 In other words, $d$ divides $n$ **exactly** — with **no remainder**.  
 This is the same as saying:
 $$
-n % d == 0
+n \% d == 0
 $$
 
 Every positive integer $n$ has at least two divisors: $1$ and $n$ itself.  
