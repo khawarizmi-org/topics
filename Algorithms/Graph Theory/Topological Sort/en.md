@@ -23,17 +23,19 @@ If the algorithm cannot find a vertex with in-degree 0 at some step, that means
 
 This method always works on a DAG because at least one vertex in a DAG has in-degree 0 (otherwise a cycle would form). Removing vertices in this way gradually reduces the graph while preserving the order constraints.
 
-**Example of a valid DAG:**  
-<div align="center">  
-  <img src="images/topo_valid.png" alt="Valid DAG" width="400">  
-</div>  
-In this graph, one correct topological order is **2, 4, 1, 5, 6**.
+>**Example of a valid DAG:**  
+><div align="center">  
+>  <img src="images/topo_valid.png" alt="Valid DAG" width="400">  
+></div>  
 
-**Example of a cyclic graph:**  
-<div align="center">  
-  <img src="images/topo_cycle.png" alt="Cyclic Graph" width="400">  
-</div>  
-This graph contains a cycle and thus has **no** topological ordering.
+>In this graph, one correct topological order is **2, 4, 1, 5, 6**.
+
+>**Example of a cyclic graph:**  
+><div align="center">  
+>  <img src="images/topo_cycle.png" alt="Cyclic Graph" width="400">  
+></div>  
+
+>This graph contains a cycle and thus has **no** topological ordering.
 
 ---
 
