@@ -37,7 +37,7 @@ $$
 - $38 ≡ 2 (mod 6)$ → since $38$ - $2$ = $36$, and $36$ is divisible by $6$
 - $7 ≡ 0 (mod 7)$ → every number is congruent to $0$ modulo itself
 
-This congruence relation helps us reason about divisibility and equivalence classes of integers under a given modulus. It’s also the foundation of modular arithmetic, which allows us to add, subtract, multiply, and even exponentiate **modulo m**.
+This congruence relation helps us reason about divisibility and equivalence classes of integers under a given modulus. It’s also the foundation of modular arithmetic, which allows us to add, subtract, multiply, and even exponentiate **modulo $m$**.
 
 ---
 
@@ -255,6 +255,5 @@ Let’s look at a few examples to see the difference between prime and composite
   - It only has one divisor ($1$ itself), so it doesn’t satisfy the definition.
 - The **smallest prime** is $2$.
   - It’s also the **only even prime** — every other even number is divisible by $2$ and thus composite.
-- As numbers get larger, primes become less frequent — but they never stop.
 
 ---
