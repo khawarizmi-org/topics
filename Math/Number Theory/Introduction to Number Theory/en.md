@@ -93,7 +93,7 @@ We want a method that will list out **every number** that divides $n$.
 
 #### Pseudocode
 
-```
+```plaintext
 For each number i from 1 to n:
     If n divided by i has no remainder:
         Then i is a divisor of n → add it to the list
@@ -213,7 +213,7 @@ We only iterate up to $\sqrt{n}$ and for every divisor $i$, we add both $i$ and 
 
 #### Pseudocode
 
-```
+```plaintext
 For each number i from 1 to sqrt(n):
     If n is divisible by i:
         Add i to the list
