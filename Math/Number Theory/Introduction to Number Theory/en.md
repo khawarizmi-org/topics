@@ -136,7 +136,7 @@ $$
 n = d \times k
 $$
 
-In this case, both $d$ and $k$ are divisors of $n$, since they multiply to $n$. This immediately tells us that **divisors come in pairs**: if $d \divides n$, then $\frac{n}{d} \divide n$ also holds.
+In this case, both $d$ and $k$ are divisors of $n$, since they multiply to $n$. This immediately tells us that **divisors come in pairs**: if $d \divides n$, then $\frac{n}{d} \divides n$ also holds.
 
 We can think of every divisor $d$ being paired with another divisor $\frac{n}{d}$. Therefore, all the divisors of $n$ can be grouped into such **($d$, $\frac{n}{d}$)** pairs.
 
