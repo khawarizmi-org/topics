@@ -32,7 +32,7 @@ Given an array $A_1, A_2, \dots,  A_n$ and $q$ queries, each asking for the sum 
 
 **1-Indexed Implementation**
 
-=== c++
+=== "c++"
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -60,7 +60,7 @@ int main() {
 }
 ```
 
-=== Java
+=== "Java"
 ```java
 import java.io.*;
 import java.util.*;
@@ -92,7 +92,7 @@ public class Main {
 }
 ```
 
-=== Python
+=== "Python"
 ```python
 import sys
 input = sys.stdin.readline
@@ -142,7 +142,7 @@ You have $m$ segments $[l_i, r_i]$ where $1 \le l_i \le r_i \le n$. Compute for 
 
 **1-Indexed Implementation**
 
-=== c++
+=== "c++"
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -171,7 +171,7 @@ int main() {
 }
 ```
 
-=== Java
+=== "Java"
 ```java
 import java.io.*;
 import java.util.*;
@@ -201,7 +201,7 @@ public class Main {
 }
 ```
 
-=== Python
+=== "Python"
 ```python
 import sys
 input = sys.stdin.readline
