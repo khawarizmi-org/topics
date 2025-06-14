@@ -12,5 +12,6 @@
     "Introduction to Graph": "مقدمة في الرسم البياني",
     "Complete Search": "البحث الشامل",
     "Graph Theory": "نظرية الرسوم البيانية",
-    "Meet in the Middle": "الالتقاء في المنتصف"
+    "Meet in the Middle": "الالتقاء في المنتصف",
+    "BFS": "البحث بعرض أولاً (BFS)"
 }
