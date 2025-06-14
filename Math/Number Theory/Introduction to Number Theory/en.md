@@ -13,9 +13,9 @@ Consider the integers $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots \}$, for $a,
 ### Theorem
 For all $a, b, c, \in \mathbb{Z}$, we have:
 - $a \divides a$, $1 \divides a$ and $a \divides 0$.
-- $a \divides b$ **if and only if** $-a \divides a$ **if and only if** $a \divides -b$.
+- $a \divides b$ **if and only if** $-a \divides b$ **if and only if** $a \divides -b$.
 - $a \divides b$ and $a \divides c$ implies $a \divides (b + c)$.
-- $a \divides b$ and $a \divides c$ implies $a \divides c$.
+- $a \divides b$ and $b \divides c$ implies $a \divides c$.
 - $a \divides b$ and $b \divides a$ **if and only if ** $a = \pm b$.
 
 ## What Is Modulo?
