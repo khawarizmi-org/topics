@@ -4,6 +4,31 @@
 
 A **trie** (pronounced "try"), also known as a **prefix tree**, is a tree-like data structure that stores a dynamic set of strings, where keys are usually strings. Each node represents a common prefix of some keys. By leveraging the structure of the keys, tries can facilitate efficient search, insertion, and deletion operations in $O(L)$ time, where $L$ is the length of the key.
 
+## How a Trie Works
+
+A trie starts with a single **root node** which represents an empty prefix. Each edge from a node corresponds to a character, and each child node represents a longer prefix of the string.
+
+### Insertion
+
+To insert a word into the trie:
+
+1. Start from the root node.
+2. For each character `c` in the word:
+   - Check if there is already a child node for `c`. If not, create it.
+   - Move to the child node for `c`.
+   - Increment the `prefixCount` of the node.
+3. After all characters are processed, increment the `endCount` at the final node.
+
+### Search
+
+To search for a word, traverse the trie from the root following the path of each character in the word. If any character is missing, the word does not exist. If you reach the last character and the `endCount` is greater than zero, the word exists.
+
+### Prefix Search
+
+To count how many words start with a given prefix, traverse the prefix as you would during a normal search. If the prefix exists, return the `prefixCount` of the last node.
+
+
+
 ## Node Structure
 
 Each trie node typically contains:
