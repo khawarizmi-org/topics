@@ -53,7 +53,7 @@ In number theory, we often express modulo relations more formally using **congru
 
 Mathematically:
 $$
-$a \equiv b\ \pmod{m} \Leftrightarrow (a - b)$ is divisible by $m \Leftrightarrow a \bmod m = b \bmod m$
+a \equiv b\ \pmod{m} \Leftrightarrow (a - b)$ is divisible by $m \Leftrightarrow a \bmod m = b \bmod m
 $$
 
 ### Examples:
@@ -74,6 +74,7 @@ Let $d$ and $n$ be positive integers.
 
 In other words, $d$ divides $n$ **exactly** — with **no remainder**.  
 This is the same as saying:
+
 $$
 n \bmod d = 0
 $$
