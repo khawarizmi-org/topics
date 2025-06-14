@@ -276,8 +276,7 @@ In number theory, one of the most fundamental types of numbers is the **prime nu
 
 A **prime number** is a natural number greater than $1$ that has **exactly two distinct positive divisors**:
 
-- $1$, and  
-- the number itself.
+- $1$, and the number itself.
 
 This means that you cannot write a prime number as a product of two smaller natural numbers, other than trivially as $1 \times n$.
 
