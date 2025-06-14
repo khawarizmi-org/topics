@@ -41,7 +41,7 @@ frequency = [0, 2, 3, 2, 0, 1]
 
 #### مثال على التنفيذ
 
-=== c++
+=== "c++"
 
 ```c++
 #include <iostream>
@@ -71,7 +71,7 @@ int main() {
 }
 ```
 
-=== Java
+=== "Java"
 
 ```java
 import java.util.Scanner;
@@ -104,7 +104,7 @@ public class FrequencyArray {
 }
 ```
 
-=== Python
+=== "Python"
 
 ```python
 n = int(input())
