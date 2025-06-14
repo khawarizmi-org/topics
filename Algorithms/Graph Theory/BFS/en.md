@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Breadth-First Search (BFS) is one of the most fundamental graph traversal algorithms. It explores a graph in “rings” of increasing distance from a starting node, guaranteeing that when a vertex is first visited, you have found the shortest path (by number of edges) from the source. BFS runs in $O(|V| + |E|)$ time and uses $O(|V|)$ additional space. It underpins many algorithms in networking, maze solving, social network analysis, and more.
+Breadth-First Search (BFS) is one of the most fundamental graph traversal algorithms. It explores a graph in “rings” of increasing distance from a starting node, guaranteeing that when a vertex is first visited, you have found the shortest path (by number of edges) from the source. It underpins many algorithms in networking, maze solving, social network analysis, and more.
 
 ---
 
