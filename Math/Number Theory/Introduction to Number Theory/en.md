@@ -36,9 +36,9 @@ a % b
 ```
 
 ### Example:
-- $14$ \bmod $3$ = $2$ $\rightarrow$ because $14$ divided by $3$ is $4$ with a remainder of $2$.
-- $12$ \bmod $4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$.
-- $7$ \bmod $7$ = $0$ $\rightarrow$ every number is divisible by itself.
+- $14 \bmod 3$ = $2$ $\rightarrow$ because $14$ divided by $3$ is $4$ with a remainder of $2$.
+- $12 \bmod 4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$.
+- $7 \bmod 7$ = $0$ $\rightarrow$ every number is divisible by itself.
 
 Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if $a$ % $b$ == $0$).
 
@@ -58,9 +58,9 @@ $$
 
 ### Examples:
 
-- $14 \equiv 2 (mod 3)$ because both $14$ and $2$ leave remainder $2$ when divided by $3$.
-- $38 \equiv 2 (mod 6)$ $\rightarrow$ since $38$ - $2$ = $36$, and $36$ is divisible by $6$.
-- $7 \equiv 0 (mod 7)$ $\rightarrow$ every number is congruent to $0$ modulo itself.
+- $14 \equiv 2 \pmod{3}$ because both $14$ and $2$ leave remainder $2$ when divided by $3$.
+- $38 \equiv 2 \pmod{6}$ $\rightarrow$ since $38$ - $2$ = $36$, and $36$ is divisible by $6$.
+- $7 \equiv 0 \pmod{7}$ $\rightarrow$ every number is congruent to $0$ modulo itself.
 
 This congruence relation helps us reason about divisibility and equivalence classes of integers under a given modulus. It’s also the foundation of modular arithmetic, which allows us to add, subtract, multiply, and even exponentiate **modulo $m$**.
 
