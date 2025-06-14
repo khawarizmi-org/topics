@@ -210,3 +210,51 @@ std::vector<int> findDivisors(int n) {
 
 This approach reduces the time complexity from **O($n$)** to **O($\sqrt{n}$)** and is the standard method in most number theory problems.
 
+## Prime Numbers
+
+In number theory, one of the most fundamental types of numbers is the **prime number**.
+
+A **prime number** is a natural number greater than $1$ that has **exactly two distinct positive divisors**:
+
+- $1$, and  
+- the number itself.
+
+This means that you cannot write a prime number as a product of two smaller natural numbers, other than trivially as $1 \times n$.
+
+
+---
+
+### Examples of Prime and Non-Prime Numbers
+
+Let’s look at a few examples to see the difference between prime and composite numbers:
+
+- $2$ → Prime  
+  - Divisors: $1$ and $2$
+- $3$ → Prime  
+  - Divisors: $1$ and $3$
+- $4$ → Not prime (composite)  
+  - Divisors: $1$, $2$, $4$ → more than two
+- $5$ → Prime  
+  - Divisors: $1$ and $5$
+- $6$ → Not prime  
+  - Divisors: $1$, $2$, $3$, $6$
+- $7$ → Prime  
+  - Divisors: $1$ and $7$
+- $8$ → Not prime  
+  - Divisors: $1$, $2$, $4$, $8$
+- $9$ → Not prime  
+  - Divisors: $1$, $3$, $9$
+- $11$ → Prime  
+  - Divisors: $1$ and $11$
+
+---
+
+### Special Notes:
+
+- $1$ is **not** a prime number.  
+  - It only has one divisor ($1$ itself), so it doesn’t satisfy the definition.
+- The **smallest prime** is $2$.
+  - It’s also the **only even prime** — every other even number is divisible by $2$ and thus composite.
+- As numbers get larger, primes become less frequent — but they never stop.
+
+---
