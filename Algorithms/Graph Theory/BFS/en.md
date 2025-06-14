@@ -46,7 +46,7 @@ Adjacency list (1-based):
 ```
 
 <div align="center">
-    <img src="gifs/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
+    <img src="images/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
 </div>
 
 Starting from source = 1:
@@ -161,7 +161,7 @@ Adjacency:
 10: 5, 8
 ```
 <div align="center">
-    <img src="gifs/bfs.gif" alt="Detailed BFS Graph" width="400">
+    <img src="images/bfs.gif" alt="Detailed BFS Graph" width="400">
 </div>
 ---
 

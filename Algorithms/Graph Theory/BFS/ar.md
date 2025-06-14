@@ -46,7 +46,7 @@ E = {(1,2),(1,3),(2,4),(3,4),(4,5),(5,6)}
 ```
 
 <div align="center">
-    <img src="gifs/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
+    <img src="images/bfs_simple_example.gif" alt="Simple BFS Example GIF" width="400">
 </div>
 
 من المصدر = 1:
@@ -158,7 +158,7 @@ E = {(1,2),(1,3),(2,4),(2,8),(3,4),(3,5),(5,10),(4,6),
 10: 5, 8
 ```
 <div align="center">
-    <img src="gifs/bfs.gif" alt="شرح مُفصّل على BFS" width="400">
+    <img src="images/bfs.gif" alt="شرح مُفصّل على BFS" width="400">
 </div>
 ---
 
