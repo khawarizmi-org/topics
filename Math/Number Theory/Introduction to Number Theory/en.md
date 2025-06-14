@@ -208,5 +208,5 @@ std::vector<int> findDivisors(int n) {
 }
 ```
 
-This approach reduces the time complexity from **O(n)** to **O($\sqrt{n}$)** and is the standard method in most number theory problems.
+This approach reduces the time complexity from **O($n$)** to **O($\sqrt{n}$)** and is the standard method in most number theory problems.
 
