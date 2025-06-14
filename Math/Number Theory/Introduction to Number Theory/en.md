@@ -8,10 +8,10 @@
 ## What Is Modulo?
 
 The **modulo operation** is a way of finding the **remainder** when one number is divided by another.  
-It is written as $a$ % $b$, and is read as $a mod b$”.
+It is written as $a$ % $b$, and is read as $a$ mod $b$”.
 
 ### Example:
-- $14$ % $3$ = $2$ → because $14$ divided by $3$ is $4$ with a remainder of 2  
+- $14$ % $3$ = $2$ → because $14$ divided by $3$ is $4$ with a remainder of $2$  
 - $12$ % $4$ = $0$ → because $12$ is exactly divisible by $4$  
 - $7$ % $7$ = $0$ → every number is divisible by itself
 
@@ -35,7 +35,7 @@ $$
 
 - $14 ≡ 2 (mod 3)$ because both $14$ and $2$ leave remainder $2$ when divided by $3$
 - $38 ≡ 2 (mod 6)$ → since $38$ - $2$ = $36$, and $36$ is divisible by $6$
-- $7 ≡ 0 (mod 7)$ → every number is congruent to 0 modulo itself
+- $7 ≡ 0 (mod 7)$ → every number is congruent to $0$ modulo itself
 
 This congruence relation helps us reason about divisibility and equivalence classes of integers under a given modulus. It’s also the foundation of modular arithmetic, which allows us to add, subtract, multiply, and even exponentiate **modulo m**.
 
@@ -45,7 +45,7 @@ This congruence relation helps us reason about divisibility and equivalence clas
 
 Let $d$ and $n$ be positive integers.
 
-> We say that $d$ is a **divisor** of $n$ if there exists an integer $k$ such that $$n = d \times k$.
+> We say that $d$ is a **divisor** of $n$ if there exists an integer $k$ such that $n = d \times k$.
 
 In other words, $d$ divides $n$ **exactly** — with **no remainder**.  
 This is the same as saying:
@@ -64,7 +64,7 @@ We want a method that will list out **every number** that divides $n$.
 
 ---
 
-### Naive Divisor Algorithm – O(n)
+### Naive Divisor Algorithm – O($n$)
 
 #### Pseudocode
 
@@ -98,7 +98,7 @@ std::vector<int> findDivisorsNaive(int n) {
 }
 ```
 
-This works well for small $n$, but becomes inefficient as $n$ grows — since it performs **n checks**.
+This works well for small $n$, but becomes inefficient as $n$ grows — since it performs **$n$ checks**.
 
 ---
 
@@ -143,7 +143,7 @@ Therefore, **it is impossible for both $a$ and $b$ to be greater than $\sqrt{n}$
 So in every divisor pair $`$(d, n/d)$`$, at least one of the numbers must be $\le \sqrt{n}$.  
 This means:
 
-> To find all divisors of $n$, it is sufficient to check for divisors $d$ in the range $1 \le d \le $\sqrt{n}$$.  
+> To find all divisors of $n$, it is sufficient to check for divisors $d$ in the range $1 \le d \le \sqrt{n}$.  
 > If $d$ divides $n$, then $n / d$ is automatically a valid divisor and can be added as its pair.
 
 ---
@@ -153,11 +153,11 @@ This means:
 Let’s say $n = 36$.
 
 If we check from $1$ to $6$ (since $\sqrt{36}$ = $6$), we find:
-- 1 → paired with 36
-- 2 → paired with 18
-- 3 → paired with 12
-- 4 → paired with 9
-- 6 → paired with 6 (only counted once)
+- $1$ → paired with $36$
+- $2$ → paired with $18$
+- $3$ → paired with $12$
+- $4$ → paired with $9$
+- $6$ → paired with $6$ (only counted once)
 
 Every divisor greater than $6$ is just the result of $n / d$ for some smaller divisor $d$.
 
