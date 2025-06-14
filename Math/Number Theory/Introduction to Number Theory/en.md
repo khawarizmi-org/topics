@@ -4,16 +4,41 @@
 
 ---
 
+## Divisibility
+
+The central concept in number theory is **divisibility**.
+
+Consider the integers $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots \}$, for $a, b, \in \mathbb{Z}$, we say that $a$ **divides** $b$ if $a \dot x = b$ for some $ x \in \mathbb{Z}$. If $a$ divides $b$ we write $a \divides b$, and we say that $a$ is a **divisor** of $b$, or that $b$ is **multiple** of $a$ or that $b$ is **divisible by** $a$. If $a$ does not divide $b$, then we write $a \notdivides b$.
+
+### Theorem
+For all $a, b, c, \in \mathbb{Z}$, we have:
+- $a \divides a$, $1 \divides a$ and $a \divides 0$.
+- $a \divides b$ **if and only if** $-a \divides a$ **if and only if** $a \divides -b$.
+- $a \divides b$ and $a \divides c$ implies $a \divides (b + c)$.
+- $a \divides b$ and $a \divides c$ implies $a \divides c$.
+- $a \divides b$ and $b \divides a$ **if and only if ** $a = \pm b$.
 
 ## What Is Modulo?
 
 The result of the **modulo operation** is the **remainder** when one number is divided by another.  
-It is written as $a$ % $b$, and is read as $a$ mod $b$”.
+In **mathematics**, this is written as:
+
+$$
+a mod b
+$$
+
+and is read as “**$a \bmod b$**”.
+
+In **programming**, the modulo operation is commonly represented using the percent sign $%$, so it appears as:
+
+```cpp
+a % b
+```
 
 ### Example:
-- $14$ % $3$ = $2$ → because $14$ divided by $3$ is $4$ with a remainder of $2$  
-- $12$ % $4$ = $0$ → because $12$ is exactly divisible by $4$  
-- $7$ % $7$ = $0$ → every number is divisible by itself
+- $14$ \bmod $3$ = $2$ $\rightarrow$ because $14$ divided by $3$ is $4$ with a remainder of $2$  
+- $12$ \bmod $4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$  
+- $7$ \bmod $7$ = $0$ $\rightarrow$ every number is divisible by itself
 
 Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if $a$ % $b$ == $0$)
 
@@ -28,14 +53,14 @@ In number theory, we often express modulo relations more formally using **congru
 
 Mathematically:
 $$
-a ≡ b (mod m)  ⇔  (a - b) is divisible by m  ⇔  a \% m == b \% m
+$a \equiv b\ \pmod{m} \Leftrightarrow (a - b)$ is divisible by $m \Leftrightarrow a \bmod m = b \bmod m$
 $$
 
 ### Examples:
 
-- $14 ≡ 2 (mod 3)$ because both $14$ and $2$ leave remainder $2$ when divided by $3$
-- $38 ≡ 2 (mod 6)$ → since $38$ - $2$ = $36$, and $36$ is divisible by $6$
-- $7 ≡ 0 (mod 7)$ → every number is congruent to $0$ modulo itself
+- $14 \equiv 2 (mod 3)$ because both $14$ and $2$ leave remainder $2$ when divided by $3$
+- $38 \equiv 2 (mod 6)$ $\rightarrow$ since $38$ - $2$ = $36$, and $36$ is divisible by $6$
+- $7 \equiv 0 (mod 7)$ $\rightarrow$ every number is congruent to $0$ modulo itself
 
 This congruence relation helps us reason about divisibility and equivalence classes of integers under a given modulus. It’s also the foundation of modular arithmetic, which allows us to add, subtract, multiply, and even exponentiate **modulo $m$**.
 
@@ -50,7 +75,7 @@ Let $d$ and $n$ be positive integers.
 In other words, $d$ divides $n$ **exactly** — with **no remainder**.  
 This is the same as saying:
 $$
-n \% d == 0
+n \bmod d = 0
 $$
 
 Every positive integer $n$ has at least two divisors: $1$ and $n$ itself.  
@@ -64,7 +89,7 @@ We want a method that will list out **every number** that divides $n$.
 
 ---
 
-### Naive Divisor Algorithm – O($n$)
+### Naive Divisor Algorithm – $O(n)$
 
 #### Pseudocode
 
@@ -82,10 +107,11 @@ This method checks **every number** up to $n$.
 
 ```cpp
 #include <vector>
+using namespace std;
 
 // Naive method: try all i from 1 to n and check if n % i == 0
-std::vector<int> findDivisorsNaive(int n) {
-    std::vector<int> divisors;
+vector<int> findDivisorsNaive(int n) {
+    vector<int> divisors;
 
     for (int i = 1; i <= n; ++i) {
         if (n % i == 0) {
@@ -110,9 +136,9 @@ $$
 n = d \times k
 $$
 
-In this case, both $d$ and $k$ are divisors of $n$, since they multiply to $n$. This immediately tells us that **divisors come in pairs**: if $d$ divides $n$, then $n / d$ must also divide $n$.
+In this case, both $d$ and $k$ are divisors of $n$, since they multiply to $n$. This immediately tells us that **divisors come in pairs**: if $d \divides n$, then $\frac{n}{d} \divide n$ also holds.
 
-We can think of every divisor $d$ being paired with another divisor $n$ / $d$. Therefore, all the divisors of $n$ can be grouped into such **($d$, $n$/$d$)** pairs.
+We can think of every divisor $d$ being paired with another divisor $\frac{n}{d}$. Therefore, all the divisors of $n$ can be grouped into such **($d$, $\frac{n}{d}$)** pairs.
 
 ---
 
@@ -140,11 +166,11 @@ $$
 But this contradicts our original assumption that $a \times b = n$.  
 Therefore, **it is impossible for both $a$ and $b$ to be greater than $\sqrt{n}$** if their product is $n$.
 
-So in every divisor pair $`$(d, n/d)$`$, at least one of the numbers must be $\le \sqrt{n}$.  
+So in every divisor pair $(d, \frac{n}{d})$, at least one of the numbers must be $\le \sqrt{n}$.  
 This means:
 
 > To find all divisors of $n$, it is sufficient to check for divisors $d$ in the range $1 \le d \le \sqrt{n}$.  
-> If $d$ divides $n$, then $n / d$ is automatically a valid divisor and can be added as its pair.
+> If $d \divides n$, then $\frac{n}{d}$ is automatically a valid divisor and can be added as its pair.
 
 ---
 
@@ -153,18 +179,18 @@ This means:
 Let’s say $n = 36$.
 
 If we check from $1$ to $6$ (since $\sqrt{36}$ = $6$), we find:
-- $1$ → paired with $36$
-- $2$ → paired with $18$
-- $3$ → paired with $12$
-- $4$ → paired with $9$
-- $6$ → paired with $6$ (only counted once)
+- $1$ $\rightarrow$ paired with $36$
+- $2$ $\rightarrow$ paired with $18$
+- $3$ $\rightarrow$ paired with $12$
+- $4$ $\rightarrow$ paired with $9$
+- $6$ $\rightarrow$ paired with $6$ (only counted once)
 
-Every divisor greater than $6$ is just the result of $n / d$ for some smaller divisor $d$.
+Every divisor greater than $6$ is just the result of $\frac{n}{d}$ for some smaller divisor $d$.
 
 This is why checking up to $\sqrt{n}$ is not only sufficient but **optimal** for finding all divisors.
 
 
-### Optimized Divisor Algorithm – O($\sqrt{n}$)
+### Optimized Divisor Algorithm – $O(\sqrt{n})$
 
 By using the insight above, we can reduce our work.  
 We only iterate up to $\sqrt{n}$ and for every divisor $i$, we add both $i$ and $n / i$.
@@ -208,7 +234,7 @@ std::vector<int> findDivisors(int n) {
 }
 ```
 
-This approach reduces the time complexity from **O($n$)** to **O($\sqrt{n}$)** and is the standard method in most number theory problems.
+This approach reduces the time complexity from **$O(n)$** to **$O(\sqrt{n})$** and is the standard method in most number theory problems.
 
 ## Prime Numbers
 
@@ -228,24 +254,24 @@ This means that you cannot write a prime number as a product of two smaller natu
 
 Let’s look at a few examples to see the difference between prime and composite numbers:
 
-- $2$ → Prime  
-  - Divisors: $1$ and $2$
-- $3$ → Prime  
-  - Divisors: $1$ and $3$
-- $4$ → Not prime (composite)  
-  - Divisors: $1$, $2$, $4$ → more than two
-- $5$ → Prime  
-  - Divisors: $1$ and $5$
-- $6$ → Not prime  
-  - Divisors: $1$, $2$, $3$, $6$
-- $7$ → Prime  
-  - Divisors: $1$ and $7$
-- $8$ → Not prime  
-  - Divisors: $1$, $2$, $4$, $8$
-- $9$ → Not prime  
-  - Divisors: $1$, $3$, $9$
-- $11$ → Prime  
-  - Divisors: $1$ and $11$
+- $2$ $\rightarrow$ $\textcolor{green}{prime}$
+    - Divisors: $1$ and $2$
+- $3$ $\rightarrow$ $\textcolor{green}{prime}$
+    - Divisors: $1$ and $3$
+- $4$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
+    - Divisors: $1$, $2$, $4$ $\rightarrow$ more than two
+- $5$ $\rightarrow$ $\textcolor{green}{prime}$
+    - Divisors: $1$ and $5$
+- $6$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
+    - Divisors: $1$, $2$, $3$, $6$
+- $7$ $\rightarrow$ $\textcolor{green}{prime}$
+    - Divisors: $1$ and $7$
+- $8$ $\rightarrow$ $\textcolor{red}{prime}$ (composite)
+    - Divisors: $1$, $2$, $4$, $8$
+- $9$ $\rightarrow$ $\textcolor{red}{Not prime}$ (composite)
+    - Divisors: $1$, $3$, $9$
+- $11$ $\rightarrow$ $\textcolor{green}{prime}$
+    - Divisors: $1$ and $11
 
 ---
 
