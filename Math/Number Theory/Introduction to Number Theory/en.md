@@ -40,7 +40,7 @@ a % b
 - $12 \bmod 4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$.
 - $7 \bmod 7$ = $0$ $\rightarrow$ every number is divisible by itself.
 
-Modulo is one of the core tools in number theory, it’s used to check if a number divides another (if $a$ % $b$ == $0$).
+Modulo is one of the core tools in number theory, and we can use it to check if $a \divides b$ by checking if $b \equiv 0 \pmod{a}$, or in programming `(b % a == 0)`.
 
 
 ---
