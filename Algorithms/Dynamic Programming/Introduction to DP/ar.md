@@ -30,25 +30,29 @@
 ```c++
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
-void generate_beautiful_strings(string s, int &counter, int n, int a, int b) {
-    if ((int)s.size() == n) {
-        counter++;
+vector< string > beautiful_strings;
+
+void generate_beautiful_strings(string s,int n,int a,int b){
+    if((int)s.size() == n){
+        beautiful_strings.push_back(s);
         return;
     }
-    if ((int)s.size() + a <= n)
-        generate_beautiful_strings(s + string(a, 'a'), counter, n, a, b);
-    if ((int)s.size() + b <= n)
-        generate_beautiful_strings(s + string(b, 'b'), counter, n, a, b);
+    if((int)s.size() + a <= n)
+        generate_beautiful_strings(s + string(a, 'a'), n, a, b);
+    if((int)s.size() + b <= n)
+        generate_beautiful_strings(s + string(b, 'b'), n, a, b);
 }
 
 int main() {
     int n, a, b;
     cin >> n >> a >> b;
-    int ans = 0;
-    generate_beautiful_strings("", ans, n, a, b);
-    cout << ans << endl;
+    generate_beautiful_strings("", n, a, b);
+    cout << (int)beautiful_strings.size() << endl;
+    for(string s : beautiful_strings)
+        cout << s << endl;
     return 0;
 }
 ```
@@ -56,32 +60,39 @@ int main() {
 === "Java"
 
 ```java
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class BeautifulStrings {
+    private static final List<String> beautifulStrings = new ArrayList<>();
 
-    public static void generateBeautifulStrings(String s, int[] counter, int n, int a, int b) {
+    private static void generateBeautifulStrings(String s, int n, int a, int b) {
         if (s.length() == n) {
-            counter[0]++;
+            beautifulStrings.add(s);
             return;
         }
         if (s.length() + a <= n) {
-            generateBeautifulStrings(s + "a".repeat(a), counter, n, a, b);
+            generateBeautifulStrings(s + "a".repeat(a), n, a, b);
         }
         if (s.length() + b <= n) {
-            generateBeautifulStrings(s + "b".repeat(b), counter, n, a, b);
+            generateBeautifulStrings(s + "b".repeat(b), n, a, b);
         }
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        sc.close();
 
-        int[] counter = new int[1]; // استخدام مصفوفة لمحاكاة التمرير بالمرجع
-        generateBeautifulStrings("", counter, n, a, b);
-        System.out.println(counter[0]);
+        generateBeautifulStrings("", n, a, b);
+
+        System.out.println(beautifulStrings.size());
+        for (String s : beautifulStrings) {
+            System.out.println(s);
+        }
     }
 }
 ```
@@ -89,20 +100,23 @@ public class BeautifulStrings {
 === "Python"
 
 ```python
-def generate_beautiful_strings(s, counter, n, a, b):
+beautiful_strings = []
+
+def generate_beautiful_strings(s: str, n: int, a: int, b: int) -> None:
     if len(s) == n:
-        counter[0] += 1
+        beautiful_strings.append(s)
         return
     if len(s) + a <= n:
-        generate_beautiful_strings(s + 'a' * a, counter, n, a, b)
+        generate_beautiful_strings(s + 'a' * a, n, a, b)
     if len(s) + b <= n:
-        generate_beautiful_strings(s + 'b' * b, counter, n, a, b)
+        generate_beautiful_strings(s + 'b' * b, n, a, b)
 
 def main():
     n, a, b = map(int, input().split())
-    counter = [0]  # استخدام قائمة لمحاكاة التمرير بالمرجع
-    generate_beautiful_strings("", counter, n, a, b)
-    print(counter[0])
+    generate_beautiful_strings("", n, a, b)
+    print(len(beautiful_strings))
+    for s in beautiful_strings:
+        print(s)
 
 if __name__ == "__main__":
     main()
