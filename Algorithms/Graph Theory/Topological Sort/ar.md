@@ -44,7 +44,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> topologicalSort(int n, const vector<vector<int>>& adj) {
+vector<int> topological_sort(int n, const vector<vector<int>>& adj) {
     vector<int> indegree(n, 0), order;
     queue<int> q;
     // حساب درجات الدخول
