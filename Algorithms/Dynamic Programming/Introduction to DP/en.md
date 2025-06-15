@@ -20,7 +20,7 @@ For example, if $n = 4$, $a = 1$, and $b = 2$:
 
 The possible strings are:
 
-```
+```plaintext
 "aaaa", "aabb", "abba", "bbaa", "bbbb"
 ```
 
@@ -137,13 +137,13 @@ The problem we are solving in the example is that we have a string of length $4$
 
 The solutions after going to the first option are:
 
-```
+```plaintext
 "aaaa", "aabb", "abba"
 ```
 
 The solutions after going to the second option are:
 
-```
+```plaintext
 "bbaa", "bbbb"
 ```
 
