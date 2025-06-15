@@ -75,7 +75,7 @@ a % b
 
 بصيغة رياضية:
 
-$$a \equiv b\ \pmod{m} \Leftrightarrow (a - b) \text{ قابل للقسمة على } m \Leftrightarrow a \bmod m = b \bmod m$$
+$a \equiv b\ \pmod{m} \Leftrightarrow (a - b) \text{ قابل للقسمة على } m \Leftrightarrow a \bmod m = b \bmod m$
 
 ---
 
