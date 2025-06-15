@@ -8,15 +8,15 @@
 
 The central concept in number theory is **divisibility**.
 
-Consider the integers $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots \}$, for $a, b, \in \mathbb{Z}$, we say that $a$ **divides** $b$ if $a \dot x = b$ for some $x \in \mathbb{Z}$. If $a$ divides $b$ we write $a \divides b$, and we say that $a$ is a **divisor** of $b$, or that $b$ is **multiple** of $a$ or that $b$ is **divisible by** $a$. If $a$ does not divide $b$, then we write $a \notdivides b$.
+Consider the integers $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots \}$, for $a, b, \in \mathbb{Z}$, we say that $a$ **divides** $b$ if $a \dot x = b$ for some $x \in \mathbb{Z}$. If $a$ divides $b$ we write $a \mid b$, and we say that $a$ is a **divisor** of $b$, or that $b$ is **multiple** of $a$ or that $b$ is **divisible by** $a$. If $a$ does not divide $b$, then we write $a \nmid b$.
 
 ### Theorem
 For all $a, b, c, \in \mathbb{Z}$, we have:
-- $a \divides a$, $1 \divides a$ and $a \divides 0$.
-- $a \divides b$ **if and only if** $-a \divides b$ **if and only if** $a \divides -b$.
-- $a \divides b$ and $a \divides c$ implies $a \divides (b + c)$.
-- $a \divides b$ and $b \divides c$ implies $a \divides c$.
-- $a \divides b$ and $b \divides a$ **if and only if ** $a = \pm b$.
+- $a \mid a$, $1 \mid a$ and $a \mid 0$.
+- $a \mid b$ **if and only if** $-a \mid b$ **if and only if** $a \mid -b$.
+- $a \mid b$ and $a \mid c$ implies $a \mid (b + c)$.
+- $a \mid b$ and $b \mid c$ implies $a \mid c$.
+- $a \mid b$ and $b \mid a$ **if and only if ** $a = \pm b$.
 
 ## What Is Modulo?
 
@@ -48,7 +48,7 @@ The modulo operation returns just the **remainder**.
 - $12 \bmod 4$ = $0$ $\rightarrow$ because $12$ is exactly divisible by $4$.
 - $7 \bmod 7$ = $0$ $\rightarrow$ every number is divisible by itself.
 
-Modulo is one of the core tools in number theory, and we can use it to check if $a \divides b$ by checking if $b \equiv 0 \pmod{a}$, or in programming `(b % a == 0)`.
+Modulo is one of the core tools in number theory, and we can use it to check if $a \mid b$ by checking if $b \equiv 0 \pmod{a}$, or in programming `(b % a == 0)`.
 
 
 ---
@@ -160,7 +160,7 @@ $$
 n = d \times k
 $$
 
-In this case, both $d$ and $k$ are divisors of $n$, since they multiply to $n$. This immediately tells us that **divisors come in pairs**: if $d \divides n$, then $\frac{n}{d} \divides n$ also holds.
+In this case, both $d$ and $k$ are divisors of $n$, since they multiply to $n$. This immediately tells us that **divisors come in pairs**: if $d \mid n$, then $\frac{n}{d} \mid n$ also holds.
 
 We can think of every divisor $d$ being paired with another divisor $\frac{n}{d}$. Therefore, all the divisors of $n$ can be grouped into such **($d$, $\frac{n}{d}$)** pairs.
 
@@ -194,7 +194,7 @@ So in every divisor pair $(d, \frac{n}{d})$, at least one of the numbers must be
 This means:
 
 > To find all divisors of $n$, it is sufficient to check for divisors $d$ in the range $1 \le d \le \sqrt{n}$.  
-> If $d \divides n$, then $\frac{n}{d}$ is automatically a valid divisor and can be added as its pair.
+> If $d \mid n$, then $\frac{n}{d}$ is automatically a valid divisor and can be added as its pair.
 
 ---
 
