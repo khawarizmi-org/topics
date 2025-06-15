@@ -1,7 +1,6 @@
 # الخريطة (Map)
 
-
-#### ماب (`map`/`TreeMap`) وهاش-ماب (`unordered_map`/`HashMap`/`dict`)
+#### ماب (`map`/`TreeMap`)
 
 في البرمجة التنافسية، غالبًا ما تحتاج إلى عدّ أو البحث عن عناصر مفاتيحها ليست أعدادًا صحيحة صغيرة (مثل السلاسل النصية، الأزواج، المعرفات المبعثرة). تفشل مصفوفة التكرار في تلك الحالات — استخدم الحاويات الترابطية بدلًا منها.
 
@@ -10,143 +9,190 @@
 ### الوصف
 
 - **ماب<K,V> (في C++) / TreeMap<K,V> (في Java)**  
-  - شجرة متوازنة تحت الغطاء (غالبًا شجرة أحمر-أسود).  
-  - المفاتيح مخزنة بترتيب مرتب.  
-- **هاش-ماب<K,V> (في C++) / HashMap<K,V> (في Java) / dict (في Python)**  
-  - جدول تجزئة بعمليات متوسطة O(1).  
-  - لا يضمن ترتيبًا معينًا.
+  - شجرة متوازنة تحت الغطاء (غالبًا شجرة أحمر–أسود).  
+  - المفاتيح مخزنة بترتيبٍ مرتب.  
 
 ---
 
 ### متى نستخدمها
 
-| السيناريو                                   | مصفوفة التكرار | ماب / TreeMap        | هاش-ماب / HashMap / dict |
-|---------------------------------------------|:-------------:|:--------------------:|:-----------------------:|
-| المفاتيح أعداد صحيحة متجاورة وصغيرة        | ✓             | ✓ (لكن أبطأ)         | ✓ (يحتاج تجزئة)          |
-| المفاتيح أعداد صحيحة كبيرة أو مبعثرة (حتى 10⁹) | ✗          | ✓                    | ✓                        |
-| المفاتيح سلاسل نصية (كلمات، مقاطع)         | ✗             | ✓                    | ✓                        |
-| المفاتيح أزواج/مجموعات (إحداثيات)         | ✗             | ✓                    | ✓                        |
-| نحتاج ترتيبًا أو استعلامات مدى            | ✗             | ✓                    | ✗                        |
+| السيناريو                                      | مصفوفة التكرار | ماب / TreeMap        |
+|-----------------------------------------------|:--------------:|:--------------------:|
+| المفاتيح **أعداد صحيحة متجاورة وصغيرة**       | ✓              | ✓ (لكن أبطأ)         |
+| المفاتيح **أعداد صحيحة كبيرة/مبعثرة** (حتى 10⁹) | ✗            | ✓                    |
+| المفاتيح **سلاسل نصية** (كلمات، مقاطع)        | ✗              | ✓                    |
+| المفاتيح **أزواج/مجموعات** (إحداثيات)        | ✗              | ✓                    |
+| نحتاج **تكرار مرتب** أو **استعلامات مدى**      | ✗              | ✓                    |
 
 ---
 
 ### التعقيد الزمني
 
-| العملية           | ماب / TreeMap    | هاش-ماب / HashMap / dict     |
-|:-----------------:|:----------------:|:-----------------------------:|
-| **الإدراج**       | O(log n)         | O(1) متوسط، O(n) في أسوأ الحالات |
-| **البحث/الوصول**  | O(log n)         | O(1) متوسط، O(n) في أسوأ الحالات |
-| **الحذف**         | O(log n)         | O(1) متوسط، O(n) في أسوأ الحالات |
-| **التكرار**       | O(n) بترتيب المفاتيح | O(n) بترتيب عشوائي       |
+| العملية            | ماب / TreeMap      |
+|:------------------:|:------------------:|
+| **الإدراج**        | O(log n)           |
+| **البحث/الوصول**   | O(log n)           |
+| **الحذف**          | O(log n)           |
+| **التكرار**        | O(n) بترتيب المفاتيح |
 
 ---
 
 ### أمثلة التنفيذ
 
-=== c++
+#### مثال على الإدراج والتكرار
 
 ```cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
+#include <string>
 using namespace std;
 
-int main() {
-    int n;
-    cin >> n;
-    // عدّ التكرارات للمفاتيح العشوائية (مثل السلاسل النصية)
-    unordered_map<string,int> freq;     // هاش-ماب: O(1) متوسط
-    map<string,int>    ofreq;           // ماب: O(log n) ، مرتب
+int main(){
+    map<string, int> frequency;
 
-    for(int i = 0; i < n; i++) {
-        string s;
-        cin >> s;
-        freq[s]++;    // هاش-ماب
-        ofreq[s]++;   // ماب
+    string arr[] = {
+        "cat", "hat", "apple",
+        "apple", "hat", "dog",
+        "hat", "cat", "cat",
+        "cat", "hat", "hat"
+    };
+
+    for (string &s : arr){
+        // زيادة تكرار كل سلسلة
+        frequency[s]++; 
     }
 
-    // مثال على البحث والتكرار بالترتيب
-    for (auto &p : ofreq) {
-        // p.first = المفتاح، p.second = التكرار
-        cout << p.first << " -> " << p.second << "\n";
+    cout << "Map keys and values:" << endl;
+    for (auto [key, value] : frequency) {
+        cout << key << " -> " << value << endl;
     }
 
-    cout << "التكرار لكلمة "foo": " << freq["foo"] << "\n";
     return 0;
 }
 ```
 
-=== Java
-
 ```java
-import java.util.*;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class MapDemo {
+public class FrequencyCounter {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        HashMap<String,Integer> hmap = new HashMap<>();   // هاش-ماب: O(1) متوسط
-        TreeMap<String,Integer> omap = new TreeMap<>();   // ماب: O(log n)
+        Map<String, Integer> frequency = new TreeMap<>();
 
-        while (n-- > 0) {
-            String s = sc.next();
-            hmap.put(s, hmap.getOrDefault(s, 0) + 1);
-            omap.put(s, omap.getOrDefault(s, 0) + 1);
+        String[] arr = {
+            "cat", "hat", "apple",
+            "apple", "hat", "dog",
+            "hat", "cat", "cat",
+            "cat", "hat", "hat"
+        };
+
+        for (String s : arr) {
+            // زيادة تكرار كل سلسلة
+            frequency.put(s, frequency.getOrDefault(s, 0) + 1);
         }
 
-        // تكرار مرتب
-        for (var e : omap.entrySet()) {
-            System.out.println(e.getKey() + " -> " + e.getValue());
+        System.out.println("Map keys and values:");
+        for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
-        System.out.println("التكرار لكلمة "foo": " + hmap.getOrDefault("foo", 0));
     }
 }
 ```
 
-=== Python
+#### مثال على التحقق من تكرار مفتاح وحذفه
 
-```python
-from collections import defaultdict
+```cpp
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
 
-n = int(input())
-hmap = defaultdict(int)   # dict كهاش-ماب مع قيمة افتراضية 0
+int main(){
+    map<string, int> frequency;
 
-for _ in range(n):
-    s = input().strip()
-    hmap[s] += 1          # هاش-ماب متوسطة O(1)
+    string arr[] = {
+        "cat", "hat", "apple",
+        "apple", "hat", "dog",
+        "hat", "cat", "cat",
+        "cat", "hat", "hat"
+    };
 
-# التكرار بالترتيب إذا لزم الأمر:
-for key in sorted(hmap):
-    print(f"{key} -> {hmap[key]}")
+    for (string &s : arr){
+        frequency[s]++; 
+    }
 
-print("التكرار لكلمة "foo":", hmap["foo"])
+    // الوصول مباشرة لتكرار المفتاح
+    cout << "Frequency of cat: " << frequency["cat"] << endl;
+    cout << endl;
+
+    // التحقق من وجود المفتاح باستخدام count
+    cout << "Does banana exist? " << frequency.count("banana") << endl;
+    cout << "Does apple exist? " << frequency.count("apple") << endl;
+    cout << endl;
+
+    // حجم الماب قبل وبعد الحذف
+    cout << "number of elements in the map is: " << frequency.size() << endl;
+    frequency.erase("cat");
+    cout << "number of elements in the map is: " << frequency.size() << endl;
+
+    return 0;
+}
 ```
 
----
+```java
+import java.util.Map;
+import java.util.TreeMap;
 
-### لماذا ماب بدل مصفوفة التكرار؟
+public class FrequencyMapDemo {
+    public static void main(String[] args) {
+        Map<String, Integer> frequency = new TreeMap<>();
 
-1. **أنواع مفاتيح غير محدودة**:  
+        String[] arr = {
+            "cat", "hat", "apple",
+            "apple", "hat", "dog",
+            "hat", "cat", "cat",
+            "cat", "hat", "hat"
+        };
+
+        // بناء خريطة التكرار
+        for (String s : arr) {
+            frequency.put(s, frequency.getOrDefault(s, 0) + 1);
+        }
+
+        // الوصول مباشرة لتكرار المفتاح
+        System.out.println("Frequency of cat: " + frequency.get("cat"));
+        System.out.println();
+
+        // التحقق من وجود المفتاح
+        System.out.println("Does banana exist? " + (frequency.containsKey("banana") ? 1 : 0));
+        System.out.println("Does apple exist?  " + (frequency.containsKey("apple")  ? 1 : 0));
+        System.out.println();
+
+        // الحجم قبل وبعد الحذف
+        System.out.println("Number of elements in the map is: " + frequency.size());
+        frequency.remove("cat");
+        System.out.println("Number of elements in the map is: " + frequency.size());
+    }
+}
+```
+
+### لماذا الماب بدل مصفوفة التكرار؟
+
+1. **أنواع مفاتيح غير محدودة**  
    - **سلاسل نصية**: عدّ الكلمات أو المقاطع.  
    - **أزواج/مجموعات**: عدّ الإحداثيات أو حواف الرسم البياني.
 
-2. **لا حاجة لنطاق مسبق**:  
+2. **لا حاجة لنطاق مسبق**  
    - مصفوفة التكرار تتطلب معرفة `max_key` وتخصيص `O(max_key)`.  
-   - الماب تنمو ديناميكيًا بتعقيد `O(log n)` أو `O(1)`.
+   - الماب تنمو ديناميكيًا بـ `O(log n)`.
 
-3. **بيانات مبعثرة**:  
+3. **بيانات مبعثرة**  
    - إذا ظهرت بعض المفاتيح فقط من نطاق ضخم، فالمصفوفة تضيع مساحة كبيرة.
 
-4. **عمليات مرتبة** (مع ماب/TreeMap):  
-   - استعلامات المدى: `lower_bound`، `upper_bound`.  
+4. **عمليات مرتبة** (مع ماب/TreeMap)  
+   - استعلامات مدى: `lower_bound`، `upper_bound`.  
    - التكرار بترتيب المفاتيح.
-
-```cpp
-// مثال: عدّ الحواف في رسم بياني
-map<pair<int,int>,int> edgeCount;
-edgeCount[{u,v}]++;      // لا حاجة لمصفوفة ضخمة
-```
-
----
 
 > **الخلاصة:**  
 > - **مصفوفات التكرار** ممتازة للمفاتيح الصحيحة الصغيرة والمعروفة.  
-> - **ماب/هاش-ماب** تتعامل بكفاءة مع **السلاسل**، **الأزواج**، **المعرفات المبعثرة أو غير المعروفة** بأقل تكلفة إضافية.  
+> - **ماب** تتعامل بكفاءة مع **السلاسل**، **الأزواج**، **المعرفات المبعثرة أو غير المعروفة** بأقل تكلفة إضافية.  
