@@ -144,14 +144,43 @@ We often want to generate **all primes up to $n$**, especially in algorithmic pr
 
 ### Brute Force Approach – $O(n\sqrt{n})$
 
-Use the prime check function on every number.
+This method is based on repeatedly using the **prime check** function for each number from $2$ to $n$.
 
+It’s simple and intuitive but becomes inefficient for large $n$.
+
+#### How It Works
+
+For each integer $i$ from $2$ to $n$:
+- Check whether $i$ is a prime using `isPrime()` function.
+- If it is prime, add it to the list of primes.
+
+Since `isPrime()` takes $O(\sqrt{n})$, and we call it $n$ times, the total complexity is:
+
+$$
+O(n\sqrt{n})
+$$
+
+#### Pseudocode
+
+```plaintext
+Initialize an empty list called primes
+
+For every number i from 2 to n:
+    If i is prime:
+        Add i to the primes list
+
+Return the list of primes
+```
+
+#### Implementation
+
+=== "c++"
 ```cpp
 #include <vector>
+using namespace std;
 
-// Uses isPrime() to collect all primes up to n
-std::vector<int> getPrimesSlow(int n) {
-    std::vector<int> primes;
+vector<int> getPrimesSlow(int n) {
+    vector<int> primes;
 
     for (int i = 2; i <= n; ++i) {
         if (isPrime(i)) {
@@ -163,20 +192,81 @@ std::vector<int> getPrimesSlow(int n) {
 }
 ```
 
+=== "Python"
+```python
+
+def get_primes_slow(n):
+    primes = []
+
+    for i in range(2, n + 1):
+        if is_prime(i):
+            primes.append(i)
+
+    return primes
+```
+
 ---
 
 ### Sieve of Eratosthenes – $O(n log log n)$
 
-A highly efficient algorithm that eliminates multiples instead of checking one-by-one.
+This is one of the **most efficient algorithms** for generating **all primes ≤ $n$**.
 
-> Mark all numbers as prime initially, then for each prime $p$, mark off $p^2, p^2+p, p^2+2p, ...$ as not prime.
+Rather than checking each number individually, the Sieve eliminates **non-prime numbers in bulk** by exploiting their multiplicative structure.
 
+### How it Works
+
+1. **Start with all numbers marked as prime**.
+2. **Loop from $2$ to $n$**.
+3. **If $i$ is still marked as prime**:
+   - Then $i$ is guaranteed to be prime.
+   - Mark **all multiples of $i$** (i.e., $2i, 3i, 4i, ...$) as not prime.
+
+### Why Is the Sieve of Eratosthenes $O(n \log \log n)$?
+
+To analyze the time complexity of the sieve, we look at how many times each composite number gets marked as **not prime**.
+
+Let’s consider the **total number of operations** — that is, how many times we iterate over any multiple of a prime.
+
+So for every prime $p \leq n$, we mark off:
+
+$$
+\left\lfloor \frac{n}{p} \right\rfloor - 1 \quad \text{multiples (excluding p itself)}
+$$
+
+So the total number of operations is:
+
+$$
+\sum_{p \leq n,\ p\ \text{prime}} \left\lfloor \frac{n}{p} \right\rfloor
+$$
+
+We can estimate this by:
+
+$$
+\sum_{p \leq n} \frac{n}{p} = n \cdot \sum_{p \leq n} \frac{1}{p}
+$$
+
+The term $\sum_{p \leq n} \frac{1}{p}$ is a well-known mathematical expression — the **harmonic sum over primes** — and it grows like:
+
+$$
+\sum_{p \leq n} \frac{1}{p} \approx \log \log n
+$$
+
+Therefore, the total number of operations is approximately:
+
+$$
+n \cdot \log \log n
+$$
+
+### Implementation
+
+=== "c++"
 ```cpp
 #include <vector>
+include namespace std;
 
 // Classic sieve algorithm to generate primes up to n
-std::vector<int> sieve(int n) {
-    std::vector<bool> isPrime(n + 1, true); // initially assume all prime
+vector<int> sieve(int n) {
+    vector<bool> isPrime(n + 1, true); // initially assume all prime
     isPrime[0] = isPrime[1] = false;
 
     for (int p = 2; p * p <= n; ++p) {
@@ -188,7 +278,7 @@ std::vector<int> sieve(int n) {
         }
     }
 
-    std::vector<int> primes;
+    vector<int> primes;
     for (int i = 2; i <= n; ++i) {
         if (isPrime[i]) {
             primes.push_back(i);
@@ -197,4 +287,20 @@ std::vector<int> sieve(int n) {
 
     return primes;
 }
+```
+
+=== "Python"
+```python
+def sieve_to_n(n):
+    is_prime = [True] * (n + 1)
+    is_prime[0] = is_prime[1] = False
+
+    for i in range(2, n + 1):
+        if is_prime[i]:
+            # Mark all multiples of i as not prime
+            for multiple in range(2 * i, n + 1, i):
+                is_prime[multiple] = False
+
+    primes = [i for i, prime in enumerate(is_prime) if prime]
+    return primes
 ```
