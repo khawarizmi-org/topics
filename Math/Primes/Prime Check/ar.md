@@ -32,7 +32,6 @@ Return true
 
 === "c++"
 ```cpp
-// الطريقة البدائية للتحقق مما إذا كان عدد أوليًا
 bool isPrimeNaive(int n) {
     if (n <= 1) return false;
 
@@ -49,7 +48,6 @@ bool isPrimeNaive(int n) {
 
 === "Python"
 ```python
-# الطريقة البدائية للتحقق مما إذا كان عدد أوليًا
 def is_prime_naive(n):
     if n <= 1:
         return False
@@ -102,7 +100,6 @@ Return true
 
 === "c++"
 ```cpp
-// الطريقة المحسنة للتحقق من أولية عدد باستخدام sqrt(n)
 bool isPrime(int n) {
     if (n <= 1) return false;
 
@@ -120,8 +117,6 @@ bool isPrime(int n) {
 === "Python"
 ```python
 import math
-
-# الطريقة المحسنة للتحقق من أولية عدد باستخدام sqrt(n)
 def is_prime(n):
     if n <= 1:
         return False
