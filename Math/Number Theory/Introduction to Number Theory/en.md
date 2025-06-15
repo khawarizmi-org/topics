@@ -16,7 +16,7 @@ For all $a, b, c, \in \mathbb{Z}$, we have:
 - $a \mid b$ **if and only if** $-a \mid b$ **if and only if** $a \mid -b$.
 - $a \mid b$ and $a \mid c$ implies $a \mid (b + c)$.
 - $a \mid b$ and $b \mid c$ implies $a \mid c$.
-- $a \mid b$ and $b \mid a$ **if and only if ** $a = \pm b$.
+- $a \mid b$ and $b \mid a$ **if and only if** $a = \pm b$.
 
 ## What Is Modulo?
 
