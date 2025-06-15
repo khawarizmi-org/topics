@@ -17,8 +17,12 @@
     "Queue": "الطابور",
     "Deque": "ديكيو (Deque)",
     "Meet in the Middle": "الالتقاء في المنتصف",
-    "Topological Sort": "الترتيب الطوبولوجي"
+    "Topological Sort": "الترتيب الطوبولوجي",
     "Constructive Algorithms": "الخوازرميات البنائية",
     "Prefix Sum": "المجموع التراكمي",
-    "Dynamic Programming": "البرمجة الديناميكية"
+    "Dynamic Programming": "البرمجة الديناميكية",
+    "Introduction to Number Theory": "مقدمة في نظرية الأعداد",
+    "Introduction to DP": "مقدمة في البرمجة الديناميكية",
+    "Number Theory": "نظرية الأعداد",
+    "Math": "الرياضيات"
 }
