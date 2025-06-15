@@ -28,8 +28,9 @@ For each number i from 2 to n - 1:
 Return true
 ```
 
-#### C++ Implementation
+#### Implementation
 
+=== "c++"
 ```cpp
 // Naive method to check if a number is prime
 bool isPrimeNaive(int n) {
@@ -46,6 +47,21 @@ bool isPrimeNaive(int n) {
 }
 ```
 
+=== "Python"
+```python
+# Naive method to check if a number is prime
+def is_prime_naive(n):
+    if n <= 1:
+        return False
+
+    for d in range(2, n):
+        if n % d == 0:
+            # Found a divisor → not prime
+            return False
+
+    return True  # No divisors found → prime
+```
+
 ---
 
 ### Optimized Prime Check – $O(\sqrt{n})$
@@ -56,7 +72,7 @@ Suppose we are given a number $n$.
 If $n$ is **not a prime**, then by definition it must have a divisor **other than** $1$ and $n$ itself.  
 Let’s call that divisor $d$.
 
-Now, from the properties of divisors (as discussed earlier), we know:
+Now, from the properties of divisors (as discussed earlier in **Introduction to number theory**), we know:
 
 > Every divisor $d$ of $n$ appears with a corresponding pair $\frac{n}{d}$.  
 > In any such pair, **at least one of the numbers must be ≤ \sqrt{n}**.
@@ -82,8 +98,9 @@ For each number d from 2 to sqrt(n):
 Return true
 ```
 
-#### C++ Implementation
+#### Implementation
 
+=== "c++"
 ```cpp
 // Optimized method to check for primality using sqrt(n)
 bool isPrime(int n) {
@@ -98,6 +115,23 @@ bool isPrime(int n) {
 
     return true; // No divisors in [2, sqrt(n)] → prime
 }
+```
+
+=== "Python"
+```python
+import math
+
+# Optimized method to check for primality using sqrt(n)
+def is_prime(n):
+    if n <= 1:
+        return False
+
+    for d in range(2, int(math.isqrt(n)) + 1):
+        if n % d == 0:
+            # Found a divisor → not prime
+            return False
+
+    return True  # No divisors in [2, sqrt(n)] → prime
 ```
 
 This optimization reduces the number of checks massively, especially for large numbers.
