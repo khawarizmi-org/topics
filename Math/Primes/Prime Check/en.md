@@ -135,3 +135,66 @@ def is_prime(n):
 ```
 
 This optimization reduces the number of checks massively, especially for large numbers.
+
+## Finding All Primes from $1$ to $n$
+
+We often want to generate **all primes up to $n$**, especially in algorithmic problems.
+
+---
+
+### Brute Force Approach – $O(n\sqrt{n})$
+
+Use the prime check function on every number.
+
+```cpp
+#include <vector>
+
+// Uses isPrime() to collect all primes up to n
+std::vector<int> getPrimesSlow(int n) {
+    std::vector<int> primes;
+
+    for (int i = 2; i <= n; ++i) {
+        if (isPrime(i)) {
+            primes.push_back(i);
+        }
+    }
+
+    return primes;
+}
+```
+
+---
+
+### Sieve of Eratosthenes – $O(n log log n)$
+
+A highly efficient algorithm that eliminates multiples instead of checking one-by-one.
+
+> Mark all numbers as prime initially, then for each prime $p$, mark off $p^2, p^2+p, p^2+2p, ...$ as not prime.
+
+```cpp
+#include <vector>
+
+// Classic sieve algorithm to generate primes up to n
+std::vector<int> sieve(int n) {
+    std::vector<bool> isPrime(n + 1, true); // initially assume all prime
+    isPrime[0] = isPrime[1] = false;
+
+    for (int p = 2; p * p <= n; ++p) {
+        if (isPrime[p]) {
+            // mark multiples of p starting from p*p
+            for (int multiple = p * p; multiple <= n; multiple += p) {
+                isPrime[multiple] = false;
+            }
+        }
+    }
+
+    std::vector<int> primes;
+    for (int i = 2; i <= n; ++i) {
+        if (isPrime[i]) {
+            primes.push_back(i);
+        }
+    }
+
+    return primes;
+}
+```
