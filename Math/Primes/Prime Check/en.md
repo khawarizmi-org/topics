@@ -17,7 +17,7 @@ If any of those numbers divide $n$ exactly, then $n$ is **not** prime.
 
 #### Pseudocode
 
-```
+```plaintext
 If n is less than or equal to 1:
     Return false
 
@@ -87,7 +87,7 @@ If no number in that range divides $n$, then $n$ must be prime.
 
 #### Pseudocode
 
-```
+```plaintext
 If n is less than or equal to 1:
     Return false
 
