@@ -10,9 +10,9 @@ Usually, the first thing to think of when solving any problem is the brute-force
 
 You are given three integers $n$, $a$, and $b$. Find all possible strings of length $n$ that can be formed by concatenating any number of blocks, where each block is either:
 
-- a string of length $a$ consisting only of the character `a`, or
+- a string of length $a$ consisting only of the character `'a'`, or
 
-- a string of length $b$ consisting only of the character `b`.
+- a string of length $b$ consisting only of the character `'b'`.
 
 Each string must be exactly of length $n$ and constructed by concatenating these blocks (in any order and combination).
 
