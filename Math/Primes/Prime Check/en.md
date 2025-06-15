@@ -79,7 +79,7 @@ Now, from the properties of divisors (as discussed earlier in **Introduction to 
 
 This gives us the key insight:
 
-> If $n$ has a divisor other than 1 and itself, then the **smaller member of the divisor pair** must be $ \le \sqrt{n}$.
+> If $n$ has a divisor other than 1 and itself, then the **smaller member of the divisor pair** must be $\le \sqrt{n}$.
 
 So instead of checking every number from $2$ to $n - 1$, we only need to check up to **\sqrt{n}**.
 
