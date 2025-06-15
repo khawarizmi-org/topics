@@ -225,11 +225,11 @@ $$
 لنفترض أن $n = 36$
 
 إذا تحققنا من الأعداد من $1$ إلى $6$ (لأن $\sqrt{36} = 6$)، نجد:
-- $1$ $\lefttarrow$ زوجها هو $36$
-- $2$ $\lefttarrow$ زوجها هو $18$
-- $3$ $\lefttarrow$ زوجها هو $12$
-- $4$ $\lefttarrow$ زوجها هو $9$
-- $6$ $\lefttarrow$ زوجها هو $6$ (نعده مرة واحدة فقط)
+- $1$ $\leftarrow$ زوجها هو $36$
+- $2$ $\leftarrow$ زوجها هو $18$
+- $3$ $\leftarrow$ زوجها هو $12$
+- $4$ $\leftarrow$ زوجها هو $9$
+- $6$ $\leftarrow$ زوجها هو $6$ (نعده مرة واحدة فقط)
 
 كل القواسم الأكبر من $6$ هي فقط ناتجة من $\frac{n}{d}$ لأحد القواسم الأصغر.
 
@@ -317,23 +317,23 @@ def find_divisors(n):
 
 دعونا نلقي نظرة على بعض الأمثلة لتمييز الأعداد الأولية عن الأعداد المركبة:
 
-- $2$ $\lefttarrow$ $\textcolor{green}{أولي}$:
+- $2$ $\leftarrow$ $\textcolor{green}{أولي}$:
     - قواسمه: $1$ و $2$.
-- $3$ $\lefttarrow$ $\textcolor{green}{أولي}$:
+- $3$ $\leftarrow$ $\textcolor{green}{أولي}$:
     - قواسمه: $1$ و $3$.
-- $4$ $\lefttarrow$ $\textcolor{red}{غير أولي}$ (مركب):
+- $4$ $\leftarrow$ $\textcolor{red}{غير أولي}$ (مركب):
     - قواسمه: $1$, $2$, $4$ ← أكثر من قاسمين.
-- $5$ $\lefttarrow$ $\textcolor{green}{أولي}$:
+- $5$ $\leftarrow$ $\textcolor{green}{أولي}$:
     - قواسمه: $1$ و $5$.
-- $6$ $\lefttarrow$ $\textcolor{red}{غير أولي}$ (مركب):
+- $6$ $\leftarrow$ $\textcolor{red}{غير أولي}$ (مركب):
     - قواسمه: $1$, $2$, $3$, $6$.
-- $7$ $\lefttarrow$ $\textcolor{green}{أولي}$:
+- $7$ $\leftarrow$ $\textcolor{green}{أولي}$:
     - قواسمه: $1$ و $7$.
-- $8$ $\lefttarrow$ $\textcolor{red}{غير أولي}$ (مركب):
+- $8$ $\leftarrow$ $\textcolor{red}{غير أولي}$ (مركب):
     - قواسمه: $1$, $2$, $4$, $8$.
-- $9$ $\lefttarrow$ $\textcolor{red}{غير أولي}$ (مركب):
+- $9$ $\leftarrow$ $\textcolor{red}{غير أولي}$ (مركب):
     - قواسمه: $1$, $3$, $9$.
-- $11$ $\lefttarrow$ $\textcolor{green}{أولي}$:
+- $11$ $\leftarrow$ $\textcolor{green}{أولي}$:
     - قواسمه: $1$ و $11$.
 
 ---
