@@ -75,7 +75,7 @@ Let’s call that divisor $d$.
 Now, from the properties of divisors (as discussed earlier in **Introduction to number theory**), we know:
 
 > Every divisor $d$ of $n$ appears with a corresponding pair $\frac{n}{d}$.  
-> In any such pair, **at least one of the numbers must be ≤ \sqrt{n}**.
+> In any such pair, **at least one of the numbers must be $\le \sqrt{n}$**.
 
 This gives us the key insight:
 
