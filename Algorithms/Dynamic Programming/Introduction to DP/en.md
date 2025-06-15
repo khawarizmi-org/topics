@@ -460,5 +460,5 @@ In the example problem, we have $n$ distinct states, and for each state, we are 
 This is a demonstration of the recursion tree when $n = 5$, $a = 1$, and $b = 2$, after applying memoization. We can see that the tree is reduced from the shape of a nearly full binary tree with up to $2^n$ calls to a much smaller tree with at most $2 \cdot n$ calls.
 
 <div align="center">
-    <img src="images/dp.jpg" alt="recursion tree with memoization">
+    <img src="images/dp-tree.jpg" alt="recursion tree with memoization">
 </div>
