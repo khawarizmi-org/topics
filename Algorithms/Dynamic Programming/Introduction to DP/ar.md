@@ -124,7 +124,9 @@ if __name__ == "__main__":
 
 دعونا نلقي نظرة على الاستدعاءات العودية التي ستحدث عندما $n=4$ و $a=1$ و $b=2$ باستخدام الحل السابق:
 
-![Alt text](images/rec-tree.jpg)
+<div align="center">
+    <img src="images/rec-tree.jpg" alt="recursion tree">
+</div>
 
 ---
 
@@ -239,7 +241,9 @@ if __name__ == "__main__":
 
 هذا توضيح لشجرة الاستدعاءات عندما $n=5$ و $a=1$ و $b=2$:
 
-![Alt text](images/rec-tree-2.jpg)
+<div align="center">
+    <img src="images/rec-tree-2.jpg" alt="recursion tree">
+</div>
 
 نلاحظ أن الدالة `count(3)` استُدعيت مرتين، وفي كلا المرتين أعادت `ans = 3`. لأننا نحاول حل نفس المشكلة مراراً، فمن الطبيعي أن النتيجة متطابقة — وهنا تأتي أهمية **التخزين المؤقت**.
 
@@ -370,4 +374,6 @@ if __name__ == "__main__":
 
 هذا توضيح لشجرة الاستدعاءات بعد تطبيق التخزين المؤقت عندما $n=5$ و $a=1$ و $b=2$:
 
-![Alt text](images/dp-tree.jpg)
+<div align="center">
+    <img src="images/dp-tree" alt="recursion tree with memoization">
+</div>

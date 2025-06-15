@@ -125,7 +125,9 @@ if __name__ == "__main__":
 
 Let's take a look at the recursive calls that are going to happen when $n=4$, $a=1$, $b=2$, when we use the previous solution:
 
-![Alt text](images/rec-tree.jpg)
+<div align="center">
+    <img src="images/rec-tree.jpg" alt="recursion tree">
+</div>
 
 Now we need to change the way we think about the problem. Instead of generating all possibilities, we need to think about how we are going to build the answer to our problem by breaking it into smaller subproblems.
 
@@ -234,7 +236,9 @@ if __name__ == "__main__":
 
 This is a demonstration of the recursion tree when $n=5$, $a=1$, and $b=2$, where each recursive call represents a problem, and the answer will be the sum of the two subproblems under it.
 
-![Alt text](images/rec-tree-2.jpg)
+<div align="center">
+    <img src="images/rec-tree-2.jpg" alt="recursion tree">
+</div>
 
 Let's take a look at the tree above. We can see that `count("bb")` and `count("aa")` have the same answer, and their subtrees look the same.
 
@@ -325,7 +329,9 @@ if __name__ == "__main__":
 
 This is a demonstration of the recursion tree when $n=5$, $a=1$, and $b=2$.
 
-![Alt text](images/rec-tree-3.jpg)
+<div align="center">
+    <img src="images/rec-tree-3.jpg" alt="recursion tree">
+</div>
 
 Let's take a look again at this tree. We can see that the function `count(3)` was called twice. In both times, it returned with `ans = 3`. Because we are solving the same problem, obviously it will return with the same answer — and here comes the idea of memoization.
 
@@ -453,4 +459,6 @@ In the example problem, we have $n$ distinct states, and for each state, we are 
 
 This is a demonstration of the recursion tree when $n = 5$, $a = 1$, and $b = 2$, after applying memoization. We can see that the tree is reduced from the shape of a nearly full binary tree with up to $2^n$ calls to a much smaller tree with at most $2 \cdot n$ calls.
 
-![Alt text](images/dp-tree.jpg)
+<div align="center">
+    <img src="images/dp.jpg" alt="recursion tree with memoization">
+</div>
