@@ -61,9 +61,7 @@ In number theory, we often express modulo relations more formally using **congru
 
 Mathematically:
 
-$$
-a \equiv b\ \pmod{m} \Leftrightarrow (a - b)$ is divisible by $m \Leftrightarrow a \bmod m = b \bmod m
-$$
+$$a \equiv b\ \pmod{m} \Leftrightarrow (a - b)$ is divisible by $m \Leftrightarrow a \bmod m = b \bmod m$$
 
 ### Examples:
 
