@@ -41,6 +41,8 @@
 
 #### مثال على الإدراج والتكرار
 
+=== "c++"
+
 ```cpp
 #include <iostream>
 #include <map>
@@ -71,6 +73,8 @@ int main(){
 }
 ```
 
+=== "Java"
+
 ```java
 import java.util.Map;
 import java.util.TreeMap;
@@ -100,6 +104,8 @@ public class FrequencyCounter {
 ```
 
 #### مثال على التحقق من تكرار مفتاح وحذفه
+
+=== "c++"
 
 ```cpp
 #include <iostream>
@@ -138,6 +144,8 @@ int main(){
     return 0;
 }
 ```
+
+=== "Java"
 
 ```java
 import java.util.Map;

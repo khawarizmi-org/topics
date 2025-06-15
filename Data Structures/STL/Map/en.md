@@ -41,7 +41,7 @@ In CP, you often need to count or look up items whose keys aren’t small intege
 
 #### Example for insertion and iteration
 
-=== c++
+=== "c++"
 
 ```cpp
 #include <iostream>
@@ -74,7 +74,7 @@ int main(){
 }
 ```
 
-=== Java
+=== "Java"
 
 ```java
 import java.util.Map;
@@ -120,7 +120,7 @@ As you can see, the keys are stored in sorted order, and the frequency of each s
 
 #### Example for checking the frequency of a specific key and deleting it
 
-=== c++
+=== "c++"
 
 ```cpp
 #include <iostream>
@@ -163,7 +163,7 @@ int main(){
 }
 ```
 
-=== Java
+=== "Java"
 
 ```java
 import java.util.Map;
