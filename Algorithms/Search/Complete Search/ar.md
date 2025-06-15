@@ -87,7 +87,10 @@ def is_rbs(s):
 
 فيما يلي مثال عندما تكون $n = 4$:
 
-![النص البديل](gifs/draw-tree.gif)
+<div align="center">
+    <img src="images/draw-tree.gif" alt="recursion tree">
+</div>
+
 
 ### التوليد العودي
 

@@ -97,7 +97,9 @@ One known way to do this on paper is to draw a tree as follows:
 
 Here is an example where $n = 4$:
 
-![Alt Text](gifs/draw-tree.gif)
+<div align="center">
+    <img src="images/draw-tree.gif" alt="recursion tree">
+</div>
 
 ### Recursive Generation
 

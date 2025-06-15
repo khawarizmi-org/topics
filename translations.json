@@ -7,13 +7,17 @@
     "Stack": "ستاك",
     "Data Structures": "هياكل البيانات",
     "STL": "المكتبة القياسية للغة C++",
+    "Frequency Array": "مصفوفة التكرار",
     "Introduction": "الأساسيات",
     "Complexity": "الكومبليكسيتي",
     "Introduction to Graph": "مقدمة في الرسم البياني",
     "Complete Search": "البحث الشامل",
     "Graph Theory": "نظرية الرسوم البيانية",
+    "BFS": "البحث بعرض أولاً (BFS)",
     "Queue": "الطابور",
     "Deque": "ديكيو (Deque)",
     "Meet in the Middle": "الالتقاء في المنتصف",
     "Topological Sort": "الترتيب الطوبولوجي"
+    "Constructive Algorithms": "الخوازرميات البنائية",
+    "Prefix Sum": "المجموع التراكمي"
 }
