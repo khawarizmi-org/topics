@@ -207,7 +207,7 @@ def get_primes_slow(n):
 
 ---
 
-### Sieve of Eratosthenes – $O(n log log n)$
+### Sieve of Eratosthenes – $O(n \cdot \log(\log(n)))$
 
 This is one of the **most efficient algorithms** for generating **all primes ≤ $n$**.
 
