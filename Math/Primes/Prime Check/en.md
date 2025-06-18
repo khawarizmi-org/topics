@@ -221,7 +221,7 @@ Rather than checking each number individually, the Sieve eliminates **non-prime 
    - Then $i$ is guaranteed to be prime.
    - Mark **all multiples of $i$** (i.e., $2i, 3i, 4i, ...$) as not prime.
 
-### Why Is the Sieve of Eratosthenes $O(n \log \log n)$?
+### Why Is the Sieve of Eratosthenes $O(n \cdot \log(\log(n)))$?
 
 To analyze the time complexity of the sieve, we look at how many times each composite number gets marked as **not prime**.
 
