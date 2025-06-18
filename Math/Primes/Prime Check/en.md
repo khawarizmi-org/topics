@@ -248,7 +248,7 @@ $$
 The term $\sum_{p \leq n} \frac{1}{p}$ is a well-known mathematical expression — the **harmonic sum over primes** — and it grows like:
 
 $$
-\sum_{p \leq n} \frac{1}{p} \approx \log \log n
+\sum_{p \leq n} \frac{1}{p} \approx \log(\log(n))
 $$
 
 Therefore, the total number of operations is approximately:
