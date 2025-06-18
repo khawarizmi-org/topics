@@ -236,7 +236,7 @@ $$
 So the total number of operations is:
 
 $$
-\sum_{p \leq n,\ p\ \text{prime}} \left\lfloor \frac{n}{p} \right\rfloor
+\sum_{p \leq n,\ p\ \in \text{prime}} \left\lfloor \frac{n}{p} \right\rfloor
 $$
 
 We can estimate this by:
