@@ -254,7 +254,7 @@ $$
 Therefore, the total number of operations is approximately:
 
 $$
-n \cdot \log \log n
+n \cdot \log(\log(n))
 $$
 
 ### Implementation
