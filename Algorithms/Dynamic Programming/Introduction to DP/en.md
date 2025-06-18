@@ -347,6 +347,8 @@ Now we will do a small change to the last code we wrote. We will define an array
 
 The modifed code:
 
+=== "c++"
+
 ```c++
 #include <iostream>
 #include <memory.h>
